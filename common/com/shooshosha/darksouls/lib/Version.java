@@ -23,7 +23,7 @@ public class Version {
 	private static String build;
 	private static String mcversion;
 	
-	private void init(Properties properties) {
+	public static void init(Properties properties) {
 		if (properties != null) {
 			major = properties.getProperty("DarkSoulsCraftMod.build.major.number");
 			minor = properties.getProperty("DarkSoulsCraftMod.build.minor.number");
