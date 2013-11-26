@@ -1,0 +1,22 @@
+/**
+ * DarkSoulsCraft
+ * 
+ * Reference.java
+ * 
+ * @author shooshosha
+ * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
+ *
+ */
+package com.shooshosha.darksouls.lib;
+
+/**
+ * @author shooshosha
+ * @date Nov 26, 2013
+ *
+ */
+public class Reference {
+	public static final String MOD_ID = "darksoulscraft";
+	public static final String MOD_NAME = "Dark Souls Craft";
+	public static final String MOD_VERSION = "0.1.0";
+	public static final String MOD_DEPENDENCIES = "required_after:FML";
+}
