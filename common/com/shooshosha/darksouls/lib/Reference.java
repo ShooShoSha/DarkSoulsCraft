@@ -17,6 +17,5 @@ package com.shooshosha.darksouls.lib;
 public class Reference {
 	public static final String MOD_ID = "darksoulscraft";
 	public static final String MOD_NAME = "Dark Souls Craft";
-	public static final String MOD_VERSION = "0.1.0";
 	public static final String MOD_DEPENDENCIES = "required_after:FML";
 }
