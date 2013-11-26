@@ -23,7 +23,8 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
  *
  */
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.MOD_VERSION, dependencies = Reference.MOD_DEPENDENCIES)
-public class DarkSoulsCraftMod {
+public class DarkSoulsCraft {
+	public static DarkSoulsCraft instance;
 	@EventHandler public void preInit(FMLPreInitializationEvent event) {
 		
 	}
