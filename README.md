@@ -1,4 +1,4 @@
 DarkSoulsCraft
 ==============
 
-Bringing Dark Souls to Minecraft!
+Bringing Dark Souls to Minecraft! (...eventually)
