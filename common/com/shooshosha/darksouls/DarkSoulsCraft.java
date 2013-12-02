@@ -13,12 +13,15 @@ import java.util.logging.Level;
 
 import net.minecraftforge.common.Configuration;
 
+import com.shooshosha.darksouls.core.proxy.CommonProxy;
 import com.shooshosha.darksouls.lib.Reference;
 import com.shooshosha.darksouls.lib.Version;
 
 import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -30,20 +33,14 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
  */
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, dependencies = Reference.MOD_DEPENDENCIES)
 public class DarkSoulsCraft {
+	@Instance
 	public static DarkSoulsCraft instance;
+	
+	@SidedProxy(clientSide=Reference.PROXY_CLIENT, serverSide = Reference.PROXY_SERVER)
+	public static CommonProxy proxy;
+	
 	@EventHandler public void preInit(FMLPreInitializationEvent event) {
-		Version.init(event.getVersionProperties());
-		event.getModMetadata().version = Version.fullVersionString();
-		Configuration cfg = new Configuration(event.getSuggestedConfigurationFile());
-		try {
-			cfg.load();
-		} catch (Exception e) {
-			FMLLog.log(Level.SEVERE, e, "DarkSoulsCraft has a problem loading it's configuration");
-		} finally {
-			if (cfg.hasChanged()) {
-				cfg.save();
-			}
-		}
+		
 	}
 	@EventHandler public void Init(FMLInitializationEvent event) {
 		
