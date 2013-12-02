@@ -7,7 +7,7 @@
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  *
  */
-package com.shooshosha.darksouls.lib;
+package com.shooshosha.darksouls.core.helper;
 
 import java.util.Properties;
 
@@ -24,6 +24,9 @@ public class Version {
 	private static String mcversion;
 	
 	public static void init(Properties properties) {
+		com.shooshosha.darksouls.core.helper.remote.Version.execute();
+		com.shooshosha.darksouls.core.helper.local.Version.execute();
+		
 		if (properties != null) {
 			major = properties.getProperty("DarkSoulsCraftMod.build.major.number");
 			minor = properties.getProperty("DarkSoulsCraftMod.build.minor.number");
