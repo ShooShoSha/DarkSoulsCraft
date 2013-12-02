@@ -10,6 +10,7 @@
 package com.shooshosha.darksouls;
 
 import com.shooshosha.darksouls.core.proxy.CommonProxy;
+import com.shooshosha.darksouls.lib.Log;
 import com.shooshosha.darksouls.lib.Reference;
 
 import cpw.mods.fml.common.Mod;
@@ -34,7 +35,8 @@ public class DarkSoulsCraft {
 	public static CommonProxy proxy;
 		
 	@EventHandler public void preInit(FMLPreInitializationEvent event) {
-		
+		//Initialize custom logger
+		Log.init();
 	}
 	@EventHandler public void Init(FMLInitializationEvent event) {
 		
