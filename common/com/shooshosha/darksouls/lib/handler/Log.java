@@ -7,10 +7,12 @@
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  *
  */
-package com.shooshosha.darksouls.lib;
+package com.shooshosha.darksouls.lib.handler;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import com.shooshosha.darksouls.lib.Reference;
 
 import cpw.mods.fml.common.FMLLog;
 

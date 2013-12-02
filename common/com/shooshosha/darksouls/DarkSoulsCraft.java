@@ -10,8 +10,8 @@
 package com.shooshosha.darksouls;
 
 import com.shooshosha.darksouls.core.proxy.CommonProxy;
-import com.shooshosha.darksouls.lib.Log;
 import com.shooshosha.darksouls.lib.Reference;
+import com.shooshosha.darksouls.lib.handler.Log;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
