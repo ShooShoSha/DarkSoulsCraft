@@ -1,0 +1,3 @@
+# Fingerprint error localizations
+fingerprint.dsc:none=This copy of Dark Souls Craft is a development version and thus may be unstable, incomplete, or both probably maybe most certainly.
+fingerprint.dsc:invalid=This copy of Dark Souls Craft was modified from the original and may be harmful (to cats). Please re-download the original from an appropriate site.
