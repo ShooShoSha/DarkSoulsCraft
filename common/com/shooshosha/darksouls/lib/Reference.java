@@ -21,4 +21,6 @@ public class Reference {
 	
 	public static final String PROXY_CLIENT	 = "com.shooshosha.darksouls.core.proxy.ClientProxy";
 	public static final String PROXY_SERVER  = "com.shooshosha.darksouls.core.proxy.ServerProxy";
+	
+	public static final String FINGERPRINT = "@FINGERPRINT@";
 }
