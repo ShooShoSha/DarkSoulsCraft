@@ -9,7 +9,8 @@
  */
 package com.shooshosha.darksouls;
 
-import com.shooshosha.darksouls.core.helper.local.Log;
+import com.shooshosha.darksouls.core.helper.LogHelper;
+import com.shooshosha.darksouls.core.helper.VersionHelper;
 import com.shooshosha.darksouls.core.proxy.CommonProxy;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
@@ -39,15 +40,16 @@ public class DarkSoulsCraft {
 	@EventHandler public void invalidFingerprint(FMLFingerprintViolationEvent event) {
 		//Log error version of Dark Souls Craft used was changed or corrupted
 		if(Reference.FINGERPRINT.equals("@FINGERPRINT@")) {
-			Log.warning(Messages.FINGERPRINT_NONE);
+			LogHelper.warning(Messages.FINGERPRINT_NONE);
 		} else {
-			Log.severe(Messages.FINGERPRINT_INVALID);
+			LogHelper.severe(Messages.FINGERPRINT_INVALID);
 		}
 	}
 		
 	@EventHandler public void preInit(FMLPreInitializationEvent event) {
 		//Initialize custom logger
-		Log.init();
+		LogHelper.init();
+		
 	}
 	@EventHandler public void Init(FMLInitializationEvent event) {
 		
