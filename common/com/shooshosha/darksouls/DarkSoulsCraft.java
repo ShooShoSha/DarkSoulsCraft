@@ -11,12 +11,14 @@ package com.shooshosha.darksouls;
 
 import com.shooshosha.darksouls.core.helper.local.Log;
 import com.shooshosha.darksouls.core.proxy.CommonProxy;
+import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -33,6 +35,15 @@ public class DarkSoulsCraft {
 	
 	@SidedProxy(clientSide=Reference.PROXY_CLIENT, serverSide = Reference.PROXY_SERVER)
 	public static CommonProxy proxy;
+	
+	@EventHandler public void invalidFingerprint(FMLFingerprintViolationEvent event) {
+		//Log error version of Dark Souls Craft used was changed or corrupted
+		if(Reference.FINGERPRINT.equals("@FINGERPRINT@")) {
+			Log.warning(Messages.FINGERPRINT_NONE);
+		} else {
+			Log.severe(Messages.FINGERPRINT_INVALID);
+		}
+	}
 		
 	@EventHandler public void preInit(FMLPreInitializationEvent event) {
 		//Initialize custom logger
