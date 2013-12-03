@@ -7,7 +7,7 @@
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  *
  */
-package com.shooshosha.darksouls.core.helper.local;
+package com.shooshosha.darksouls.core.helper;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,7 +21,7 @@ import cpw.mods.fml.common.FMLLog;
  * @date Dec 2, 2013
  *
  */
-public class Log {
+public class LogHelper {
 	private static Logger dsLogger = Logger.getLogger(Reference.MOD_ID);
 	
 	public static void init() {
