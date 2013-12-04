@@ -16,5 +16,5 @@ package com.shooshosha.darksouls.config;
  */
 public class ConfigurationSettings {
 	//Version check related settings
-	
+	public static boolean VERSION_RESULT;
 }
