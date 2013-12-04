@@ -1,3 +1,13 @@
 # Fingerprint error localizations
-fingerprint.dsc:none=This copy of Dark Souls Craft is a development version and thus may be unstable, incomplete, or both probably maybe most certainly.
-fingerprint.dsc:invalid=This copy of Dark Souls Craft was modified from the original and may be harmful (to cats). Please re-download the original from an appropriate site.
+fingerprint.dsc:none=This copy of %s is a development version and thus may be unstable, incomplete, or both probably maybe most certainly.
+fingerprint.dsc:invalid=This copy of %s was modified from the original and may be harmful (to cats). Please re-download the original from an appropriate site.
+
+#Version status localizations
+version.dsc:init=Initializing remote version check against remote version authority at %s
+version.dsc:uninit=Remote version check failed to initialize properly
+version.dsc:current=Using current version (%s) of %s for %s
+version.dsc:outdated=A new version exists (%s) for %s. Get it here: %s
+version.dsc:error_connect=Error while connecting to remote version authority file; attempting another connection...
+version.dsc:error_attempt=Version check stopping after %d unsuccessful attempts
+version.dsc:error_mc=Unable to find a version of %s for %s in remote version authority
+version.dsc:error_unknown=An unspecified error occurred during version checking (better than nothing)
