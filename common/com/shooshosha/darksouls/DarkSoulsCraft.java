@@ -9,6 +9,9 @@
  */
 package com.shooshosha.darksouls;
 
+import java.io.File;
+
+import com.shooshosha.darksouls.config.ConfigurationHandler;
 import com.shooshosha.darksouls.core.helper.FingerprintHelper;
 import com.shooshosha.darksouls.core.helper.LogHelper;
 import com.shooshosha.darksouls.core.helper.VersionHelper;
@@ -45,6 +48,9 @@ public class DarkSoulsCraft {
 	@EventHandler public void preInit(FMLPreInitializationEvent event) {
 		//Initialize custom logger
 		LogHelper.init();
+		
+		//Initialize the configuration
+		ConfigurationHandler.init(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.MOD_ID);
 		
 		//Check version
 		VersionHelper.execute();
