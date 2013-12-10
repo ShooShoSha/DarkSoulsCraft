@@ -70,8 +70,8 @@ public class VersionHelper implements Runnable {
                 }
 
                 if (remoteVersion != null) {
-                    if (!ConfigurationSettings.LAST_DISCOVERED_VERSION.equalsIgnoreCase(remoteVersion)) {
-                        GeneralConfiguration.set(Configuration.CATEGORY_GENERAL, ConfigurationSettings.LAST_DISCOVERED_VERSION_CONFIGNAME, remoteVersion);
+                    if (!ConfigurationSettings.VERSION_DISCOVERED.equalsIgnoreCase(remoteVersion)) {
+                        GeneralConfiguration.set(Configuration.CATEGORY_GENERAL, ConfigurationSettings.VERSION_DISCOVERED_NAME, remoteVersion);
                     }
 
                     if (remoteVersion.equalsIgnoreCase(getVersionForCheck())) {
