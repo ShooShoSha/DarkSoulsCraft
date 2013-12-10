@@ -18,4 +18,7 @@ public class Messages {
 	//Configuration error messages
 	public static final String CONFIG_GENERAL = "config.dsc:error_general";
 	public static final String CONFIG_ITEM = "config.dsc:error_item";
+	
+	//Item name messages
+	public static final String HOMEWARD_BONE_NAME = "";
 }

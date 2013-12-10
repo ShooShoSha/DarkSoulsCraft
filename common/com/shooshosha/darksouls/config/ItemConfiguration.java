@@ -12,6 +12,7 @@ package com.shooshosha.darksouls.config;
 import java.io.File;
 import java.util.logging.Level;
 
+import com.shooshosha.darksouls.lib.ItemIds;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
 
@@ -29,6 +30,9 @@ public class ItemConfiguration {
 	
 	protected static void init(File configPath) {
 		itemConfiguration = new Configuration(configPath);
+		
+		/* Item configs */
+		ItemIds.HOMEWARD_BONE = itemConfiguration.getItem(
 		
 		try {
 			itemConfiguration.load();
