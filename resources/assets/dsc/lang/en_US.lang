@@ -11,3 +11,6 @@ version.dsc:error_connect=Error while connecting to remote version authority fil
 version.dsc:error_attempt=Version check stopping after %d unsuccessful attempts
 version.dsc:error_mc=Unable to find a version of %s for %s in remote version authority
 version.dsc:error_unknown=An unspecified error occurred during version checking (better than nothing)
+
+#Configuration error message localizations
+config.dsc:error_read=%s encountered a problem loading its general configuration
