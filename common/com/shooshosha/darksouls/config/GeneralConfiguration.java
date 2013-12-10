@@ -41,7 +41,7 @@ public class GeneralConfiguration {
 			ConfigurationSettings.VERSION_TYPE = generalConfiguration.get(CATEGORY_GENERAL, ConfigurationSettings.VERSION_TYPE_NAME, ConfigurationSettings.VERSION_TYPE_DEFAULT).getString();
 			
 		} catch (Exception e) {
-			FMLLog.log(Level.SEVERE, e, StatCollector.translateToLocalFormatted(Messages.CONFIG_READ, Reference.MOD_NAME));
+			FMLLog.log(Level.SEVERE, e, StatCollector.translateToLocalFormatted(Messages.CONFIG_GENERAL, Reference.MOD_NAME));
 		} finally {
 			generalConfiguration.save();
 		}
