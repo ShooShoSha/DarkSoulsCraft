@@ -13,4 +13,5 @@ version.dsc:error_mc=Unable to find a version of %s for %s in remote version aut
 version.dsc:error_unknown=An unspecified error occurred during version checking (better than nothing)
 
 #Configuration error message localizations
-config.dsc:error_read=%s encountered a problem loading its general configuration
+config.dsc:error_general=%s encountered a problem loading its general configuration
+config.dsc:error_item=%s encountered a problem loading its item configuration

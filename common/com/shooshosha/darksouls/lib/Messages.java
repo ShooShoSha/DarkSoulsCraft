@@ -16,5 +16,6 @@ public class Messages {
 	public static final String VERSION_ERROR_UNKNOWN = "version.dsc:error_unknown";
 	
 	//Configuration error messages
-	public static final String CONFIG_READ = "config.dsc:error_read";
+	public static final String CONFIG_GENERAL = "config.dsc:error_general";
+	public static final String CONFIG_ITEM = "config.dsc:error_item";
 }
