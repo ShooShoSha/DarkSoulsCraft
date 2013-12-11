@@ -31,11 +31,13 @@ public class ItemConfiguration {
 	protected static void init(File configPath) {
 		itemConfiguration = new Configuration(configPath);
 		
-		/* Item configs */
-		ItemIds.HOMEWARD_BONE = itemConfiguration.getItem(
 		
 		try {
 			itemConfiguration.load();
+			
+			/* Item configurations */
+			ItemIds.HOMEWARD_BONE = itemConfiguration.getItem(ItemIds.HOMEWARD_BONE_NAME, ItemIds.HOMEWARD_BONE_DEFAULT).getInt(ItemIds.HOMEWARD_BONE_DEFAULT);
+			
 		} catch (Exception e) {
 			FMLLog.log(Level.SEVERE, e, StatCollector.translateToLocalFormatted(Messages.CONFIG_ITEM, Reference.MOD_NAME));
 		} finally {
