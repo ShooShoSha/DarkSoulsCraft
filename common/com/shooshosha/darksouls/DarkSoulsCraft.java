@@ -19,6 +19,7 @@ import com.shooshosha.darksouls.core.helper.LogHelper;
 import com.shooshosha.darksouls.core.helper.VersionHelper;
 import com.shooshosha.darksouls.core.proxy.CommonProxy;
 import com.shooshosha.darksouls.creativetab.CreativeTabDSC;
+import com.shooshosha.darksouls.item.ModItems;
 import com.shooshosha.darksouls.lib.Reference;
 
 import cpw.mods.fml.common.Mod;
@@ -59,6 +60,9 @@ public class DarkSoulsCraft {
 		
 		//Check version
 		VersionHelper.execute();
+		
+		//Initialize items
+		ModItems.init();
 		
 	}
 	@EventHandler public void Init(FMLInitializationEvent event) {
