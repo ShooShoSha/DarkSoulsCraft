@@ -20,4 +20,7 @@ public class ItemIds {
 	
 	/* Current item IDs */
 	public static int HOMEWARD_BONE;
+	
+	/* Item name constants */
+	public static final String HOMEWARD_BONE_NAME = "boneHomeward";
 }

@@ -15,3 +15,6 @@ version.dsc:error_unknown=An unspecified error occurred during version checking 
 #Configuration error message localizations
 config.dsc:error_general=%s encountered a problem loading its general configuration
 config.dsc:error_item=%s encountered a problem loading its item configuration
+
+#Item localizations
+item.dsc:boneHomeward.name=Homeward Bone
