@@ -9,6 +9,7 @@
  */
 package com.shooshosha.darksouls.item;
 
+import com.shooshosha.darksouls.DarkSoulsCraft;
 import com.shooshosha.darksouls.lib.ItemIds;
 import com.shooshosha.darksouls.lib.Reference;
 
@@ -25,6 +26,7 @@ public class HomewardBone extends ItemDS {
 	public HomewardBone(int id) {
 		super(id);
 		this.setUnlocalizedName(Reference.RESOURCE_PREFIX + ItemIds.HOMEWARD_BONE_NAME);
+		this.setCreativeTab(DarkSoulsCraft.tabsDSC);
+		maxStackSize = 99; //This probably won't work
 	}
-
 }
