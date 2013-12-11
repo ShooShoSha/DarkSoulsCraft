@@ -11,11 +11,14 @@ package com.shooshosha.darksouls;
 
 import java.io.File;
 
+import net.minecraft.creativetab.CreativeTabs;
+
 import com.shooshosha.darksouls.config.ConfigurationHandler;
 import com.shooshosha.darksouls.core.helper.FingerprintHelper;
 import com.shooshosha.darksouls.core.helper.LogHelper;
 import com.shooshosha.darksouls.core.helper.VersionHelper;
 import com.shooshosha.darksouls.core.proxy.CommonProxy;
+import com.shooshosha.darksouls.creativetab.CreativeTabDSC;
 import com.shooshosha.darksouls.lib.Reference;
 
 import cpw.mods.fml.common.Mod;
@@ -39,6 +42,8 @@ public class DarkSoulsCraft {
 	
 	@SidedProxy(clientSide=Reference.PROXY_CLIENT, serverSide = Reference.PROXY_SERVER)
 	public static CommonProxy proxy;
+	
+	public static CreativeTabs tabsDSC = new CreativeTabDSC(CreativeTabs.getNextID(), Reference.MOD_ID);
 	
 	@EventHandler public void invalidFingerprint(FMLFingerprintViolationEvent event) {
 		//Log error version of Dark Souls Craft used was changed or corrupted
