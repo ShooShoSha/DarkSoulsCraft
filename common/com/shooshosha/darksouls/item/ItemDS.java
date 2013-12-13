@@ -9,6 +9,7 @@
  */
 package com.shooshosha.darksouls.item;
 
+import com.shooshosha.darksouls.DarkSoulsCraft;
 import com.shooshosha.darksouls.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
@@ -24,12 +25,13 @@ import net.minecraft.item.Item;
 public class ItemDS extends Item {
 
 	/**
-	 * @param par1
+	 * @param id
 	 */
 	public ItemDS(int id) {
 		super(id - Reference.ID_RANGE_CORRECTION);
-		maxStackSize = 64;
-		setNoRepair();
+		this.maxStackSize = 64;
+		this.setNoRepair();
+		this.setCreativeTab(DarkSoulsCraft.tabsDSC);
 	}
 	
 	@Override
