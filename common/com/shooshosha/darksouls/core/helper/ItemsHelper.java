@@ -7,8 +7,9 @@
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  *
  */
-package com.shooshosha.darksouls.item;
+package com.shooshosha.darksouls.core.helper;
 
+import com.shooshosha.darksouls.item.HomewardBone;
 import com.shooshosha.darksouls.lib.ItemIds;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -20,7 +21,7 @@ import net.minecraft.item.ItemStack;
  * @date Dec 11, 2013
  *
  */
-public class ModItems {
+public class ItemsHelper {
 	//Mod item instances
 	public static Item boneHomeward;
 	
