@@ -28,7 +28,7 @@ import net.minecraftforge.common.Configuration;
 public class ItemConfiguration {
 	private static Configuration itemConfiguration;
 	
-	protected static void init(File configPath) {
+	public static void init(File configPath) {
 		itemConfiguration = new Configuration(configPath);
 		
 		

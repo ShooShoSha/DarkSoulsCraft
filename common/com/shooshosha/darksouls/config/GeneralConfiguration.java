@@ -29,7 +29,7 @@ import net.minecraftforge.common.Configuration;
 public class GeneralConfiguration {
 	private static Configuration generalConfiguration;
 	
-	protected static void init(File configFile) {
+	public static void init(File configFile) {
 		generalConfiguration = new Configuration(configFile);
 		
 		try {
