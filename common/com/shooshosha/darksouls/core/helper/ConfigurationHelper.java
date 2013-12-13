@@ -7,9 +7,12 @@
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  *
  */
-package com.shooshosha.darksouls.config;
+package com.shooshosha.darksouls.core.helper;
 
 import java.io.File;
+
+import com.shooshosha.darksouls.config.GeneralConfiguration;
+import com.shooshosha.darksouls.config.ItemConfiguration;
 
 import net.minecraftforge.common.Configuration;
 
@@ -18,7 +21,7 @@ import net.minecraftforge.common.Configuration;
  * @date Dec 10, 2013
  *
  */
-public class ConfigurationHandler {
+public class ConfigurationHelper {
 	public static Configuration configuration;
 	
 	public static void init(String configPath) {

@@ -13,7 +13,7 @@ import java.io.File;
 
 import net.minecraft.creativetab.CreativeTabs;
 
-import com.shooshosha.darksouls.config.ConfigurationHandler;
+import com.shooshosha.darksouls.core.helper.ConfigurationHelper;
 import com.shooshosha.darksouls.core.helper.FingerprintHelper;
 import com.shooshosha.darksouls.core.helper.LogHelper;
 import com.shooshosha.darksouls.core.helper.ItemsHelper;
@@ -56,7 +56,7 @@ public class DarkSoulsCraft {
 		LogHelper.init();
 		
 		//Initialize the configuration
-		ConfigurationHandler.init(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.MOD_ID);
+		ConfigurationHelper.init(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.MOD_ID);
 		
 		//Check version
 		VersionHelper.execute();
