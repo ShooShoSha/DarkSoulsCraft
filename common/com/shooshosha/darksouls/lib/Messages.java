@@ -5,6 +5,9 @@ public class Messages {
 	public static final String FINGERPRINT_NONE = "fingerprint.dsc:none";
 	public static final String FINGERPRINT_INVALID = "fingerprint.dsc:invalid";
 	
+	//Logger error messages
+	public static final String LOGGER_NULL = "logger.dsc:null";
+	
 	//Version check status messages
 	public static final String VERSION_INIT = "version.dsc:init";
 	public static final String VERSION_UNINIT = "version.dsc:uninit";
