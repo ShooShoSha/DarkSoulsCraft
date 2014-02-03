@@ -1,6 +1,9 @@
 # Fingerprint error localizations
-fingerprint.dsc:none=This copy of %s is a development version and thus may be unstable, incomplete, or both probably maybe most certainly.
-fingerprint.dsc:invalid=This copy of %s was modified from the original and may be harmful (to cats). Please re-download the original from an appropriate site.
+fingerprint.dsc:none=This copy of %s is a development version and thus may be unstable, incomplete, or both
+fingerprint.dsc:invalid=This copy of %s was modified from the original and may be harmful. Please re-download the original from an appropriate site.
+
+#Logger error localizations
+logger.dsc:null=The internal logger was accessed before initialization. Initializing...
 
 #Version status localizations
 version.dsc:init=Initializing remote version check against remote version authority at %s
@@ -13,8 +16,8 @@ version.dsc:error_mc=Unable to find a version of %s for %s in remote version aut
 version.dsc:error_unknown=An unspecified error occurred during version checking (better than nothing)
 
 #Configuration error message localizations
-config.dsc:error_general=%s encountered a problem loading its general configuration
-config.dsc:error_item=%s encountered a problem loading its item configuration
+config.dsc:error_general=%s encountered a problem loading its general configurations
+config.dsc:error_item=%s encountered a problem loading its item configurations
 
 #Item localizations
 item.dsc:boneHomeward.name=Homeward Bone
