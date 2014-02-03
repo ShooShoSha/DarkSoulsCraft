@@ -9,13 +9,11 @@
  */
 package com.shooshosha.darksouls;
 
-import java.io.File;
-
 import net.minecraft.creativetab.CreativeTabs;
 
 import com.shooshosha.darksouls.core.helper.ConfigurationHelper;
 import com.shooshosha.darksouls.core.helper.FingerprintHelper;
-import com.shooshosha.darksouls.core.helper.LogHelper;
+import com.shooshosha.darksouls.core.helper.ModLogger;
 import com.shooshosha.darksouls.core.helper.ItemsHelper;
 import com.shooshosha.darksouls.core.helper.VersionHelper;
 import com.shooshosha.darksouls.core.proxy.CommonProxy;
@@ -52,11 +50,9 @@ public class DarkSoulsCraft {
 	}
 		
 	@EventHandler public void preInit(FMLPreInitializationEvent event) {
-		//Initialize custom logger
-		LogHelper.init();
+		ModLogger.initialize();
 		
-		//Initialize the configuration
-		ConfigurationHelper.init(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Reference.MOD_ID);
+		ConfigurationHelper.initializeFiles(event);
 		
 		//Check version
 		VersionHelper.execute();

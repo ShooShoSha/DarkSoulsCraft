@@ -22,9 +22,9 @@ import com.shooshosha.darksouls.lib.Reference;
 public class FingerprintHelper {
 	public static void advise() {
 		if(Reference.FINGERPRINT.equals("@FINGERPRINT@")) {
-			LogHelper.warning(StatCollector.translateToLocalFormatted(Messages.FINGERPRINT_NONE, Reference.MOD_NAME));
+			ModLogger.warning(StatCollector.translateToLocalFormatted(Messages.FINGERPRINT_NONE, Reference.MOD_NAME));
 		} else {
-			LogHelper.severe(StatCollector.translateToLocalFormatted(Messages.FINGERPRINT_INVALID, Reference.MOD_NAME));
+			ModLogger.severe(StatCollector.translateToLocalFormatted(Messages.FINGERPRINT_INVALID, Reference.MOD_NAME));
 		}
 	}
 }

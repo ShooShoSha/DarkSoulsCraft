@@ -10,14 +10,13 @@
 package com.shooshosha.darksouls.config;
 
 import java.io.File;
-import java.util.logging.Level;
 
+import com.shooshosha.darksouls.core.helper.ModLogger;
 import com.shooshosha.darksouls.lib.ItemIds;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
+import com.shooshosha.darksouls.localize.Localize;
 
-import cpw.mods.fml.common.FMLLog;
-import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.Configuration;
 
 /**
@@ -28,20 +27,24 @@ import net.minecraftforge.common.Configuration;
 public class ItemConfiguration {
 	private static Configuration itemConfiguration;
 	
-	public static void init(File configPath) {
-		itemConfiguration = new Configuration(configPath);
+	public static void initialize(File itemConfigurations) {
+		itemConfiguration = new Configuration(itemConfigurations);
 		
 		
 		try {
 			itemConfiguration.load();
 			
-			/* Item configurations */
-			ItemIds.HOMEWARD_BONE = itemConfiguration.getItem(ItemIds.HOMEWARD_BONE_NAME, ItemIds.HOMEWARD_BONE_DEFAULT).getInt(ItemIds.HOMEWARD_BONE_DEFAULT);
+			readItemConfigurations();
 			
 		} catch (Exception e) {
-			FMLLog.log(Level.SEVERE, e, StatCollector.translateToLocalFormatted(Messages.CONFIG_ITEM, Reference.MOD_NAME));
+			ModLogger.severe(Localize.message(Messages.CONFIG_ITEM, Reference.MOD_ID), e);
 		} finally {
 			itemConfiguration.save();
 		}
+	}
+	
+	private static void readItemConfigurations() {
+		ItemIds.HOMEWARD_BONE = itemConfiguration.getItem(ItemIds.HOMEWARD_BONE_NAME, 
+				ItemIds.HOMEWARD_BONE_DEFAULT).getInt(ItemIds.HOMEWARD_BONE_DEFAULT);
 	}
 }

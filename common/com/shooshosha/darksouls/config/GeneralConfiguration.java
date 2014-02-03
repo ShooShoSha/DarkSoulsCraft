@@ -12,13 +12,12 @@ package com.shooshosha.darksouls.config;
 import static net.minecraftforge.common.Configuration.CATEGORY_GENERAL;
 
 import java.io.File;
-import java.util.logging.Level;
 
+import com.shooshosha.darksouls.core.helper.ModLogger;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
+import com.shooshosha.darksouls.localize.Localize;
 
-import cpw.mods.fml.common.FMLLog;
-import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.Configuration;
 
 /**
@@ -29,22 +28,43 @@ import net.minecraftforge.common.Configuration;
 public class GeneralConfiguration {
 	private static Configuration generalConfiguration;
 	
-	public static void init(File configFile) {
-		generalConfiguration = new Configuration(configFile);
+	public static void initialize(File generalConfigurations) {
+		generalConfiguration = new Configuration(generalConfigurations);
 		
 		try {
 			generalConfiguration.load();
 			
-			/* Version check */
-			ConfigurationSettings.VERSION_RESULT = generalConfiguration.get(CATEGORY_GENERAL, ConfigurationSettings.VERSION_RESULT_NAME, ConfigurationSettings.VERSION_RESULT_DEFAULT).getBoolean(ConfigurationSettings.VERSION_RESULT_DEFAULT);
-			ConfigurationSettings.VERSION_DISCOVERED = generalConfiguration.get(CATEGORY_GENERAL, ConfigurationSettings.VERSION_DISCOVERED_NAME, ConfigurationSettings.VERSION_DISCOVERED_DEFAULT).getString();
-			ConfigurationSettings.VERSION_TYPE = generalConfiguration.get(CATEGORY_GENERAL, ConfigurationSettings.VERSION_TYPE_NAME, ConfigurationSettings.VERSION_TYPE_DEFAULT).getString();
+			getVersionInformation();
 			
 		} catch (Exception e) {
-			FMLLog.log(Level.SEVERE, e, StatCollector.translateToLocalFormatted(Messages.CONFIG_GENERAL, Reference.MOD_NAME));
+			ModLogger.severe(Localize.message(Messages.CONFIG_ITEM, Reference.MOD_ID), e);
 		} finally {
 			generalConfiguration.save();
 		}
+	}
+	
+	private static void getVersionInformation() {
+		getVersionDisplayResult();
+		getLastDiscoveredVersion();
+		getTypeOfLastDiscoveredVersion();
+	}
+	
+	private static void getVersionDisplayResult() {
+		ConfigurationSettings.VERSION_RESULT = generalConfiguration.get(CATEGORY_GENERAL, 
+				ConfigurationSettings.VERSION_RESULT_NAME, 
+				ConfigurationSettings.VERSION_RESULT_DEFAULT).getBoolean(ConfigurationSettings.VERSION_RESULT_DEFAULT);
+	}
+	
+	private static void getLastDiscoveredVersion() {
+		ConfigurationSettings.VERSION_DISCOVERED = generalConfiguration.get(CATEGORY_GENERAL, 
+				ConfigurationSettings.VERSION_DISCOVERED_NAME, 
+				ConfigurationSettings.VERSION_DISCOVERED_DEFAULT).getString();
+	}
+	
+	private static void getTypeOfLastDiscoveredVersion() {
+		ConfigurationSettings.VERSION_TYPE = generalConfiguration.get(CATEGORY_GENERAL, 
+				ConfigurationSettings.VERSION_TYPE_NAME, 
+				ConfigurationSettings.VERSION_TYPE_DEFAULT).getString();
 	}
 	
 	public static void set(String categoryName, String propertyName, String newValue) {
