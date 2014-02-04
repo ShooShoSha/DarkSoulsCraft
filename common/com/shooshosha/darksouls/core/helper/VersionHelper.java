@@ -102,9 +102,9 @@ public class VersionHelper implements Runnable {
 
 	public static void logResult() {
 		if(CURRENT == result || result == OUTDATED) {
-			ModLogger.info(getResultMessage());
+			Log.info(getResultMessage());
 		} else {
-			ModLogger.warning(getResultMessage());
+			Log.warning(getResultMessage());
 		}
 	}
 	
@@ -134,7 +134,7 @@ public class VersionHelper implements Runnable {
 	public void run() {
 		int count = 0;
 		
-		ModLogger.info(StatCollector.translateToLocalFormatted(Messages.VERSION_INIT, Reference.VERSION_REMOTE_FILE));
+		Log.info(StatCollector.translateToLocalFormatted(Messages.VERSION_INIT, Reference.VERSION_REMOTE_FILE));
 		
 		try {
 			while (count++ < Reference.VERSION_CHECK_ATTEMPTS && (UNINITIALIZED == result || result == ERROR_CONNECT)) {
