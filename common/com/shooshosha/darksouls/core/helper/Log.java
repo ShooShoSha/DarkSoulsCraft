@@ -23,23 +23,16 @@ import cpw.mods.fml.common.FMLLog;
  * @date Dec 2, 2013
  *
  */
-public class ModLogger {
-	private static Logger dsLogger;
+public class Log {
+	private static Logger dsLogger = Logger.getLogger(Reference.MOD_ID);
 	
 	public static void initialize() {
-		dsLogger = Logger.getLogger(Reference.MOD_ID);
+		//dsLogger = Logger.getLogger(Reference.MOD_ID);
 		dsLogger.setParent(FMLLog.getLogger());
 	}
 	
 	private static void log(Level logLevel, String logMessage) {
-		try {
-			dsLogger.log(logLevel, logMessage);
-		} catch (NullPointerException e) {
-			FMLLog.log(Level.WARNING, Localize.message(Messages.LOGGER_NULL));
-		} finally {
-			FMLLog.log(logLevel, logMessage);
-			initialize();
-		}
+		log(logLevel, logMessage, null);
 	}
 	
 	private static void log(Level logLevel, String logMessage, Throwable logException) {
@@ -47,8 +40,8 @@ public class ModLogger {
 			dsLogger.log(logLevel, logMessage, logException);
 		} catch (NullPointerException e) {
 			FMLLog.log(Level.WARNING, Localize.message(Messages.LOGGER_NULL));
-		} finally {
 			FMLLog.log(logLevel, logException, logMessage);
+		} finally {
 			initialize();
 		}
 	}
