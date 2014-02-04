@@ -11,11 +11,8 @@ package com.shooshosha.darksouls;
 
 import net.minecraft.creativetab.CreativeTabs;
 
-import com.shooshosha.darksouls.core.helper.ConfigurationHelper;
 import com.shooshosha.darksouls.core.helper.FingerprintHelper;
-import com.shooshosha.darksouls.core.helper.ModLogger;
-import com.shooshosha.darksouls.core.helper.ItemsHelper;
-import com.shooshosha.darksouls.core.helper.VersionHelper;
+import com.shooshosha.darksouls.core.helper.PreInitializer;
 import com.shooshosha.darksouls.core.proxy.CommonProxy;
 import com.shooshosha.darksouls.creativetab.CreativeTabDSC;
 import com.shooshosha.darksouls.lib.Reference;
@@ -49,14 +46,7 @@ public class DarkSoulsCraft {
 	}
 		
 	@EventHandler public void preInit(FMLPreInitializationEvent event) {
-		ModLogger.initialize();
-		
-		ConfigurationHelper.initializeFiles(event);
-		
-		VersionHelper.execute();
-		
-		ItemsHelper.init();
-		
+		PreInitializer.handle(event);
 	}
 	@EventHandler public void Init(FMLInitializationEvent event) {
 		
