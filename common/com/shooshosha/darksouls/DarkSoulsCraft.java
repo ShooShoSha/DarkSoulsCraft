@@ -45,7 +45,6 @@ public class DarkSoulsCraft {
 	public static CreativeTabs tabsDSC = new CreativeTabDSC(CreativeTabs.getNextID(), Reference.MOD_ID);
 	
 	@EventHandler public void invalidFingerprint(FMLFingerprintViolationEvent event) {
-		//Log error version of Dark Souls Craft used was changed or corrupted
 		FingerprintHelper.advise();
 	}
 		
@@ -54,10 +53,8 @@ public class DarkSoulsCraft {
 		
 		ConfigurationHelper.initializeFiles(event);
 		
-		//Check version
 		VersionHelper.execute();
 		
-		//Initialize items
 		ItemsHelper.init();
 		
 	}
