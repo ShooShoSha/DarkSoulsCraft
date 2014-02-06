@@ -12,9 +12,7 @@ package com.shooshosha.darksouls.core.helper;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
-import com.shooshosha.darksouls.localize.Localize;
 
 import cpw.mods.fml.common.FMLLog;
 
@@ -27,7 +25,6 @@ public class Log {
 	private static Logger dsLogger = Logger.getLogger(Reference.MOD_ID);
 	
 	public static void initialize() {
-		//dsLogger = Logger.getLogger(Reference.MOD_ID);
 		dsLogger.setParent(FMLLog.getLogger());
 	}
 	
@@ -36,14 +33,7 @@ public class Log {
 	}
 	
 	private static void log(Level logLevel, String logMessage, Throwable logException) {
-		try {
-			dsLogger.log(logLevel, logMessage, logException);
-		} catch (NullPointerException e) {
-			FMLLog.log(Level.WARNING, Localize.message(Messages.LOGGER_NULL));
-			FMLLog.log(logLevel, logException, logMessage);
-		} finally {
-			initialize();
-		}
+		dsLogger.log(logLevel, logMessage, logException);
 	}
 	
 	public static void severe(Object loggable) {
