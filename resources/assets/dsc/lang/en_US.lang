@@ -10,9 +10,10 @@ version.dsc:init=Initializing remote version check against remote version author
 version.dsc:uninit=Remote version check failed to initialize properly
 version.dsc:current=Using current version (%s) of %s for %s
 version.dsc:outdated=A new version exists (%s) for %s. Get it here: %s
-version.dsc:error_connect=Error while connecting to remote version authority file; attempting another connection...
+version.dsc:error_connect=Error while connecting to remote version authority file
 version.dsc:error_attempt=Version check stopping after %d unsuccessful attempts
 version.dsc:error_mc=Unable to find a version of %s for %s in remote version authority
+version.dsc:error_url=Could not reach URL at %s
 
 #Configuration error message localizations
 config.dsc:error_general=%s encountered a problem loading its general configurations
