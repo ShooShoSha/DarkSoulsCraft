@@ -9,17 +9,23 @@
  */
 package com.shooshosha.darksouls.core.helper;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
+import scala.collection.script.Message;
 import net.minecraft.util.StatCollector;
 import net.minecraftforge.common.Configuration;
 
 import com.shooshosha.darksouls.config.ConfigurationSettings;
 import com.shooshosha.darksouls.config.GeneralConfiguration;
+import com.shooshosha.darksouls.error.VersionCheckException;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
+import com.shooshosha.darksouls.localize.Localize;
 
 import cpw.mods.fml.common.Loader;
 
@@ -28,11 +34,74 @@ import cpw.mods.fml.common.Loader;
  * @date Nov 26, 2013
  *
  */
-public class VersionHelper implements Runnable {
-	private static VersionHelper instance = new VersionHelper();
-	
+public class Version implements Runnable {
 	public static Properties remoteVersionProperties = new Properties();
 	
+	private static Version validator = new Version();
+	private static InputStream remoteVersionRepository;
+	private static String remoteVersion;
+	private static String remoteUpdateLocation;
+	
+	
+	public static void runCheck() throws InterruptedException {
+		Log.info(Localize.message(Messages.VERSION_INIT, Reference.VERSION_REMOTE_FILE));
+		new Thread(validator).start();
+	}
+	
+	//@Override
+	public void _run() {
+		try {
+			attemptCheck(Reference.VERSION_CHECK_ATTEMPTS);
+			retrieveXMLFileFromStream();
+			extractPropertiesFromXML();
+		} catch (VersionCheckException e) {
+			
+		}
+	}
+
+	private void attemptCheck(int versionCheckAttempts) throws VersionCheckException {
+		int attemptsMade = 0;
+		while (++attemptsMade < versionCheckAttempts) {
+			connectToRemoteFile(Reference.VERSION_REMOTE_FILE);
+		}
+	}
+
+	private static void connectToRemoteFile(String remoteFileAddress) {
+		URL remoteFileVersion;
+		try {
+			remoteFileVersion = new URL(remoteFileAddress);
+			remoteVersionRepository = remoteFileVersion.openStream();
+		} catch (IOException exception) {
+			Thread.sleep(Reference.VERSION_RETRY);
+			throw new VersionCheckException(Localize.message(Messages.VERSION_ERROR_CONNECT), exception);
+		}
+		
+	}
+	
+	private static void retrieveXMLFileFromStream() {
+		try {
+			remoteVersionProperties.loadFromXML(remoteVersionRepository);
+		} catch (InvalidPropertiesFormatException e) {
+			throw new VersionCheckException();
+		} catch (IOException e) {
+			throw new VersionCheckException();
+		}
+	}
+	
+	private void extractPropertiesFromXML() {
+		String relevantVersionPropertyElement = 
+				remoteVersionProperties.getProperty(Loader.instance().getMCVersionString());
+		try {
+			String[] versionPropertyElementTokens = relevantVersionPropertyElement.split("\\|");
+			remoteVersion = versionPropertyElementTokens[0];
+			remoteUpdateLocation = versionPropertyElementTokens[1];
+		} catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+			throw new VersionCheckException(Localize.message(Messages.VERSION_ERROR_MC, Reference.MOD_NAME, 
+					Loader.instance().getMCVersionString()), e);
+		}
+	}
+	
+	// TODO Replace with exception handling.
 	//Results of remote version number check
 	public static final byte UNINITIALIZED = 0;
 	public static final byte CURRENT = 1;
@@ -40,12 +109,9 @@ public class VersionHelper implements Runnable {
 	public static final byte ERROR_CONNECT = 3;
 	public static final byte ERROR_ATTEMPT = 4;
 	public static final byte ERROR_MC = 5;
-	public static final byte ERROR_UNKNOWN = 6;
 	
 	//Variables to hold results of remote version check, set to uninitialized
 	public static byte result = UNINITIALIZED;
-	public static String remoteVersion = null;
-	public static String remoteUpdateLocation = null;
 	
 	public static void checkVersion() {
 		InputStream remoteVersionRepoStream = null;
@@ -134,8 +200,6 @@ public class VersionHelper implements Runnable {
 	public void run() {
 		int count = 0;
 		
-		Log.info(StatCollector.translateToLocalFormatted(Messages.VERSION_INIT, Reference.VERSION_REMOTE_FILE));
-		
 		try {
 			while (count++ < Reference.VERSION_CHECK_ATTEMPTS && (UNINITIALIZED == result || result == ERROR_CONNECT)) {
 				checkVersion();
@@ -152,9 +216,5 @@ public class VersionHelper implements Runnable {
 		} catch (InterruptedException e) {
 			
 		}
-	}
-
-	public static void execute() {
-		new Thread(instance).start();
 	}
 }

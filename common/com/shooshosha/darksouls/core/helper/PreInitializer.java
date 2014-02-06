@@ -22,7 +22,11 @@ public class PreInitializer {
 		
 		ConfigurationHelper.initializeFiles(preInitializeEvent);
 		
-		VersionHelper.execute();
+		try {
+			Version.runCheck();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		
 		ItemsHelper.init();
 	}
