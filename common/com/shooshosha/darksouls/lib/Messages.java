@@ -16,6 +16,7 @@ public class Messages {
 	public static final String VERSION_ERROR_CONNECT = "version.dsc:error_connect";
 	public static final String VERSION_ERROR_ATTEMPT = "version.dsc:error_attempt";
 	public static final String VERSION_ERROR_MC = "version.dsc:error_mc";
+	public static final String VERSION_ERROR_XML = "version.dsc:error_xml";
 	
 	//Configuration error messages
 	public static final String CONFIG_GENERAL = "config.dsc:error_general";
