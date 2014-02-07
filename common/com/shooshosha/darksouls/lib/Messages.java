@@ -9,14 +9,13 @@ public class Messages {
 	public static final String LOGGER_NULL = "logger.dsc:null";
 	
 	//Version check status messages
-	public static final String VERSION_INIT = "version.dsc:init";
-	public static final String VERSION_UNINIT = "version.dsc:uninit";
-	public static final String VERSION_CURRENT = "version.dsc:current";
+	public static final String VERSION_INITIALIZATION = "version.dsc:initialization";
+	public static final String VERSION_URL_BAD = "version.dsc:url_bad";
+	public static final String VERSION_FAILED_CONNECTION = "version.dsc:failed_connection";
+	public static final String VERSION_REMOTE_FILE_INVALID = "version.dsc:remote_file_invalid";
+	public static final String VERSION_KEY_INVALID = "version.dsc:key_invalid";
 	public static final String VERSION_OUTDATED = "version.dsc:outdated";
-	public static final String VERSION_ERROR_CONNECT = "version.dsc:error_connect";
-	public static final String VERSION_ERROR_ATTEMPT = "version.dsc:error_attempt";
-	public static final String VERSION_ERROR_MC = "version.dsc:error_mc";
-	public static final String VERSION_ERROR_XML = "version.dsc:error_xml";
+	public static final String VERSION_CURRENT = "version.dsc:current";
 	
 	//Configuration error messages
 	public static final String CONFIG_GENERAL = "config.dsc:error_general";

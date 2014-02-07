@@ -23,7 +23,7 @@ public class PreInitializer {
 		ConfigurationHelper.initializeFiles(preInitializeEvent);
 		
 		try {
-			Version.runCheck();
+			VersionHelper.runCheck();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

@@ -6,15 +6,13 @@ fingerprint.dsc:invalid=This copy of %s was modified from the original and may b
 logger.dsc:null=The internal logger was accessed before initialization. Initializing...
 
 #Version status localizations
-version.dsc:init=Initializing remote version check against remote version authority at %s
-version.dsc:uninit=Remote version check failed to initialize properly
-version.dsc:current=Using current version (%s) of %s for %s
-version.dsc:outdated=A new version exists (%s) for %s. Get it here: %s
-version.dsc:error_connect=Error while connecting to remote version authority file
-version.dsc:error_attempt=Version check stopping after %d unsuccessful attempts
-version.dsc:error_mc=Unable to find a version of %s for %s in remote version authority
-version.dsc:error_xml=Could not extract entry from file
-version.dsc:error_url=Could not reach URL at %s
+version.dsc:initialization=Checking version against remote authority
+version.dsc:url_bad=Invalid authority URL
+version.dsc:failed_connection=Unable to connect to remote authority
+version.dsc:remote_file_invalid=Remote file may be corrupted
+version.dsc:key_invalid=Unable to find a version for at remote authority
+version.dsc:outdated=A new version exists. Get it here: %s
+version.dsc:current=Using current version
 
 #Configuration error message localizations
 config.dsc:error_general=%s encountered a problem loading its general configurations

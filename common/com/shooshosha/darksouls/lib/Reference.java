@@ -24,7 +24,8 @@ public class Reference {
 	//Version control constants
 	public static final int VERSION_CHECK_ATTEMPTS = 3;
 	public static final long VERSION_RETRY = 10000; //Time in milliseconds before attempting a retry
-	public static final String VERSION_REMOTE_FILE = "https://raw.github.com/ShooShoSha/DarkSoulsCraft/master/version.xml";
+	public static final String VERSION_AUTHORITY_LOCATION = 
+			"https://raw.github.com/ShooShoSha/DarkSoulsCraft/master/version.xml";
 	
 	//Proxy class constants
 	public static final String PROXY_CLIENT	 = "com.shooshosha.darksouls.core.proxy.ClientProxy";

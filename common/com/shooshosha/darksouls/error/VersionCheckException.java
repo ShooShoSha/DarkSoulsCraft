@@ -15,50 +15,22 @@ package com.shooshosha.darksouls.error;
  *
  */
 public class VersionCheckException extends RuntimeException {
-	private static final long serialVersionUID = 2876255270502903204L; //Generate on file create.
+	private static final long serialVersionUID = 2876255270502903204L; //Generated on file create.
 
-	/**
-	 * 
-	 */
 	public VersionCheckException() {
-		// TODO Auto-generated constructor stub
 	}
-
-	/**
-	 * @param arg0
-	 */
-	public VersionCheckException(String arg0) {
-		super(arg0);
-		// TODO Auto-generated constructor stub
+	public VersionCheckException(String message) {
+		super(message);
 	}
-
-	/**
-	 * @param arg0
-	 */
-	public VersionCheckException(Throwable arg0) {
-		super(arg0);
-		// TODO Auto-generated constructor stub
+	public VersionCheckException(Throwable cause) {
+		super(cause);
 	}
-
-	/**
-	 * @param arg0
-	 * @param arg1
-	 */
-	public VersionCheckException(String arg0, Throwable arg1) {
-		super(arg0, arg1);
-		// TODO Auto-generated constructor stub
+	public VersionCheckException(String message, Throwable cause) {
+		super(message, cause);
 	}
-
-	/**
-	 * @param arg0
-	 * @param arg1
-	 * @param arg2
-	 * @param arg3
-	 */
-	public VersionCheckException(String arg0, Throwable arg1, boolean arg2,
-			boolean arg3) {
-		super(arg0, arg1, arg2, arg3);
-		// TODO Auto-generated constructor stub
+	public VersionCheckException(String message, Throwable cause, boolean enableSuppression, 
+			boolean writableStackTrace) {
+		super(message, cause, enableSuppression, writableStackTrace);
 	}
 
 }
