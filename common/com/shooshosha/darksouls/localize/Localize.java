@@ -19,7 +19,7 @@ import net.minecraft.util.StatCollector;
 public class Localize {
 	private static String localizedMessage;
 	
-	public static String message(String message, String... localizables) {
+	public static String message(String message, Object... localizables) {
 		if(localizables.length == 0) {
 			localizedMessage = StatCollector.translateToLocal(message);
 		} else if (localizables.length > 0) {
