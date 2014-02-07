@@ -13,15 +13,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.InvalidPropertiesFormatException;
 import java.util.Properties;
 
-import scala.collection.script.Message;
-import net.minecraft.util.StatCollector;
-import net.minecraftforge.common.Configuration;
-
-import com.shooshosha.darksouls.config.ConfigurationSettings;
-import com.shooshosha.darksouls.config.GeneralConfiguration;
 import com.shooshosha.darksouls.error.VersionCheckException;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
