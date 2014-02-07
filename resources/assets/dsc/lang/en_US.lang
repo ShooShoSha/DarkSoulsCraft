@@ -7,8 +7,10 @@ logger.dsc:null=The internal logger was accessed before initialization. Initiali
 
 #Version status localizations
 version.dsc:initialization=Checking version against remote authority
+version.dsc:uninitialized=Version checking failed to initialize
 version.dsc:url_bad=Invalid authority URL
 version.dsc:failed_connection=Unable to connect to remote authority
+version.dsc:attempts=Unable to connect, attempt %d of %d
 version.dsc:remote_file_invalid=Remote file may be corrupted
 version.dsc:key_invalid=Unable to find a version for at remote authority
 version.dsc:outdated=A new version exists. Get it here: %s
