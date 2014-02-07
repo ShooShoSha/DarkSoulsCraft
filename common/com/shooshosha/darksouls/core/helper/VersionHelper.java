@@ -50,49 +50,57 @@ public class VersionHelper implements Runnable {
 			Log.info(Localize.message(Messages.VERSION_CURRENT));
 		} catch (VersionCheckException e) {
 			Log.warning(e.getMessage());
+		} catch (InterruptedException e) {
+			Log.severe(Localize.message(Messages.VERSION_UNINITIALIZED));
 		}
 	}
 	
-	private static void checkVersion() throws VersionCheckException {
+	private static void checkVersion() throws VersionCheckException, InterruptedException {
 		connectToAuthority();
 		extractVersionProperty();
 		compareVersions();
 	}
 	
-	private static void connectToAuthority() {
+	private static void connectToAuthority() throws InterruptedException {
 		getRemoteAuthorityLocation();
-		getRemoteAuthorityConnection();
-		getRemoteAuthorityProperties();
 	}
 	
-	private static void getRemoteAuthorityLocation() {
+	private static void getRemoteAuthorityLocation() throws InterruptedException {
 		try {
 			remoteAuthorityLocation = new URL(Reference.VERSION_AUTHORITY_LOCATION);
 		} catch (MalformedURLException e) {
 			throw new VersionCheckException(Localize.message(Messages.VERSION_URL_BAD), e);
 		}
+		getRemoteAuthorityConnection();
 	}
 	
-	private static void getRemoteAuthorityConnection() {
-		try  {
-			remoteAuthorityConnection = remoteAuthorityLocation.openStream();
-		} catch (IOException e) {
-			throw new VersionCheckException(Localize.message(Messages.VERSION_FAILED_CONNECTION), e);
-		}
+	private static void getRemoteAuthorityConnection() throws InterruptedException {
+		int attemptsMade = 0;
+		while (remoteAuthorityConnection == null && ++attemptsMade < Reference.VERSION_CHECK_ATTEMPTS) {
+			try  {
+				remoteAuthorityConnection = remoteAuthorityLocation.openStream();
+				getRemoteAuthorityProperties();
+			} catch (IOException e) {
+				Log.info(Localize.message(Messages.VERSION_ATTEMPTS, attemptsMade, Reference.VERSION_CHECK_ATTEMPTS));
+				Thread.sleep(Reference.VERSION_RETRY);
+				throw new VersionCheckException(Localize.message(Messages.VERSION_FAILED_CONNECTION), e);
+			}
+		}		
 	}
 	
 	private static void getRemoteAuthorityProperties() {
 		try {
 			remoteAuthorityProperties = new Properties();
 			remoteAuthorityProperties.loadFromXML(remoteAuthorityConnection);
+			remoteAuthorityConnection.close();
 		} catch (IOException e) {
 			throw new VersionCheckException(Messages.VERSION_REMOTE_FILE_INVALID, e);
 		}
 	}
 	
 	private static void extractVersionProperty() {
-		remoteVersionProperty = remoteAuthorityProperties.getProperty(Loader.instance().getMCVersionString());
 		try {
+			remoteVersionProperty = remoteAuthorityProperties.getProperty(Loader.instance().getMCVersionString());
 			String[] remoteVersionPropertyTokens = remoteVersionProperty.split("\\|");
 			remoteVersionNumber = remoteVersionPropertyTokens[0];
 			remoteUpdateLocation = remoteVersionPropertyTokens[1];
