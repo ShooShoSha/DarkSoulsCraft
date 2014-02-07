@@ -11,7 +11,7 @@ package com.shooshosha.darksouls.config;
 
 import java.io.File;
 
-import com.shooshosha.darksouls.core.helper.Log;
+import com.shooshosha.darksouls.helper.Log;
 import com.shooshosha.darksouls.lib.ItemIds;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;

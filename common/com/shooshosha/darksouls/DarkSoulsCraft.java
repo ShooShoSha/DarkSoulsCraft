@@ -11,11 +11,11 @@ package com.shooshosha.darksouls;
 
 import net.minecraft.creativetab.CreativeTabs;
 
-import com.shooshosha.darksouls.core.helper.FingerprintHelper;
-import com.shooshosha.darksouls.core.helper.PreInitializer;
-import com.shooshosha.darksouls.core.proxy.CommonProxy;
 import com.shooshosha.darksouls.creativetab.CreativeTabDSC;
+import com.shooshosha.darksouls.helper.FingerprintHelper;
+import com.shooshosha.darksouls.helper.PreInitializer;
 import com.shooshosha.darksouls.lib.Reference;
+import com.shooshosha.darksouls.proxy.CommonProxy;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;

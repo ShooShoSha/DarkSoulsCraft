@@ -13,7 +13,7 @@ import static net.minecraftforge.common.Configuration.CATEGORY_GENERAL;
 
 import java.io.File;
 
-import com.shooshosha.darksouls.core.helper.Log;
+import com.shooshosha.darksouls.helper.Log;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
 import com.shooshosha.darksouls.localize.Localize;

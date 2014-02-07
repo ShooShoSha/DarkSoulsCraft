@@ -7,7 +7,7 @@
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  *
  */
-package com.shooshosha.darksouls.core.helper;
+package com.shooshosha.darksouls.helper;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
