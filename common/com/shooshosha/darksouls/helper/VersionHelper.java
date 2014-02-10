@@ -39,7 +39,7 @@ public class VersionHelper implements Runnable {
 	
 	
 	public static void runCheck() throws InterruptedException {
-		Log.info(Localize.message(Messages.VERSION_INITIALIZATION, Reference.VERSION_AUTHORITY_LOCATION));
+		LogHelper.info(Localize.message(Messages.VERSION_INITIALIZATION, Reference.VERSION_AUTHORITY_LOCATION));
 		new Thread(validator).start();
 	}
 	
@@ -47,11 +47,11 @@ public class VersionHelper implements Runnable {
 	public void run() {
 		try {
 			checkVersion();
-			Log.info(Localize.message(Messages.VERSION_CURRENT));
+			LogHelper.info(Localize.message(Messages.VERSION_CURRENT));
 		} catch (VersionCheckException e) {
-			Log.warning(e.getMessage());
+			LogHelper.warning(e.getMessage());
 		} catch (InterruptedException e) {
-			Log.severe(Localize.message(Messages.VERSION_UNINITIALIZED));
+			LogHelper.severe(Localize.message(Messages.VERSION_UNINITIALIZED));
 		}
 	}
 	
@@ -81,7 +81,7 @@ public class VersionHelper implements Runnable {
 				remoteAuthorityConnection = remoteAuthorityLocation.openStream();
 				getRemoteAuthorityProperties();
 			} catch (IOException e) {
-				Log.info(Localize.message(Messages.VERSION_ATTEMPTS, attemptsMade, Reference.VERSION_CHECK_ATTEMPTS));
+				LogHelper.info(Localize.message(Messages.VERSION_ATTEMPTS, attemptsMade, Reference.VERSION_CHECK_ATTEMPTS));
 				Thread.sleep(Reference.VERSION_RETRY);
 				throw new VersionCheckException(Localize.message(Messages.VERSION_FAILED_CONNECTION), e);
 			}

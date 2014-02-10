@@ -11,7 +11,7 @@ package com.shooshosha.darksouls.config;
 
 import java.io.File;
 
-import com.shooshosha.darksouls.helper.Log;
+import com.shooshosha.darksouls.helper.LogHelper;
 import com.shooshosha.darksouls.lib.ItemIds;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
@@ -37,7 +37,7 @@ public class ItemConfiguration {
 			readItemConfigurations();
 			
 		} catch (Exception e) {
-			Log.severe(Localize.message(Messages.CONFIG_ITEM, Reference.MOD_ID), e);
+			LogHelper.severe(Localize.message(Messages.CONFIG_ITEM, Reference.MOD_ID), e);
 		} finally {
 			itemConfiguration.save();
 		}

@@ -13,7 +13,7 @@ import static net.minecraftforge.common.Configuration.CATEGORY_GENERAL;
 
 import java.io.File;
 
-import com.shooshosha.darksouls.helper.Log;
+import com.shooshosha.darksouls.helper.LogHelper;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
 import com.shooshosha.darksouls.localize.Localize;
@@ -37,7 +37,7 @@ public class GeneralConfiguration {
 			getVersionInformation();
 			
 		} catch (Exception e) {
-			Log.severe(Localize.message(Messages.CONFIG_ITEM, Reference.MOD_ID), e);
+			LogHelper.severe(Localize.message(Messages.CONFIG_ITEM, Reference.MOD_ID), e);
 		} finally {
 			generalConfiguration.save();
 		}

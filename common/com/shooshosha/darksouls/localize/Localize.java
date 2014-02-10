@@ -16,7 +16,7 @@ import net.minecraft.util.StatCollector;
  * @date Feb 3, 2014
  *
  */
-public class Localizer {
+public class Localize {
 	private static String localizedMessage;
 	
 	public static String message(String message, Object... localizables) {
