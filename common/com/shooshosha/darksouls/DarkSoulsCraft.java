@@ -12,10 +12,10 @@ package com.shooshosha.darksouls;
 import net.minecraft.creativetab.CreativeTabs;
 
 import com.shooshosha.darksouls.creativetab.CreativeTabDSC;
+import com.shooshosha.darksouls.event.Fingerprint;
 import com.shooshosha.darksouls.event.Initializer;
 import com.shooshosha.darksouls.event.PostInitializer;
 import com.shooshosha.darksouls.event.PreInitializer;
-import com.shooshosha.darksouls.helper.FingerprintHelper;
 import com.shooshosha.darksouls.lib.Reference;
 import com.shooshosha.darksouls.proxy.CommonProxy;
 
@@ -44,16 +44,16 @@ public class DarkSoulsCraft {
 	public static CreativeTabs tabsDSC = new CreativeTabDSC(CreativeTabs.getNextID(), Reference.MOD_ID);
 	
 	@EventHandler public void invalidFingerprint(FMLFingerprintViolationEvent event) {
-		FingerprintHelper.advise();
+		Fingerprint.handle(event);
 	}
 		
-	@EventHandler public void preInit(FMLPreInitializationEvent event) {
+	@EventHandler public void Pre(FMLPreInitializationEvent event) {
 		PreInitializer.handle(event);
 	}
 	@EventHandler public void Init(FMLInitializationEvent event) {
 		Initializer.handle(event);
 	}
-	@EventHandler public void postInit(FMLPostInitializationEvent event) {
+	@EventHandler public void Post(FMLPostInitializationEvent event) {
 		PostInitializer.handle(event);
 	}
 }
