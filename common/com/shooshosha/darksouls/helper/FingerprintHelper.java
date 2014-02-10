@@ -9,9 +9,8 @@
  */
 package com.shooshosha.darksouls.helper;
 
-import com.shooshosha.darksouls.lib.Messages;
+import com.shooshosha.darksouls.error.Error;
 import com.shooshosha.darksouls.lib.Reference;
-import com.shooshosha.darksouls.localize.Localize;
 
 /**
  * @author shooshosha
@@ -21,9 +20,9 @@ import com.shooshosha.darksouls.localize.Localize;
 public class FingerprintHelper {
 	public static void advise() {
 		if(Reference.FINGERPRINT.equals("@FINGERPRINT@")) {
-			Log.warning(Localize.message(Messages.FINGERPRINT_NONE, Reference.MOD_ID));
+			LogHelper.warning(Error.Fingerprint.NONE.getMessage(), Reference.MOD_NAME);
 		} else {
-			Log.severe(Localize.message(Messages.FINGERPRINT_INVALID, Reference.MOD_ID));
+			LogHelper.severe(Error.Fingerprint.INVALID.getMessage(), Reference.MOD_NAME);
 		}
 	}
 }
