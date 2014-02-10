@@ -1,7 +1,3 @@
-# Fingerprint error localizations
-fingerprint.dsc:none=This copy of %s is a development version and thus may be unstable, incomplete, or both
-fingerprint.dsc:invalid=This copy of %s was modified from the original and may be harmful. Please re-download the original from an appropriate site.
-
 #Logger error localizations
 logger.dsc:null=The internal logger was accessed before initialization. Initializing...
 
