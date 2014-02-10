@@ -7,7 +7,11 @@
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  *
  */
-package com.shooshosha.darksouls.helper;
+package com.shooshosha.darksouls.event;
+
+import com.shooshosha.darksouls.helper.ConfigurationHelper;
+import com.shooshosha.darksouls.helper.ItemsHelper;
+import com.shooshosha.darksouls.helper.VersionHelper;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
@@ -18,7 +22,6 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
  */
 public class PreInitializer {
 	public static void handle(FMLPreInitializationEvent preInitializeEvent) {
-		
 		ConfigurationHelper.initializeFiles(preInitializeEvent);
 		
 		try {
@@ -28,5 +31,6 @@ public class PreInitializer {
 		}
 		
 		ItemsHelper.init();
-	}
+		
+	}		
 }
