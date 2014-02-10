@@ -18,7 +18,6 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
  */
 public class PreInitializer {
 	public static void handle(FMLPreInitializationEvent preInitializeEvent) {
-		Log.initialize();
 		
 		ConfigurationHelper.initializeFiles(preInitializeEvent);
 		
