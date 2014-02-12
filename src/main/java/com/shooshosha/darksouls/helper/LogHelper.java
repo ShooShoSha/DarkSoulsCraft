@@ -13,6 +13,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.google.common.base.Optional;
+
+import com.shooshosha.darksouls.DarkSoulsCraft;
 import com.shooshosha.darksouls.lib.Reference;
 
 import cpw.mods.fml.common.FMLLog;
@@ -39,7 +41,7 @@ public enum LogHelper {
 			return;
 		}
 		logger = Optional.of(Logger.getLogger(Reference.MOD_ID));
-		logger.get().setParent(FMLLog.getLogger());
+		logger.get().setParent((Logger) FMLLog.getLogger());
 	}
 	
 	private void log(Level level, String formattedMessage, Object... formattables) {

@@ -10,12 +10,16 @@
 package com.shooshosha.darksouls.helper;
 
 import com.shooshosha.darksouls.block.Bonfire;
+import com.shooshosha.darksouls.item.Items;
 import com.shooshosha.darksouls.lib.BlockIds;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemCoal;
+import net.minecraft.item.ItemSkull;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemSword;
 
 /**
  * @author shooshosha
@@ -48,6 +52,6 @@ public class BlocksHelper {
 	 * 
 	 */
 	private static void initBlockRecipes() {
-		GameRegistry.addRecipe(new ItemStack(bonfire), new Object[] {" s ", " b ", "ccc", Character.valueOf('s'), Item.swordIron, Character.valueOf('b'), Item.bone, Character.valueOf('c'), Item.coal});
+		GameRegistry.addRecipe(new ItemStack(bonfire), new Object[] {" s ", " b ", "ccc", Character.valueOf('s'), ItemSword.class, Character.valueOf('b'), ItemSkull.class, Character.valueOf('c'), ItemCoal.class});
 	}
 }

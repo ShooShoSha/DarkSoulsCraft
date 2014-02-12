@@ -104,7 +104,9 @@ public class VersionHelper implements Runnable {
 			String[] remoteVersionPropertyTokens = remoteVersionProperty.split("\\|");
 			remoteVersionNumber = remoteVersionPropertyTokens[0];
 			remoteUpdateLocation = remoteVersionPropertyTokens[1];
-		} catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+		} catch (NullPointerException e) {
+			throw new VersionCheckException(Localize.message(Messages.VERSION_KEY_INVALID));
+		} catch (ArrayIndexOutOfBoundsException e) {
 			throw new VersionCheckException(Localize.message(Messages.VERSION_KEY_INVALID));
 		}
 	}
