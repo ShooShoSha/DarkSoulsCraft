@@ -17,7 +17,7 @@ import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
 import com.shooshosha.darksouls.localize.Localize;
 
-import net.minecraftforge.common.Configuration;
+import net.minecraftforge.common.config.Configuration;
 
 /**
  * @author shooshosha
@@ -44,7 +44,6 @@ public class ItemConfiguration {
 	}
 	
 	private static void readItemConfigurations() {
-		ItemIds.HOMEWARD_BONE = itemConfiguration.getItem(ItemIds.HOMEWARD_BONE_NAME, 
-				ItemIds.HOMEWARD_BONE_DEFAULT).getInt(ItemIds.HOMEWARD_BONE_DEFAULT);
+		//TODO read item configuration file
 	}
 }

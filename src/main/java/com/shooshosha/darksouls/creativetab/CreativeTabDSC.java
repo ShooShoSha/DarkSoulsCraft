@@ -12,6 +12,7 @@ package com.shooshosha.darksouls.creativetab;
 import com.shooshosha.darksouls.lib.ItemIds;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
@@ -33,10 +34,15 @@ public class CreativeTabDSC extends CreativeTabs {
 	/**
 	 * @return item ID for its icon to display on the tab
 	 */
-	@Override
 	@SideOnly(Side.CLIENT)
 	public int getTabIconItemIndex() {
 		return ItemIds.HOMEWARD_BONE;
+	}
+
+	@Override
+	public Item getTabIconItem() {
+		// TODO figure out what this is
+		return null;
 	}
 
 }

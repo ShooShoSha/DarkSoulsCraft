@@ -26,13 +26,6 @@ public class ItemsHelper {
 	public static Item boneHomeward;
 	
 	public static void init() {
-		//Initialize each item individually
-		boneHomeward = new HomewardBone(ItemIds.HOMEWARD_BONE);
-		
-		//Register items with GameRegistry
-		GameRegistry.registerItem(boneHomeward, ItemIds.HOMEWARD_BONE_NAME);
-		
-		//Add recipes for items
-		GameRegistry.addShapelessRecipe(new ItemStack(boneHomeward), new ItemStack(Item.bone), new ItemStack(Item.bed));
+		//TODO dear jebus there be work to do here
 	}
 }

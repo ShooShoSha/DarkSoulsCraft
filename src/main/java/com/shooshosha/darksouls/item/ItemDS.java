@@ -14,7 +14,6 @@ import com.shooshosha.darksouls.lib.Reference;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.item.Item;
 
 /**
@@ -27,16 +26,12 @@ public class ItemDS extends Item {
 	/**
 	 * @param id
 	 */
-	public ItemDS(int id) {
-		super(id - Reference.ID_RANGE_CORRECTION);
+	public ItemDS() {
+		super();
 		this.maxStackSize = 64;
 		this.setNoRepair();
 		this.setCreativeTab(DarkSoulsCraft.tabsDSC);
 	}
 	
-	@Override
-	@SideOnly(Side.CLIENT)
-	public void registerIcons(IconRegister iconRegister) {
-		itemIcon = iconRegister.registerIcon(this.getUnlocalizedName().substring(this.getUnlocalizedName().indexOf(".") + 1));
-	}
+	
 }

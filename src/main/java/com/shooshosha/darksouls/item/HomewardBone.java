@@ -23,8 +23,8 @@ public class HomewardBone extends ItemDS {
 	/**
 	 * @param id
 	 */
-	public HomewardBone(int id) {
-		super(id);
+	public HomewardBone() {
+		super();
 		this.setUnlocalizedName(Reference.RESOURCE_PREFIX + ItemIds.HOMEWARD_BONE_NAME);
 		this.setCreativeTab(DarkSoulsCraft.tabsDSC);
 		maxStackSize = 99; //This probably won't work

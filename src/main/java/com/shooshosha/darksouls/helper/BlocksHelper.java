@@ -32,7 +32,7 @@ public class BlocksHelper {
 		
 		
 	public static void init() {
-		bonfire = new Bonfire(BlockIds.BONFIRE);
+		bonfire = new Bonfire();
 		
 		initBlockRegistries();
 		

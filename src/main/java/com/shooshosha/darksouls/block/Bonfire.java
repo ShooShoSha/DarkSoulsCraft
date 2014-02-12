@@ -27,9 +27,8 @@ public class Bonfire extends BlockDS {
 	 * @param id
 	 * @param material
 	 */
-	public Bonfire(int id) {
-		super(id, Material.fire);
-		this.setUnlocalizedName(BlockIds.BONFIRE_NAME);
+	public Bonfire() {
+		super(Material.fire);
 		this.setHardness(5F);
 		this.setBlockBounds(0.1F, 0.0F, 0.1F, 0.9F, 1.0F, 0.9F);
 	}
@@ -44,9 +43,9 @@ public class Bonfire extends BlockDS {
 		
 		return unlocalizedName.toString();
 	}
-	
+
 	@Override
-	public TileEntity createNewTileEntity(World world) {
+	public TileEntity createNewTileEntity(World var1, int var2) {
 		// TODO Auto-generated method stub
 		return null;
 	}

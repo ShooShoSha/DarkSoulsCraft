@@ -9,16 +9,18 @@
  */
 package com.shooshosha.darksouls.config;
 
-import static net.minecraftforge.common.Configuration.CATEGORY_GENERAL;
 
 import java.io.File;
+
+import net.minecraftforge.common.config.Configuration;
+
+import static net.minecraftforge.common.config.Configuration.CATEGORY_GENERAL;
 
 import com.shooshosha.darksouls.helper.LogHelper;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
 import com.shooshosha.darksouls.localize.Localize;
 
-import net.minecraftforge.common.Configuration;
 
 /**
  * @author shooshosha
