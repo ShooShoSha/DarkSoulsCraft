@@ -25,8 +25,8 @@ public abstract class BlockDS extends BlockContainer {
 	 * @param par1
 	 * @param par2Material
 	 */
-	public BlockDS(int id, Material material) {
-		super(id, material);
+	public BlockDS(Material material) {
+		super(material);
 		this.setCreativeTab(DarkSoulsCraft.tabsDSC);
 	}
 
