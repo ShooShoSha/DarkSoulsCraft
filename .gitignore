@@ -2,7 +2,5 @@
 .classpath
 .project
 /.settings
-README.MD
-LICENSE
 private.properties
 environment.properties
