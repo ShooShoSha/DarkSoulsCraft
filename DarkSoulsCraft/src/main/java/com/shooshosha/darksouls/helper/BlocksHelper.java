@@ -52,6 +52,6 @@ public class BlocksHelper {
 	 * 
 	 */
 	private static void initBlockRecipes() {
-		GameRegistry.addRecipe(new ItemStack(bonfire), new Object[] {" s ", " b ", "ccc", Character.valueOf('s'), ItemSword.class, Character.valueOf('b'), Item.bone, Character.valueOf('c'), ItemCoal.class});
+		GameRegistry.addRecipe(new ItemStack(bonfire), new Object[] {" s ", " b ", "ccc", Character.valueOf('s'), ItemSword.class, Character.valueOf('b'), ItemSkull.class, Character.valueOf('c'), ItemCoal.class});
 	}
 }
