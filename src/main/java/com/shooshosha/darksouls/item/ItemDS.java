@@ -9,12 +9,9 @@
  */
 package com.shooshosha.darksouls.item;
 
-import com.shooshosha.darksouls.DarkSoulsCraft;
-import com.shooshosha.darksouls.lib.Reference;
-
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.item.Item;
+
+import com.shooshosha.darksouls.DarkSoulsCraft;
 
 /**
  * @author shooshosha

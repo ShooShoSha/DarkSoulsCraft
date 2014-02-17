@@ -9,12 +9,7 @@
  */
 package com.shooshosha.darksouls.helper;
 
-import com.shooshosha.darksouls.item.HomewardBone;
-import com.shooshosha.darksouls.lib.ItemIds;
-
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 
 /**
  * @author shooshosha

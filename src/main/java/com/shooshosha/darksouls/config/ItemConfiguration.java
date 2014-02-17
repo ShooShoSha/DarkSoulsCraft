@@ -11,13 +11,12 @@ package com.shooshosha.darksouls.config;
 
 import java.io.File;
 
+import net.minecraftforge.common.config.Configuration;
+
 import com.shooshosha.darksouls.helper.LogHelper;
-import com.shooshosha.darksouls.lib.ItemIds;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
 import com.shooshosha.darksouls.localize.Localize;
-
-import net.minecraftforge.common.config.Configuration;
 
 /**
  * @author shooshosha

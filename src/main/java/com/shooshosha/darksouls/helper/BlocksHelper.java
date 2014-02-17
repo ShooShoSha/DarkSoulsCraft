@@ -9,17 +9,16 @@
  */
 package com.shooshosha.darksouls.helper;
 
-import com.shooshosha.darksouls.block.Bonfire;
-import com.shooshosha.darksouls.item.Items;
-import com.shooshosha.darksouls.lib.BlockIds;
-
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.block.Block;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemCoal;
 import net.minecraft.item.ItemSkull;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+
+import com.shooshosha.darksouls.block.Bonfire;
+import com.shooshosha.darksouls.lib.BlockIds;
+
+import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
  * @author shooshosha

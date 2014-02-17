@@ -13,8 +13,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import com.google.common.base.Optional;
-
-import com.shooshosha.darksouls.DarkSoulsCraft;
 import com.shooshosha.darksouls.lib.Reference;
 
 import cpw.mods.fml.common.FMLLog;
