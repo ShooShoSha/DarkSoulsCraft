@@ -28,8 +28,8 @@ public class Reference {
 			"https://raw.github.com/ShooShoSha/DarkSoulsCraft/master/version.xml";
 	
 	//Proxy class constants
-	public static final String PROXY_CLIENT	 = "com.shooshosha.darksouls.core.proxy.ClientProxy";
-	public static final String PROXY_SERVER  = "com.shooshosha.darksouls.core.proxy.ServerProxy";
+	public static final String PROXY_CLIENT	 = "com.shooshosha.darksouls.proxy.ClientProxy";
+	public static final String PROXY_SERVER  = "com.shooshosha.darksouls.proxy.ServerProxy";
 	
 	//Jar signature constants
 	public static final String FINGERPRINT = "@FINGERPRINT@";

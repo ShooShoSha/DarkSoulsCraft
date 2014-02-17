@@ -10,7 +10,7 @@
 package com.shooshosha.darksouls.event;
 
 import com.shooshosha.darksouls.error.Error;
-import com.shooshosha.darksouls.helper.LogHelper;
+import com.shooshosha.darksouls.lib.Log;
 import com.shooshosha.darksouls.lib.Reference;
 
 import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
@@ -23,9 +23,9 @@ import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
 public class Fingerprint {
 	public static void handle(FMLFingerprintViolationEvent event) {
 		if(Reference.FINGERPRINT.equals("@FINGERPRINT@")) {
-			LogHelper.warning(Error.Fingerprint.NONE.getMessage(), Reference.MOD_NAME);
+			Log.warning(Error.Fingerprint.NONE.getMessage(), Reference.MOD_NAME);
 		} else {
-			LogHelper.severe(Error.Fingerprint.INVALID.getMessage(), Reference.MOD_NAME);
+			Log.severe(Error.Fingerprint.INVALID.getMessage(), Reference.MOD_NAME);
 		}
 	}
 }

@@ -16,6 +16,7 @@ import java.net.URL;
 import java.util.Properties;
 
 import com.shooshosha.darksouls.error.VersionCheckException;
+import com.shooshosha.darksouls.lib.Log;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
 import com.shooshosha.darksouls.localize.Localize;
@@ -39,7 +40,7 @@ public class VersionHelper implements Runnable {
 	
 	
 	public static void runCheck() throws InterruptedException {
-		LogHelper.info(Localize.message(Messages.VERSION_INITIALIZATION, Reference.VERSION_AUTHORITY_LOCATION));
+		Log.info(Localize.message(Messages.VERSION_INITIALIZATION, Reference.VERSION_AUTHORITY_LOCATION));
 		new Thread(validator).start();
 	}
 	
@@ -47,11 +48,11 @@ public class VersionHelper implements Runnable {
 	public void run() {
 		try {
 			checkVersion();
-			LogHelper.info(Localize.message(Messages.VERSION_CURRENT));
+			Log.info(Localize.message(Messages.VERSION_CURRENT));
 		} catch (VersionCheckException e) {
-			LogHelper.warning(e.getMessage());
+			Log.warning(e.getMessage());
 		} catch (InterruptedException e) {
-			LogHelper.severe(Localize.message(Messages.VERSION_UNINITIALIZED));
+			Log.severe(Localize.message(Messages.VERSION_UNINITIALIZED));
 		}
 	}
 	
@@ -81,7 +82,7 @@ public class VersionHelper implements Runnable {
 				remoteAuthorityConnection = remoteAuthorityLocation.openStream();
 				getRemoteAuthorityProperties();
 			} catch (IOException e) {
-				LogHelper.info(Localize.message(Messages.VERSION_ATTEMPTS, attemptsMade, Reference.VERSION_CHECK_ATTEMPTS));
+				Log.info(Localize.message(Messages.VERSION_ATTEMPTS, attemptsMade, Reference.VERSION_CHECK_ATTEMPTS));
 				Thread.sleep(Reference.VERSION_RETRY);
 				throw new VersionCheckException(Localize.message(Messages.VERSION_FAILED_CONNECTION), e);
 			}
