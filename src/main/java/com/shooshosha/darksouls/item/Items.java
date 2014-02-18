@@ -9,32 +9,22 @@
  */
 package com.shooshosha.darksouls.item;
 
-import com.shooshosha.darksouls.lib.Identifications;
-import com.shooshosha.darksouls.localize.Localizations;
 
 /**
  * @author shooshosha
  * @date Feb 10, 2014
  *
  */
-public enum Items implements Localizations, Identifications {
-	HOMEWARDBONE("item.dsc:homewardbone.name", 25400);
+public enum Items {
+	HOMEWARDBONE("item.dsc:homewardbone.name");
 	
 	private final String itemName;
-	private final int itemId;
 	
-	Items(String itemName, int itemId) {
+	Items(String itemName) {
 		this.itemName = itemName;
-		this.itemId = itemId;
 	}
 	
-	@Override
-	public String getName() {
+	public String unlocal() {
 		return itemName;
-	}
-	
-	@Override
-	public int getId() {
-		return itemId;
 	}
 }
