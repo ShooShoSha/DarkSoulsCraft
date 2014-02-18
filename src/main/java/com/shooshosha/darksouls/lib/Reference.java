@@ -16,7 +16,7 @@ package com.shooshosha.darksouls.lib;
  */
 public class Reference {
 	//Mod specific constants
-	public static final String MOD_ID = "DSC";
+	public static final String MOD_ID = "dsc";
 	public static final String MOD_NAME = "Dark Souls Craft";
 	public static final String MOD_DEPENDENCIES = ""; //This needs to be fixed
 	public static final String MOD_VERSION = "@VERSION@:@BUILD@";
