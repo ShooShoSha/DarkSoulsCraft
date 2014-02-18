@@ -46,7 +46,7 @@ public class Bonfire extends BlockDS {
 
 	@Override
 	public TileEntity createNewTileEntity(World var1, int var2) {
-		// TODO Auto-generated method stub
+		// TODO tile fun time
 		return null;
 	}
 
