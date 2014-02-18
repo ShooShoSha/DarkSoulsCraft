@@ -9,12 +9,8 @@
  */
 package com.shooshosha.darksouls.creativetab;
 
-import com.shooshosha.darksouls.lib.ItemIds;
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 /**
  * @author shooshosha
@@ -29,14 +25,6 @@ public class CreativeTabDSC extends CreativeTabs {
 	 */
 	public CreativeTabDSC(int tabID, String tabLabel) {
 		super(tabID, tabLabel);
-	}
-	
-	/**
-	 * @return item ID for its icon to display on the tab
-	 */
-	@SideOnly(Side.CLIENT)
-	public int getTabIconItemIndex() {
-		return ItemIds.HOMEWARD_BONE;
 	}
 
 	@Override
