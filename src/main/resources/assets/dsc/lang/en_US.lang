@@ -1,20 +1,8 @@
-#Logger error localizations
-logger.dsc:null=The internal logger was accessed before initialization. Initializing...
-
-#Version status localizations
-version.dsc:initialization=Checking version against remote authority
-version.dsc:uninitialized=Version checking failed to initialize
-version.dsc:url_bad=Invalid authority URL
-version.dsc:failed_connection=Unable to connect to remote authority
-version.dsc:attempts=Unable to connect, attempt %d of %d
-version.dsc:remote_file_invalid=Remote file may be corrupted
-version.dsc:key_invalid=Unable to find a version for at remote authority
-version.dsc:outdated=A new version exists. Get it here: %s
-version.dsc:current=Using current version
-
-#Configuration error message localizations
-config.dsc:error_general=%s encountered a problem loading its general configurations
-config.dsc:error_item=%s encountered a problem loading its item configurations
-
 #Item localizations
-item.dsc:boneHomeward.name=Homeward Bone
+item.dsc:homewardbone.name=Homeward Bone
+item.dsc:halberd.name=Halberd
+
+#Block localizations
+tile.dsc:bonfire.name=Bonfire
+
+itemGroup.dsc=Dark Souls Craft

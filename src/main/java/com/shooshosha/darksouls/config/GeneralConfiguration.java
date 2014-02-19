@@ -15,10 +15,10 @@ import java.io.File;
 import net.minecraftforge.common.config.Configuration;
 import static net.minecraftforge.common.config.Configuration.CATEGORY_GENERAL;
 
+import com.shooshosha.darksouls.language.Localize;
 import com.shooshosha.darksouls.lib.Log;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
-import com.shooshosha.darksouls.localize.Localize;
 
 
 /**

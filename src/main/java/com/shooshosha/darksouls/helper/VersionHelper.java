@@ -16,10 +16,10 @@ import java.net.URL;
 import java.util.Properties;
 
 import com.shooshosha.darksouls.error.VersionCheckException;
+import com.shooshosha.darksouls.language.Localize;
 import com.shooshosha.darksouls.lib.Log;
 import com.shooshosha.darksouls.lib.Messages;
 import com.shooshosha.darksouls.lib.Reference;
-import com.shooshosha.darksouls.localize.Localize;
 
 import cpw.mods.fml.common.Loader;
 

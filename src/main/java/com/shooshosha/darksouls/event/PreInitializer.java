@@ -9,8 +9,10 @@
  */
 package com.shooshosha.darksouls.event;
 
+import com.shooshosha.darksouls.block.DSCBlocks;
+import com.shooshosha.darksouls.item.DSCItems;
+
 import com.shooshosha.darksouls.helper.ConfigurationHelper;
-import com.shooshosha.darksouls.helper.ItemsHelper;
 import com.shooshosha.darksouls.helper.VersionHelper;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -30,7 +32,8 @@ public class PreInitializer {
 			e.printStackTrace();
 		}
 		
-		ItemsHelper.init();
+		DSCItems.initialize();
 		
+		DSCBlocks.initialize();
 	}		
 }

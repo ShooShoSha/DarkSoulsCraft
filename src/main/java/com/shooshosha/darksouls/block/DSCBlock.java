@@ -9,25 +9,21 @@
  */
 package com.shooshosha.darksouls.block;
 
-import com.shooshosha.darksouls.DarkSoulsCraft;
-
-import net.minecraft.block.BlockContainer;
+import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+
+import com.shooshosha.darksouls.proxy.CommonProxy;
 
 /**
  * @author shooshosha
  * @date Dec 13, 2013
  *
  */
-public abstract class BlockDS extends BlockContainer {
-
-	/**
-	 * @param par1
-	 * @param par2Material
-	 */
-	public BlockDS(Material material) {
+public abstract class DSCBlock extends Block {
+	
+	public DSCBlock(Material material) {
 		super(material);
-		this.setCreativeTab(DarkSoulsCraft.tabsDSC);
+		this.setCreativeTab(CommonProxy.DSCtab);
 	}
 
 }

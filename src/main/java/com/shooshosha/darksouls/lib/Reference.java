@@ -16,7 +16,7 @@ package com.shooshosha.darksouls.lib;
  */
 public class Reference {
 	//Mod specific constants
-	public static final String MOD_ID = "DSC";
+	public static final String MOD_ID = "dsc";
 	public static final String MOD_NAME = "Dark Souls Craft";
 	public static final String MOD_DEPENDENCIES = ""; //This needs to be fixed
 	public static final String MOD_VERSION = "@VERSION@:@BUILD@";
@@ -37,8 +37,8 @@ public class Reference {
 	//Object id offset constant
 	public static final int ID_RANGE_CORRECTION = 256;
 	
-	//Localizations prefix
-	public static final String RESOURCE_PREFIX = MOD_ID.toLowerCase() + ":";
+	//Localizations prefixes
+	public static final String RESOURCE_PREFIX = MOD_ID + ":";
 	public static final String ITEM_PREFIX = "item." + RESOURCE_PREFIX;
 	public static final String BLOCK_PREFIX = "block." + RESOURCE_PREFIX;
 }

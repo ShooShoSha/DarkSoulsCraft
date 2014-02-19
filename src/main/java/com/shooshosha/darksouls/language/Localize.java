@@ -7,7 +7,7 @@
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
  *
  */
-package com.shooshosha.darksouls.localize;
+package com.shooshosha.darksouls.language;
 
 import net.minecraft.util.StatCollector;
 

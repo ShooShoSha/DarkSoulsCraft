@@ -11,23 +11,23 @@ package com.shooshosha.darksouls.item;
 
 import net.minecraft.item.Item;
 
-import com.shooshosha.darksouls.DarkSoulsCraft;
+import com.shooshosha.darksouls.proxy.CommonProxy;
 
 /**
  * @author shooshosha
  * @date Dec 11, 2013
  *
  */
-public class ItemDS extends Item {
+public class DSCItem extends Item {
 
 	/**
 	 * @param id
 	 */
-	public ItemDS() {
+	public DSCItem() {
 		super();
 		this.maxStackSize = 64;
 		this.setNoRepair();
-		this.setCreativeTab(DarkSoulsCraft.tabsDSC);
+		this.setCreativeTab(CommonProxy.DSCtab);
 	}
 	
 	
