@@ -1,6 +1,7 @@
 package com.shooshosha.darksouls.item.weapon.halberd;
 
 import com.shooshosha.darksouls.item.weapon.Bonus;
+import com.shooshosha.darksouls.item.weapon.Upgrade;
 
 
 
@@ -12,6 +13,7 @@ public class Halberd extends Halberds {
 		setBaseStatuses();
 	}
 
+	@Override
 	protected void setBaseStatuses() {
 		setDamages(110,0,0,0);
 		setReductions(40,10,30,30);
@@ -22,5 +24,8 @@ public class Halberd extends Halberds {
 		setWeight(60);
 		setDurability(200);
 		setSoulValue(50);
+		setPath(Upgrade.NORMAL);
+		setModifier(0);
+		setStability(26);
 	}
 }
