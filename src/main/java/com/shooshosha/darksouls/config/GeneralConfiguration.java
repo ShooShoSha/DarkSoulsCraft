@@ -37,7 +37,7 @@ public class GeneralConfiguration {
 			getVersionInformation();
 			
 		} catch (Exception e) {
-			Log.severe("%s encountered a problem loading its item configurations", Reference.MOD_ID);
+			Log.severe("%s encountered a problem loading its general configurations", Reference.MOD_ID);
 		} finally {
 			generalConfiguration.save();
 		}
