@@ -31,6 +31,7 @@ public abstract class Weapon extends DSCItem {
 	private int soulValue;
 	private Upgrade path;
 	private int modifier;
+	private int stability;
 	
 	public Weapon() {
 		super();
@@ -40,6 +41,14 @@ public abstract class Weapon extends DSCItem {
 	@Override
 	public final Item setMaxStackSize(int stackSize) {
 		return super.setMaxStackSize(1);
+	}
+	
+	private boolean isNegative(int integerCandidate) {
+		return integerCandidate < 0;
+	}
+	
+	private boolean isPercent(int percentCandidate) {
+		return 0 <= percentCandidate && percentCandidate <= 100;
 	}
 	
 	protected abstract void setBaseStatuses();
@@ -199,12 +208,8 @@ public abstract class Weapon extends DSCItem {
 		this.modifier = modifier;
 	}
 
-	private boolean isNegative(int integerCandidate) {
-		return integerCandidate < 0;
-	}
-	
-	private boolean isPercent(int percentCandidate) {
-		return 0 <= percentCandidate && percentCandidate <= 100;
+	public final void setStability(int stability) {
+		this.stability = stability;
 	}
 
 	public final int getPhysicalDamage() {
@@ -309,5 +314,9 @@ public abstract class Weapon extends DSCItem {
 
 	public final int getModifier() {
 		return modifier;
+	}
+
+	public final int getStability() {
+		return stability;
 	}
 }
