@@ -12,6 +12,7 @@ package com.shooshosha.darksouls.block;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
+import com.shooshosha.darksouls.lib.Reference;
 import com.shooshosha.darksouls.proxy.CommonProxy;
 
 /**
@@ -25,5 +26,9 @@ public abstract class DSCBlock extends Block {
 		super(material);
 		this.setCreativeTab(CommonProxy.DSCtab);
 	}
-
+	
+	@Override
+	public Block setBlockName(String unlocalName) {
+		return super.setBlockName(Reference.RESOURCE_PREFIX + unlocalName);
+	}
 }

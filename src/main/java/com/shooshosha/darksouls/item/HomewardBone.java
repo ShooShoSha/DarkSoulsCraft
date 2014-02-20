@@ -9,7 +9,6 @@
  */
 package com.shooshosha.darksouls.item;
 
-import com.shooshosha.darksouls.language.Localization;
 
 
 /**
@@ -21,7 +20,7 @@ public class HomewardBone extends DSCItem {
 	
 	public HomewardBone() {
 		super();
-		setUnlocalizedName(Localization.Items.homewardbone.unlocal());
+		setUnlocalizedName("homewardbone");
 		setTextureName(getUnlocalizedName());
 		maxStackSize = 99; //This probably won't work
 	}

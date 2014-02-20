@@ -11,6 +11,7 @@ package com.shooshosha.darksouls.item;
 
 import net.minecraft.item.Item;
 
+import com.shooshosha.darksouls.lib.Reference;
 import com.shooshosha.darksouls.proxy.CommonProxy;
 
 /**
@@ -19,10 +20,6 @@ import com.shooshosha.darksouls.proxy.CommonProxy;
  *
  */
 public class DSCItem extends Item {
-
-	/**
-	 * @param id
-	 */
 	public DSCItem() {
 		super();
 		this.maxStackSize = 64;
@@ -30,5 +27,8 @@ public class DSCItem extends Item {
 		this.setCreativeTab(CommonProxy.DSCtab);
 	}
 	
-	
+	@Override
+	public Item setUnlocalizedName(String unlocalName) {
+		return super.setUnlocalizedName(Reference.RESOURCE_PREFIX + unlocalName);
+	}
 }

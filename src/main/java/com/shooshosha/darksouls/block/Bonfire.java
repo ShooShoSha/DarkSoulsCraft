@@ -9,8 +9,6 @@
  */
 package com.shooshosha.darksouls.block;
 
-import com.shooshosha.darksouls.language.Localization;
-
 import net.minecraft.block.material.Material;
 
 /**
@@ -22,7 +20,7 @@ public class Bonfire extends DSCBlock {
 	
 	public Bonfire() {
 		super(Material.fire);
-		setBlockName(Localization.Blocks.bonfire.unlocal());
+		setBlockName("bonfire");
 		this.setHardness(5F);
 		this.setBlockBounds(0.1F, 0.0F, 0.1F, 0.9F, 1.0F, 0.9F);
 	}
