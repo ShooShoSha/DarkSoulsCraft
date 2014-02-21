@@ -41,4 +41,5 @@ public class Reference {
 	public static final String RESOURCE_PREFIX = MOD_ID + ":";
 	public static final String ITEM_PREFIX = "item." + RESOURCE_PREFIX;
 	public static final String BLOCK_PREFIX = "block." + RESOURCE_PREFIX;
+	public static final String WEAPON_PREFIX = "weapon." + RESOURCE_PREFIX;
 }
