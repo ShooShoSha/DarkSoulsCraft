@@ -16,7 +16,7 @@ public class Longsword extends StraightSwords {
 		setRequirements(10, 10, 0, 0);
 		setBonuses(Bonus.C, Bonus.C, Bonus.Z, Bonus.Z);
 		setTypes(true, false, false, false);
-		setCritcalDamage(100);
+		setCriticalDamage(100);
 		setWeight(30);
 		setDurability(200);
 		setSoulValue(50);
