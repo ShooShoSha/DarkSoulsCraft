@@ -1,6 +1,14 @@
 #Item localizations
 item.dsc:homewardbone.name=Homeward Bone
-item.dsc:halberd.name=Halberd
+
+#Weapon localizations
+item.weapon.dsc:banditsknife.name=Bandit's Knife
+item.weapon.dsc:battleaxe.name=Battle Axe
+item.weapon.dsc:dagger.name=Dagger
+item.weapon.dsc:halberd.name=Halberd
+item.weapon.dsc:longsword.name=Longsword
+item.weapon.dsc:lucerne.name=Lucerne
+item.weapon.dsc:shortsword.name=Shortsword
 
 #Block localizations
 tile.dsc:bonfire.name=Bonfire
