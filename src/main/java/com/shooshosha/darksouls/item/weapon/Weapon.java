@@ -3,6 +3,7 @@ package com.shooshosha.darksouls.item.weapon;
 import net.minecraft.item.Item;
 
 import com.shooshosha.darksouls.item.DSCItem;
+import com.shooshosha.darksouls.lib.Reference;
 
 public abstract class Weapon extends DSCItem {
 	private int physicalDamage;
@@ -32,6 +33,7 @@ public abstract class Weapon extends DSCItem {
 	private Upgrade path;
 	private int modifier;
 	private int stability;
+	private Effect auxiliary;
 	
 	public Weapon() {
 		super();
@@ -43,6 +45,11 @@ public abstract class Weapon extends DSCItem {
 	@Override
 	public final Item setMaxStackSize(int stackSize) {
 		return super.setMaxStackSize(1);
+	}
+	
+	@Override
+	public final Item setUnlocalizedName(String unlocalName) {
+		return super.setUnlocalizedName(Reference.WEAPON_PREFIX + unlocalName);
 	}
 	
 	private boolean isNegative(int integerCandidate) {
@@ -240,7 +247,11 @@ public abstract class Weapon extends DSCItem {
 	public final void setStability(int stability) {
 		this.stability = stability;
 	}
-
+	
+	public final void setAuxiliary(Effect auxiliary) {
+		this.auxiliary = auxiliary;
+	}
+	
 	public final int getPhysicalDamage() {
 		return physicalDamage;
 	}
@@ -347,5 +358,9 @@ public abstract class Weapon extends DSCItem {
 
 	public final int getStability() {
 		return stability;
+	}
+	
+	public final Effect getAuxiliary() {
+		return auxiliary;
 	}
 }
