@@ -3,6 +3,7 @@ package com.shooshosha.darksouls.item.weapon;
 import net.minecraft.item.Item;
 
 import com.shooshosha.darksouls.item.DSCItem;
+import com.shooshosha.darksouls.lib.Reference;
 
 public abstract class Weapon extends DSCItem {
 	private int physicalDamage;
@@ -32,17 +33,29 @@ public abstract class Weapon extends DSCItem {
 	private Upgrade path;
 	private int modifier;
 	private int stability;
+	private int bleedEffect;
+	private int poisonEffect;
+	private int toxinEffect;
+	private int holyEffect;
+	private int darkEffect;
 	
 	public Weapon() {
 		super();
+		setBaseStatuses();
 		setMaxStackSize(1);
 		setPath(Upgrade.NORMAL);
 		setModifier(0);
+		setAuxiliaryEffects(0, 0, 0, 0, 0);
 	}
 	
 	@Override
 	public final Item setMaxStackSize(int stackSize) {
 		return super.setMaxStackSize(1);
+	}
+	
+	@Override
+	public final Item setUnlocalizedName(String unlocalName) {
+		return super.setUnlocalizedName(Reference.WEAPON_PREFIX + unlocalName);
 	}
 	
 	private boolean isNegative(int integerCandidate) {
@@ -115,6 +128,10 @@ public abstract class Weapon extends DSCItem {
 		setStriking(strike);
 		setSlashing(slash);
 		setThrusting(thrust);
+	}
+	
+	protected final void setAuxiliaryEffects(int bleed, int poison, int toxin, int holy, int dark) {
+		
 	}
 
 	public final void setPhysicalDamage(int physicalDamage) {
@@ -240,7 +257,32 @@ public abstract class Weapon extends DSCItem {
 	public final void setStability(int stability) {
 		this.stability = stability;
 	}
+	
+	public final void setBleedEffect(int bleedEffect) {
+		if(!isNegative(bleedEffect))
+			this.bleedEffect = bleedEffect;
+	}
 
+	public final void setPoisonEffect(int poisonEffect) {
+		if(!isNegative(poisonEffect))
+			this.poisonEffect = poisonEffect;
+	}
+
+	public final void setToxinEffect(int toxinEffect) {
+		if(!isNegative(toxinEffect))
+			this.toxinEffect = toxinEffect;
+	}
+
+	public final void setHolyEffect(int holyEffect) {
+		if(!isNegative(holyEffect))
+			this.holyEffect = holyEffect;
+	}
+
+	public final void setDarkEffect(int darkEffect) {
+		if(!isNegative(darkEffect))
+			this.darkEffect = darkEffect;
+	}
+	
 	public final int getPhysicalDamage() {
 		return physicalDamage;
 	}
@@ -347,5 +389,29 @@ public abstract class Weapon extends DSCItem {
 
 	public final int getStability() {
 		return stability;
+	}
+
+	public final int getCriticalDamage() {
+		return criticalDamage;
+	}
+
+	public final int getBleedEffect() {
+		return bleedEffect;
+	}
+
+	public final int getPoisonEffect() {
+		return poisonEffect;
+	}
+
+	public final int getToxinEffect() {
+		return toxinEffect;
+	}
+
+	public final int getHolyEffect() {
+		return holyEffect;
+	}
+
+	public final int getDarkEffect() {
+		return darkEffect;
 	}
 }

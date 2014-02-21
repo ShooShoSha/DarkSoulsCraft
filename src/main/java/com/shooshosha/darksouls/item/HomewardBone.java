@@ -20,7 +20,7 @@ public class HomewardBone extends DSCItem {
 	
 	public HomewardBone() {
 		super();
-		setUnlocalizedName("homewardbone");
+		setUnlocalizedName("dsc:homewardbone");
 		setTextureName(getUnlocalizedName());
 		maxStackSize = 99; //This probably won't work
 	}

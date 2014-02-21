@@ -9,8 +9,9 @@
  */
 package com.shooshosha.darksouls.item;
 
-import cpw.mods.fml.common.registry.GameRegistry;
+import com.shooshosha.darksouls.item.weapon.halberd.Halberd;
 import net.minecraft.item.Item;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 
 /**
@@ -20,6 +21,7 @@ import net.minecraft.item.Item;
  */
 public class DSCItems {
 public static Item homewardbone;
+public static Item halberd;
 	
 	public static void initialize() {
 		createItems();
@@ -28,9 +30,11 @@ public static Item homewardbone;
 
 	private static void createItems() {
 		homewardbone = new HomewardBone();
+		halberd = new Halberd();
 	}
 	
 	private static void registerItems() {
 		GameRegistry.registerItem(homewardbone, homewardbone.getUnlocalizedName());
+		GameRegistry.registerItem(halberd, halberd.getUnlocalizedName());
 	}
 }
