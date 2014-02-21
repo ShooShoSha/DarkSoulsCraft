@@ -25,7 +25,7 @@ public abstract class Weapon extends DSCItem {
 	private boolean isStriking;
 	private boolean isSlashing;
 	private boolean isThrusting;
-	private int critcalDamage;
+	private int criticalDamage;
 	private int weight;
 	private int durability;
 	private int soulValue;
@@ -37,6 +37,7 @@ public abstract class Weapon extends DSCItem {
 		super();
 		setMaxStackSize(1);
 		setPath(Upgrade.NORMAL);
+		setModifier(0);
 	}
 	
 	@Override
@@ -52,8 +53,28 @@ public abstract class Weapon extends DSCItem {
 		return 0 <= percentCandidate && percentCandidate <= 100;
 	}
 	
+	/**
+	 * Subclasses must implement this to set base status for weapon. Needs to call:
+	 * <li> {@link #setDamages(int, int, int, int)}
+	 * <li> {@link #setReductions(int, int, int, int)}
+	 * <li> {@link #setRequirements(int, int, int, int)}
+	 * <li> {@link #setBonuses(Bonus, Bonus, Bonus, Bonus)}
+	 * <li> {@link #setTypes(boolean, boolean, boolean, boolean)}
+	 * <li> {@link #setCritcalDamage(int)}
+	 * <li> {@link #setWeight(int)}
+	 * <li> {@link #setDurability(int)}
+	 * <li> {@link #setSoulValue(int)}
+	 * <li> {@link #setStability(int)}
+	 */
 	protected abstract void setBaseStatuses();
 	
+	/**
+	 * Sets attack ratings for the following types.
+	 * @param physical
+	 * @param magical
+	 * @param fire
+	 * @param lightning
+	 */
 	protected final void setDamages(int physical, int magical, int fire, int lightning) {
 		setPhysicalDamage(physical);
 		setMagicalDamage(magical);
@@ -61,6 +82,13 @@ public abstract class Weapon extends DSCItem {
 		setLightningDamage(lightning);
 	}
 	
+	/**
+	 * Sets the damage reduction when blocking for the following types.
+	 * @param physical
+	 * @param magical
+	 * @param fire
+	 * @param lightning
+	 */
 	protected final void setReductions(int physical, int magical, int fire, int lightning) {
 		setPhysicalDamageReduction(physical);
 		setMagicalDamageReduction(magical);
@@ -181,9 +209,9 @@ public abstract class Weapon extends DSCItem {
 		this.isThrusting = isThrusting;
 	}
 
-	public final void setCritcalDamage(int critcalDamage) {
-		if(!isNegative(critcalDamage))
-			this.critcalDamage = critcalDamage;
+	public final void setCriticalDamage(int criticalDamage) {
+		if(!isNegative(criticalDamage))
+			this.criticalDamage = criticalDamage;
 	}
 
 	public final void setWeight(int weight) {
@@ -294,7 +322,7 @@ public abstract class Weapon extends DSCItem {
 	}
 
 	public final int getCritcalDamage() {
-		return critcalDamage;
+		return criticalDamage;
 	}
 
 	public final int getWeight() {
