@@ -41,6 +41,7 @@ public abstract class Weapon extends DSCItem {
 	
 	public Weapon() {
 		super();
+		setBaseStatuses();
 		setMaxStackSize(1);
 		setPath(Upgrade.NORMAL);
 		setModifier(0);
