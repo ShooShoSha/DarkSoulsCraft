@@ -4,6 +4,7 @@ item.dsc:homewardbone.name=Homeward Bone
 #Weapon localizations
 item.weapon.dsc:banditsknife.name=Bandit's Knife
 item.weapon.dsc:battleaxe.name=Battle Axe
+item.weapon.dsc:club.name=Club
 item.weapon.dsc:dagger.name=Dagger
 item.weapon.dsc:halberd.name=Halberd
 item.weapon.dsc:handaxe.name=Hand Axe
