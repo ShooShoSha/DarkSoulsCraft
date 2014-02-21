@@ -33,13 +33,18 @@ public abstract class Weapon extends DSCItem {
 	private Upgrade path;
 	private int modifier;
 	private int stability;
-	private Effect auxiliary;
+	private int bleedEffect;
+	private int poisonEffect;
+	private int toxinEffect;
+	private int holyEffect;
+	private int darkEffect;
 	
 	public Weapon() {
 		super();
 		setMaxStackSize(1);
 		setPath(Upgrade.NORMAL);
 		setModifier(0);
+		setAuxiliaryEffects(0, 0, 0, 0, 0);
 	}
 	
 	@Override
@@ -122,6 +127,10 @@ public abstract class Weapon extends DSCItem {
 		setStriking(strike);
 		setSlashing(slash);
 		setThrusting(thrust);
+	}
+	
+	protected final void setAuxiliaryEffects(int bleed, int poison, int toxin, int holy, int dark) {
+		
 	}
 
 	public final void setPhysicalDamage(int physicalDamage) {
@@ -248,8 +257,29 @@ public abstract class Weapon extends DSCItem {
 		this.stability = stability;
 	}
 	
-	public final void setAuxiliary(Effect auxiliary) {
-		this.auxiliary = auxiliary;
+	public final void setBleedEffect(int bleedEffect) {
+		if(!isNegative(bleedEffect))
+			this.bleedEffect = bleedEffect;
+	}
+
+	public final void setPoisonEffect(int poisonEffect) {
+		if(!isNegative(poisonEffect))
+			this.poisonEffect = poisonEffect;
+	}
+
+	public final void setToxinEffect(int toxinEffect) {
+		if(!isNegative(toxinEffect))
+			this.toxinEffect = toxinEffect;
+	}
+
+	public final void setHolyEffect(int holyEffect) {
+		if(!isNegative(holyEffect))
+			this.holyEffect = holyEffect;
+	}
+
+	public final void setDarkEffect(int darkEffect) {
+		if(!isNegative(darkEffect))
+			this.darkEffect = darkEffect;
 	}
 	
 	public final int getPhysicalDamage() {
@@ -359,8 +389,28 @@ public abstract class Weapon extends DSCItem {
 	public final int getStability() {
 		return stability;
 	}
-	
-	public final Effect getAuxiliary() {
-		return auxiliary;
+
+	public final int getCriticalDamage() {
+		return criticalDamage;
+	}
+
+	public final int getBleedEffect() {
+		return bleedEffect;
+	}
+
+	public final int getPoisonEffect() {
+		return poisonEffect;
+	}
+
+	public final int getToxinEffect() {
+		return toxinEffect;
+	}
+
+	public final int getHolyEffect() {
+		return holyEffect;
+	}
+
+	public final int getDarkEffect() {
+		return darkEffect;
 	}
 }
