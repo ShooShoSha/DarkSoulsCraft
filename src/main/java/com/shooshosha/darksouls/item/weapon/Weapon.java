@@ -58,14 +58,6 @@ public abstract class Weapon extends DSCItem {
 		return super.setUnlocalizedName(Reference.WEAPON_PREFIX + unlocalName);
 	}
 	
-	private boolean isNegative(int integerCandidate) {
-		return integerCandidate < 0;
-	}
-	
-	private boolean isPercent(int percentCandidate) {
-		return 0 <= percentCandidate && percentCandidate <= 100;
-	}
-	
 	/**
 	 * Subclasses must implement this to set base status for weapon. Needs to call:
 	 * <li> {@link #setDamages(int, int, int, int)}
@@ -135,62 +127,62 @@ public abstract class Weapon extends DSCItem {
 	}
 
 	public final void setPhysicalDamage(int physicalDamage) {
-		if(!isNegative(physicalDamage))
+		if(!Reference.isNegative(physicalDamage))
 			this.physicalDamage = physicalDamage;
 	}
 
 	public final void setMagicalDamage(int magicalDamage) {
-		if(!isNegative(magicalDamage))
+		if(!Reference.isNegative(magicalDamage))
 			this.magicalDamage = magicalDamage;
 	}
 
 	public final void setFireDamage(int fireDamage) {
-		if(!isNegative(fireDamage))
+		if(!Reference.isNegative(fireDamage))
 			this.fireDamage = fireDamage;
 	}
 
 	public final void setLightningDamage(int lightningDamage) {
-		if(!isNegative(lightningDamage))
+		if(!Reference.isNegative(lightningDamage))
 			this.lightningDamage = lightningDamage;
 	}
 
 	public final void setPhysicalDamageReduction(int physicalDamageReduction) {
-		if(isPercent(physicalDamageReduction))
+		if(Reference.isPercent(physicalDamageReduction))
 			this.physicalDamageReduction = physicalDamageReduction;
 	}
 
 	public final void setMagicalDamageReduction(int magicalDamageReduction) {
-		if(isPercent(magicalDamageReduction))
+		if(Reference.isPercent(magicalDamageReduction))
 			this.magicalDamageReduction = magicalDamageReduction;
 	}
 
 	public final void setFireDamageReduction(int fireDamageReduction) {
-		if(isPercent(fireDamageReduction))
+		if(Reference.isPercent(fireDamageReduction))
 			this.fireDamageReduction = fireDamageReduction;
 	}
 
 	public final void setLightningDamageReduction(int lightningDamageReduction) {
-		if(isPercent(lightningDamageReduction))
+		if(Reference.isPercent(lightningDamageReduction))
 			this.lightningDamageReduction = lightningDamageReduction;
 	}
 
 	public final void setStrengthStatusRequired(int strengthStatusRequired) {
-		if(!isNegative(strengthStatusRequired))
+		if(!Reference.isNegative(strengthStatusRequired))
 			this.strengthStatusRequired = strengthStatusRequired;
 	}
 
 	public final void setDexterityStatusRequired(int dexterityStatusRequired) {
-		if(!isNegative(dexterityStatusRequired))
+		if(!Reference.isNegative(dexterityStatusRequired))
 			this.dexterityStatusRequired = dexterityStatusRequired;
 	}
 
 	public final void setIntelligenceStatusRequired(int intelligenceStatusRequired) {
-		if(!isNegative(intelligenceStatusRequired))
+		if(!Reference.isNegative(intelligenceStatusRequired))
 			this.intelligenceStatusRequired = intelligenceStatusRequired;
 	}
 
 	public final void setFaithStatusRequired(int faithStatusRequired) {
-		if(!isNegative(faithStatusRequired))
+		if(!Reference.isNegative(faithStatusRequired))
 			this.faithStatusRequired = faithStatusRequired;
 	}
 
@@ -227,22 +219,22 @@ public abstract class Weapon extends DSCItem {
 	}
 
 	public final void setCriticalDamage(int criticalDamage) {
-		if(!isNegative(criticalDamage))
+		if(!Reference.isNegative(criticalDamage))
 			this.criticalDamage = criticalDamage;
 	}
 
 	public final void setWeight(int weight) {
-		if(isNegative(weight))
+		if(!Reference.isNegative(weight))
 			this.weight = weight;
 	}
 
 	public final void setDurability(int durability) {
-		if(!isNegative(durability))
+		if(!Reference.isNegative(durability))
 			this.durability = durability;
 	}
 
 	public final void setSoulValue(int soulValue) {
-		if(!isNegative(soulValue))
+		if(!Reference.isNegative(soulValue))
 			this.soulValue = soulValue;
 	}
 	
@@ -259,27 +251,27 @@ public abstract class Weapon extends DSCItem {
 	}
 	
 	public final void setBleedEffect(int bleedEffect) {
-		if(!isNegative(bleedEffect))
+		if(!Reference.isNegative(bleedEffect))
 			this.bleedEffect = bleedEffect;
 	}
 
 	public final void setPoisonEffect(int poisonEffect) {
-		if(!isNegative(poisonEffect))
+		if(!Reference.isNegative(poisonEffect))
 			this.poisonEffect = poisonEffect;
 	}
 
 	public final void setToxinEffect(int toxinEffect) {
-		if(!isNegative(toxinEffect))
+		if(!Reference.isNegative(toxinEffect))
 			this.toxinEffect = toxinEffect;
 	}
 
 	public final void setHolyEffect(int holyEffect) {
-		if(!isNegative(holyEffect))
+		if(!Reference.isNegative(holyEffect))
 			this.holyEffect = holyEffect;
 	}
 
 	public final void setDarkEffect(int darkEffect) {
-		if(!isNegative(darkEffect))
+		if(!Reference.isNegative(darkEffect))
 			this.darkEffect = darkEffect;
 	}
 	
