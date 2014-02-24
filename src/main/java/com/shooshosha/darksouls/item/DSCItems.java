@@ -9,7 +9,9 @@
  */
 package com.shooshosha.darksouls.item;
 
+import com.shooshosha.darksouls.item.weapon.fist.Caestus;
 import com.shooshosha.darksouls.item.weapon.hammer.Mace;
+
 import net.minecraft.item.Item;
 
 import com.shooshosha.darksouls.item.weapon.halberd.Halberd;
@@ -26,6 +28,7 @@ public class DSCItems {
 public static Item homewardbone;
 public static Item halberd;
 public static Item mace;
+public static Item caestus;
 	
 	public static void initialize() {
 		createItems();
@@ -36,10 +39,12 @@ public static Item mace;
 		homewardbone = new HomewardBone();
 		halberd = new Halberd();
 		mace = new Mace();
+		caestus = new Caestus();
 	}
 	
 	private static void registerItems() {
 		GameRegistry.registerItem(homewardbone, homewardbone.getUnlocalizedName());
 		GameRegistry.registerItem(halberd, halberd.getUnlocalizedName());
+		GameRegistry.registerItem(caestus, caestus.getUnlocalizedName());
 	}
 }
