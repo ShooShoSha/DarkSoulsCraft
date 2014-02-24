@@ -3,6 +3,12 @@ package com.shooshosha.darksouls.item.weapon.spear;
 import com.shooshosha.darksouls.item.weapon.Bonus;
 
 public class Pike extends Spears {
+	
+	public Pike() {
+		super();
+		setUnlocalizedName("pike");
+		setTextureName(getUnlocalizedName());
+	}
 
 	@Override
 	protected void setBaseStatuses() {
