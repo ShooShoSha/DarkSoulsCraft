@@ -3,6 +3,11 @@ package com.shooshosha.darksouls.item.weapon.bow;
 import com.shooshosha.darksouls.item.weapon.Bonus;
 
 public class Longbow extends Bows {
+	public Longbow() {
+		super();
+		setUnlocalizedName("longbow");
+		setTextureName(getUnlocalizedName());
+	}
 
 	@Override
 	protected void setBaseStatuses() {

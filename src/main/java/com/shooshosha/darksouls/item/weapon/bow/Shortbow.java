@@ -3,6 +3,11 @@ package com.shooshosha.darksouls.item.weapon.bow;
 import com.shooshosha.darksouls.item.weapon.Bonus;
 
 public class Shortbow extends Bows {
+	public Shortbow() {
+		super();
+		setUnlocalizedName("shortbow");
+		setTextureName(getUnlocalizedName());
+	}
 
 	@Override
 	protected void setBaseStatuses() {
