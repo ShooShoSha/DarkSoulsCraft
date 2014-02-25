@@ -3,7 +3,7 @@ package com.shooshosha.darksouls.item.weapon;
 import net.minecraft.item.Item;
 
 import com.shooshosha.darksouls.item.DSCItem;
-import com.shooshosha.darksouls.lib.Reference;
+import com.shooshosha.darksouls.library.Reference;
 
 public abstract class Weapon extends DSCItem {
 	private int physicalDamage;

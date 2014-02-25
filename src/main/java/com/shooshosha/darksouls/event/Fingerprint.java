@@ -10,8 +10,8 @@
 package com.shooshosha.darksouls.event;
 
 import com.shooshosha.darksouls.error.Error;
-import com.shooshosha.darksouls.lib.Log;
-import com.shooshosha.darksouls.lib.Reference;
+import com.shooshosha.darksouls.library.Log;
+import com.shooshosha.darksouls.library.Reference;
 
 import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
 

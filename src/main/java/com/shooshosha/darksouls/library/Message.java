@@ -1,4 +1,4 @@
-package com.shooshosha.darksouls.lib;
+package com.shooshosha.darksouls.library;
 
 public class Message {
 	

@@ -13,7 +13,7 @@ import java.io.File;
 
 import com.shooshosha.darksouls.config.GeneralConfiguration;
 import com.shooshosha.darksouls.config.ItemConfiguration;
-import com.shooshosha.darksouls.lib.Reference;
+import com.shooshosha.darksouls.library.Reference;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 

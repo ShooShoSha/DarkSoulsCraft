@@ -1,7 +1,7 @@
 package com.shooshosha.darksouls.item.weapon.crossbow;
 
 import com.shooshosha.darksouls.item.weapon.Weapon;
-import com.shooshosha.darksouls.lib.Reference;
+import com.shooshosha.darksouls.library.Reference;
 
 abstract class Crossbows extends Weapon {
 	private int range;

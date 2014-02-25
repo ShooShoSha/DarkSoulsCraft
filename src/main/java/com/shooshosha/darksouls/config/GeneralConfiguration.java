@@ -16,8 +16,8 @@ import java.io.File;
 
 import net.minecraftforge.common.config.Configuration;
 
-import com.shooshosha.darksouls.lib.Log;
-import com.shooshosha.darksouls.lib.Reference;
+import com.shooshosha.darksouls.library.Log;
+import com.shooshosha.darksouls.library.Reference;
 
 
 /**

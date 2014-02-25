@@ -13,7 +13,7 @@ import com.shooshosha.darksouls.event.Fingerprint;
 import com.shooshosha.darksouls.event.Initializer;
 import com.shooshosha.darksouls.event.PostInitializer;
 import com.shooshosha.darksouls.event.PreInitializer;
-import com.shooshosha.darksouls.lib.Reference;
+import com.shooshosha.darksouls.library.Reference;
 import com.shooshosha.darksouls.proxy.CommonProxy;
 
 import cpw.mods.fml.common.Mod;

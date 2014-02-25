@@ -12,7 +12,7 @@ package com.shooshosha.darksouls.proxy;
 import net.minecraft.creativetab.CreativeTabs;
 
 import com.shooshosha.darksouls.creativetab.DSCCreativeTab;
-import com.shooshosha.darksouls.lib.Reference;
+import com.shooshosha.darksouls.library.Reference;
 
 /**
  * @author shooshosha
