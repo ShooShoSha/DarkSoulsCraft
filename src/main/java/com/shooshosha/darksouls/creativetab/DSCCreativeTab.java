@@ -9,7 +9,10 @@
  */
 package com.shooshosha.darksouls.creativetab;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 
 /**
@@ -17,20 +20,16 @@ import net.minecraft.item.Item;
  * @date Dec 11, 2013
  *
  */
-public class CreativeTabDSC extends CreativeTabs {
-
-	/**
-	 * @param tabID is the unique identifier for the tab
-	 * @param tabLabel is the name given for the tab
-	 */
-	public CreativeTabDSC(int tabID, String tabLabel) {
-		super(tabID, tabLabel);
+public class DSCCreativeTab extends CreativeTabs {
+	
+	public DSCCreativeTab(String tabLabel) {
+		super(tabLabel);
 	}
 
 	@Override
+	@SideOnly(Side.CLIENT)
 	public Item getTabIconItem() {
-		// TODO figure out what this is
-		return null;
+		return Item.getItemFromBlock(Blocks.portal);
 	}
 
 }

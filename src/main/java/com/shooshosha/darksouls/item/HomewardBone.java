@@ -9,21 +9,19 @@
  */
 package com.shooshosha.darksouls.item;
 
-import com.shooshosha.darksouls.lib.Reference;
+
 
 /**
  * @author shooshosha
  * @date Dec 11, 2013
  *
  */
-public class HomewardBone extends ItemDS {
-
-	/**
-	 * @param id
-	 */
+public class HomewardBone extends DSCItem {
+	
 	public HomewardBone() {
 		super();
-		this.setUnlocalizedName(Reference.ITEM_PREFIX + Items.HOMEWARDBONE.unlocal());
+		setUnlocalizedName("dsc:homewardbone");
+		setTextureName(getUnlocalizedName());
 		maxStackSize = 99; //This probably won't work
 	}
 }

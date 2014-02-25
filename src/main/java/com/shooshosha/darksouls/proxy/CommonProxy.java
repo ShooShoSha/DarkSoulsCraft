@@ -9,11 +9,16 @@
  */
 package com.shooshosha.darksouls.proxy;
 
+import net.minecraft.creativetab.CreativeTabs;
+
+import com.shooshosha.darksouls.creativetab.DSCCreativeTab;
+import com.shooshosha.darksouls.library.Reference;
+
 /**
  * @author shooshosha
  * @date Dec 2, 2013
  *
  */
 public class CommonProxy {
-
+	public static CreativeTabs DSCtab = new DSCCreativeTab(Reference.MOD_ID);
 }

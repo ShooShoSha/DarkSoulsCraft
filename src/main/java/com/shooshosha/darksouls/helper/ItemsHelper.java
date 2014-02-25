@@ -9,7 +9,6 @@
  */
 package com.shooshosha.darksouls.helper;
 
-import net.minecraft.item.Item;
 
 /**
  * @author shooshosha
@@ -17,10 +16,5 @@ import net.minecraft.item.Item;
  *
  */
 public class ItemsHelper {
-	//Mod item instances
-	public static Item boneHomeward;
-	
-	public static void init() {
-		//TODO dear jebus there be work to do here
-	}
+	//TODO Give purpose.
 }

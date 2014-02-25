@@ -9,14 +9,11 @@
  */
 package com.shooshosha.darksouls;
 
-import net.minecraft.creativetab.CreativeTabs;
-
-import com.shooshosha.darksouls.creativetab.CreativeTabDSC;
 import com.shooshosha.darksouls.event.Fingerprint;
 import com.shooshosha.darksouls.event.Initializer;
 import com.shooshosha.darksouls.event.PostInitializer;
 import com.shooshosha.darksouls.event.PreInitializer;
-import com.shooshosha.darksouls.lib.Reference;
+import com.shooshosha.darksouls.library.Reference;
 import com.shooshosha.darksouls.proxy.CommonProxy;
 
 import cpw.mods.fml.common.Mod;
@@ -40,8 +37,6 @@ public class DarkSoulsCraft {
 	
 	@SidedProxy(clientSide=Reference.PROXY_CLIENT, serverSide = Reference.PROXY_SERVER)
 	public static CommonProxy proxy;
-	
-	public static CreativeTabs tabsDSC = new CreativeTabDSC(CreativeTabs.getNextID(), Reference.MOD_ID);
 	
 	@EventHandler public void invalidFingerprint(FMLFingerprintViolationEvent event) {
 		Fingerprint.handle(event);
