@@ -1,12 +1,12 @@
-package com.shooshosha.darksouls.item.weapon.bow;
-
+package com.shooshosha.darksouls.item.weapon.crossbow;
 
 import com.shooshosha.darksouls.item.weapon.Weapon;
 import com.shooshosha.darksouls.lib.Reference;
 
-abstract class Bows extends Weapon {
+abstract class Crossbows extends Weapon {
 	private int range;
-	Bows() {
+	
+	Crossbows() {
 		super();
 	}
 	
