@@ -9,8 +9,10 @@
  */
 package com.shooshosha.darksouls.item;
 
+import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 
+import com.shooshosha.darksouls.library.Registrable;
 import com.shooshosha.darksouls.proxy.CommonProxy;
 
 /**
@@ -18,11 +20,27 @@ import com.shooshosha.darksouls.proxy.CommonProxy;
  * @date Dec 11, 2013
  *
  */
-public class DSCItem extends Item {
+public class DSCItem extends Item implements Registrable {
 	public DSCItem() {
 		super();
 		this.maxStackSize = 64;
 		this.setNoRepair();
 		this.setCreativeTab(CommonProxy.DSCtab);
+	}
+
+	@Override
+	public void setName(String unlocal) {
+		super.setUnlocalizedName(unlocal);
+	}
+
+	@Override
+	public void setTextureResource() {
+		super.setTextureName(getUnlocalizedName());
+	}
+
+	@Override
+	public void setIcon(IIconRegister iconRegsiter) {
+		// TODO Auto-generated method stub
+		
 	}
 }
