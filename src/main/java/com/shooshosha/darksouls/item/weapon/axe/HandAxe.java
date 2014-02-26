@@ -1,8 +1,10 @@
 package com.shooshosha.darksouls.item.weapon.axe;
 
+import com.shooshosha.darksouls.item.weapon.Axes;
 import com.shooshosha.darksouls.item.weapon.Bonus;
+import com.shooshosha.darksouls.item.weapon.Weapon;
 
-public class HandAxe extends Axes {
+public class HandAxe extends Weapon implements Axes {
 	public HandAxe() {
 		super();
 		setUnlocalizedName("handaxe");

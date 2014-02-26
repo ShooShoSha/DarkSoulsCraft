@@ -1,15 +1,17 @@
 package com.shooshosha.darksouls.item.weapon.axe;
 
+import com.shooshosha.darksouls.item.weapon.Axes;
 import com.shooshosha.darksouls.item.weapon.Bonus;
+import com.shooshosha.darksouls.item.weapon.Weapon;
 
-public class BattleAxe extends Axes {
+public class BattleAxe extends Weapon implements Axes {
 	public BattleAxe() {
 		super();
 		setUnlocalizedName("battleaxe");
 		setTextureName(getUnlocalizedName());
 		setBaseStatuses();
 	}
-	@Override
+	
 	protected void setBaseStatuses() {
 		setDamages(95, 0, 0, 0);
 		setReductions(55, 10, 40, 40);
