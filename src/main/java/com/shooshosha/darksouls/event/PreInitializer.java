@@ -22,7 +22,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
  * @date Feb 4, 2014
  *
  */
-public class PreInitializer {
+public final class PreInitializer {
 	public static void handle(FMLPreInitializationEvent preInitializeEvent) {
 		ConfigurationHelper.initializeFiles(preInitializeEvent);
 		
