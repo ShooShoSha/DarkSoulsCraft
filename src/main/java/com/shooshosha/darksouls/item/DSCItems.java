@@ -11,6 +11,9 @@ package com.shooshosha.darksouls.item;
 
 import java.util.HashSet;
 
+import com.shooshosha.darksouls.item.weapon.fist.Caestus;
+import com.shooshosha.darksouls.item.weapon.halberd.Halberd;
+import com.shooshosha.darksouls.item.weapon.hammer.Mace;
 import net.minecraft.item.Item;
 
 import com.shooshosha.darksouls.item.weapon.Weapon;
@@ -37,9 +40,9 @@ public static HashSet<Weapon> weapons = new HashSet<Weapon>();
 
 	private static void createItems() {
 		homewardbone = new HomewardBone();
-		weapons.add(halberd);
-		weapons.add(mace);
-		weapons.add(caestus);
+		weapons.add(new Halberd());
+		weapons.add(new Mace());
+		weapons.add(new Caestus());
 	}
 	
 	private static void registerItems() {
