@@ -11,8 +11,10 @@ package com.shooshosha.darksouls.block;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
 
 import com.shooshosha.darksouls.library.Reference;
+import com.shooshosha.darksouls.library.Registrable;
 import com.shooshosha.darksouls.proxy.CommonProxy;
 
 /**
@@ -20,15 +22,26 @@ import com.shooshosha.darksouls.proxy.CommonProxy;
  * @date Dec 13, 2013
  *
  */
-public abstract class DSCBlock extends Block {
+public class DSCBlock extends Block implements Registrable {
 	
 	public DSCBlock(Material material) {
 		super(material);
 		this.setCreativeTab(CommonProxy.DSCtab);
 	}
-	
+
 	@Override
-	public Block setBlockName(String unlocalName) {
-		return super.setBlockName(Reference.RESOURCE_PREFIX + unlocalName);
+	public void setName(String unlocal) {
+		super.setBlockName(Reference.RESOURCE_PREFIX + unlocal);
+	}
+
+	@Override
+	public void setTextureResource() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void setIcon(IIconRegister iconRegister) {
+		blockIcon = iconRegister.registerIcon(Reference.RESOURCE_PREFIX + getUnlocalizedName());
 	}
 }
