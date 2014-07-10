@@ -19,7 +19,7 @@ apply plugin: 'forge'
 
 version = "${minecraft_version}-${mod_version}"
 group= "${mod_package}.${mod_id}" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "${mod_id}"
+archivesBaseName = "${mod_base}"
 
 minecraft {
     version = "${minecraft_version}-${forge_version}"
