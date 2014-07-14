@@ -9,6 +9,8 @@
  */
 package com.shooshosha.darksouls.item;
 
+import com.shooshosha.darksouls.DarkSoulsCraft;
+import com.shooshosha.darksouls.proxy.Proxy;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.item.Item;
 
@@ -21,11 +23,13 @@ import com.shooshosha.darksouls.proxy.CommonProxy;
  *
  */
 public class DSCItem extends Item implements Registrable {
+    private static final String localePrefix = "item." + DarkSoulsCraft.LOCALE;
+
 	public DSCItem() {
 		super();
 		this.maxStackSize = 64;
 		this.setNoRepair();
-		this.setCreativeTab(CommonProxy.DSCtab);
+		this.setCreativeTab(Proxy.DSCtab);
 	}
 
 	@Override
