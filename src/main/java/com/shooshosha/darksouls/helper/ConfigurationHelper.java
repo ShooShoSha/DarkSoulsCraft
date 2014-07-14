@@ -11,8 +11,8 @@ package com.shooshosha.darksouls.helper;
 
 import java.io.File;
 
-import com.shooshosha.darksouls.config.GeneralConfiguration;
-import com.shooshosha.darksouls.config.ItemConfiguration;
+import com.shooshosha.darksouls.config.ConfigGeneral;
+import com.shooshosha.darksouls.config.ConfigItem;
 
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
@@ -29,8 +29,8 @@ public class ConfigurationHelper {
 	
 	public static void initializeFiles(FMLPreInitializationEvent preLoadingEvent) {
 		getModConfigurationsPaths(preLoadingEvent);
-		GeneralConfiguration.initialize(generalModConfigurations);
-		ItemConfiguration.initialize(itemModConfigurations);
+		ConfigGeneral.initialize(generalModConfigurations);
+		ConfigItem.initialize(itemModConfigurations);
 	}
 	
 	private static void getModConfigurationsPaths(FMLPreInitializationEvent preLoadingEvent) {
