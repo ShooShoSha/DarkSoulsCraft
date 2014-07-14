@@ -6,7 +6,7 @@ import net.minecraft.item.Item;
 import com.shooshosha.darksouls.item.DSCItem;
 
 public abstract class DSCItemWeapon extends DSCItem {
-    private static final String localePrefix = "weapon." + DarkSoulsCraft.LOCALE;
+    private static final String localePrefix = "weapon.";
 
 	private int physicalDamage;
 	private int magicalDamage;
@@ -41,23 +41,13 @@ public abstract class DSCItemWeapon extends DSCItem {
 	private int holyEffect;
 	private int darkEffect;
 	
-	public DSCItemWeapon() {
-		super();
+	public DSCItemWeapon(String unlocalName) {
+        super(unlocalName);
 		setBaseStatuses();
 		setMaxStackSize(1);
 		setPath(Upgrade.NORMAL);
 		setModifier(0);
 		setAuxiliaryEffects(0, 0, 0, 0, 0);
-	}
-	
-	@Override
-	public final Item setMaxStackSize(int stackSize) {
-		return super.setMaxStackSize(1);
-	}
-	
-	@Override
-	public final Item setUnlocalizedName(String unlocalName) {
-		return super.setUnlocalizedName(Reference.WEAPON_PREFIX + unlocalName);
 	}
 	
 	/**

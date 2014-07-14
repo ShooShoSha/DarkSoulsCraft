@@ -23,15 +23,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 
-import com.shooshosha.darksouls.library.Registrable;
-import com.shooshosha.darksouls.proxy.CommonProxy;
-
 /**
  * @author shooshosha
  * @date Dec 13, 2013
  *
  */
-public class DSCBlock extends Block implements Registrable {
+public class DSCBlock extends Block {
 	public static final String localePrefix = "block." + DarkSoulsCraft.LOCALE;
 
 	public DSCBlock(Material material) {
@@ -39,14 +36,9 @@ public class DSCBlock extends Block implements Registrable {
 		this.setCreativeTab(Proxy.DSCtab);
 	}
 
-	@Override
-	public Block setBlockName(String unlocal) {
-		super.setBlockName(Reference.RESOURCE_PREFIX + unlocal);
-	}
-
     @Override
     public void setUnlocalNameAs(String unlocalName) {
-
+        super.setBlockName(localePrefix + unlocalName);
     }
 
     @Override
@@ -56,6 +48,6 @@ public class DSCBlock extends Block implements Registrable {
 
 	@Override
 	public void setIcon(IIconRegister iconRegister) {
-		blockIcon = iconRegister.registerIcon(Reference.RESOURCE_PREFIX + getUnlocalizedName());
+		blockIcon = iconRegister.registerIcon(getUnlocalizedName());
 	}
 }
