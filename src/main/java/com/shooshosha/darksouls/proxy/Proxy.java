@@ -12,11 +12,9 @@ package com.shooshosha.darksouls.proxy;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
 import cpw.mods.fml.common.event.FMLInterModComms;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.creativetab.CreativeTabs;
 
 import com.shooshosha.darksouls.creativetab.DSCCreativeTab;
-import com.shooshosha.darksouls.library.Reference;
 
 /**
  * @author shooshosha
