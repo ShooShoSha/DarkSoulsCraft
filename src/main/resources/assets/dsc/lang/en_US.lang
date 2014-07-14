@@ -1,19 +1,19 @@
 #Item localizations
-item.dsc:homewardbone.name=Homeward Bone
+darksouls:item.homewardbone.name=Homeward Bone
 
 #Weapon localizations
-item.weapon.dsc:banditsknife.name=Bandit's Knife
-item.weapon.dsc:battleaxe.name=Battle Axe
-item.weapon.dsc:club.name=Club
-item.weapon.dsc:dagger.name=Dagger
-item.weapon.dsc:halberd.name=Halberd
-item.weapon.dsc:handaxe.name=Hand Axe
-item.weapon.dsc:mace.name=Mace
-item.weapon.dsc:longsword.name=Longsword
-item.weapon.dsc:lucerne.name=Lucerne
-item.weapon.dsc:shortsword.name=Shortsword
+darksouls:item.weapon.banditsknife.name=Bandit's Knife
+darksouls:item.weapon.battleaxe.name=Battle Axe
+darksouls:item.weapon.club.name=Club
+darksouls:item.weapon.dagger.name=Dagger
+darksouls:item.weapon.halberd.name=Halberd
+darksouls:item.weapon.handaxe.name=Hand Axe
+darksouls:item.weapon.mace.name=Mace
+darksouls:item.weapon.longsword.name=Longsword
+darksouls:item.weapon.lucerne.name=Lucerne
+darksouls:item.weapon.shortsword.name=Shortsword
 
 #Block localizations
-tile.dsc:bonfire.name=Bonfire
+darksouls:tile.bonfire.name=Bonfire
 
-itemGroup.dsc=Dark Souls Craft
+itemGroup.darksouls=Dark Souls Craft
