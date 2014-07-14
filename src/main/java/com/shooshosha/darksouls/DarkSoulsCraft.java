@@ -22,8 +22,9 @@ import com.shooshosha.darksouls.event.Initializer;
 import com.shooshosha.darksouls.event.PostInitializer;
 import com.shooshosha.darksouls.event.PreInitializer;
 import com.shooshosha.darksouls.library.Reference;
-import com.shooshosha.darksouls.proxy.CommonProxy;
+import com.shooshosha.darksouls.proxy.Proxy;
 
+import com.shooshosha.darksouls.proxy.Proxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
@@ -38,31 +39,17 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
  * @date Nov 26, 2013
  * 
  */
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, dependencies = Reference.MOD_DEPENDENCIES)
+@Mod(modid = DarkSoulsCraft.ID, name = DarkSoulsCraft.NAME, dependencies = Reference.MOD_DEPENDENCIES)
 public class DarkSoulsCraft {
+    public static final String NAME = "Dark Souls Craft";
+    public static final String ID = "darksouls";
+    public static final String VERSION = "@VERSION@";
+    public static final String FINGERPRINT = "@FINGERPRINT@";
+    public static final String DEPENDENCIES = "";
+
 	@Instance(Reference.MOD_ID)
 	public static DarkSoulsCraft instance;
 
-	@SidedProxy(clientSide = Reference.PROXY_CLIENT, serverSide = Reference.PROXY_SERVER)
-	public static CommonProxy proxy;
-
-	@EventHandler
-	public void invalidFingerprint(FMLFingerprintViolationEvent event) {
-		Fingerprint.handle(event);
-	}
-
-	@EventHandler
-	public void Pre(FMLPreInitializationEvent event) {
-		PreInitializer.handle(event);
-	}
-
-	@EventHandler
-	public void Init(FMLInitializationEvent event) {
-		Initializer.handle(event);
-	}
-
-	@EventHandler
-	public void Post(FMLPostInitializationEvent event) {
-		PostInitializer.handle(event);
-	}
+	@SidedProxy
+    public static Proxy proxy;
 }
