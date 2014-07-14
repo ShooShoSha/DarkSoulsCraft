@@ -11,10 +11,10 @@ package com.shooshosha.darksouls.item;
 
 import java.util.HashSet;
 
-import com.shooshosha.darksouls.item.weapon.DSCItemWeapon;
-import com.shooshosha.darksouls.item.weapon.fist.Caestus;
-import com.shooshosha.darksouls.item.weapon.halberd.Halberd;
-import com.shooshosha.darksouls.item.weapon.hammer.Mace;
+import com.shooshosha.darksouls.item.equipment.weapon.DSCItemWeapon;
+import com.shooshosha.darksouls.item.equipment.weapon.fist.Caestus;
+import com.shooshosha.darksouls.item.equipment.weapon.halberd.Halberd;
+import com.shooshosha.darksouls.item.equipment.weapon.hammer.Mace;
 import net.minecraft.item.Item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
