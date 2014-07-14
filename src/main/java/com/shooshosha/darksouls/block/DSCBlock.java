@@ -17,11 +17,12 @@
  */
 package com.shooshosha.darksouls.block;
 
+import com.shooshosha.darksouls.DarkSoulsCraft;
+import com.shooshosha.darksouls.proxy.Proxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 
-import com.shooshosha.darksouls.library.Reference;
 import com.shooshosha.darksouls.library.Registrable;
 import com.shooshosha.darksouls.proxy.CommonProxy;
 
@@ -31,20 +32,25 @@ import com.shooshosha.darksouls.proxy.CommonProxy;
  *
  */
 public class DSCBlock extends Block implements Registrable {
-	
+	public static final String localePrefix = "block." + DarkSoulsCraft.LOCALE;
+
 	public DSCBlock(Material material) {
 		super(material);
-		this.setCreativeTab(CommonProxy.DSCtab);
+		this.setCreativeTab(Proxy.DSCtab);
 	}
 
 	@Override
-	public void setName(String unlocal) {
+	public Block setBlockName(String unlocal) {
 		super.setBlockName(Reference.RESOURCE_PREFIX + unlocal);
 	}
 
-	@Override
+    @Override
+    public void setUnlocalNameAs(String unlocalName) {
+
+    }
+
+    @Override
 	public void setTextureResource() {
-		// TODO Auto-generated method stub
 		
 	}
 
