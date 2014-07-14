@@ -21,33 +21,28 @@ import com.shooshosha.darksouls.event.Fingerprint;
 import com.shooshosha.darksouls.event.Initializer;
 import com.shooshosha.darksouls.event.PostInitializer;
 import com.shooshosha.darksouls.event.PreInitializer;
-import com.shooshosha.darksouls.library.Reference;
 import com.shooshosha.darksouls.proxy.Proxy;
 
 import com.shooshosha.darksouls.proxy.Proxy;
 import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 /**
  * @author shooshosha
  * @date Nov 26, 2013
  * 
  */
-@Mod(modid = DarkSoulsCraft.ID, name = DarkSoulsCraft.NAME, dependencies = Reference.MOD_DEPENDENCIES)
+@Mod(modid = DarkSoulsCraft.ID, name = DarkSoulsCraft.NAME, dependencies = DarkSoulsCraft.DEPENDENCIES)
 public class DarkSoulsCraft {
     public static final String NAME = "Dark Souls Craft";
     public static final String ID = "darksouls";
     public static final String VERSION = "@VERSION@";
     public static final String FINGERPRINT = "@FINGERPRINT@";
     public static final String DEPENDENCIES = "";
+    public static final String LOCALE = ID + ":";
 
-	@Instance(Reference.MOD_ID)
+	@Instance(ID)
 	public static DarkSoulsCraft instance;
 
 	@SidedProxy
