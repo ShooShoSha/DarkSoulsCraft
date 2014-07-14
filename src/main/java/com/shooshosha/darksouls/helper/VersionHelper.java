@@ -1,7 +1,7 @@
 /**
  * DarkSoulsCraft
  * 
- * Version.java
+ * VERSION.java
  * 
  * @author shooshosha
  * @license Lesser GNU Public License v3 (http://www.gnu.org/licenses/lgpl.html)
@@ -16,11 +16,10 @@ import java.net.URL;
 import java.util.Properties;
 
 import com.shooshosha.darksouls.error.VersionCheckException;
-import com.shooshosha.darksouls.library.Log;
-import com.shooshosha.darksouls.library.Messages;
-import com.shooshosha.darksouls.library.Reference;
 
 import cpw.mods.fml.common.Loader;
+
+import static com.shooshosha.darksouls.library.Log.*;
 
 /**
  * @author shooshosha
@@ -28,6 +27,10 @@ import cpw.mods.fml.common.Loader;
  *
  */
 public class VersionHelper implements Runnable {
+    private static final String AUTHORITY_URI = "https://raw.github.com/ShooShoSha/DarkSoulsCraft/master/version.xml";
+    public static final int CHECK_ATTEMPTS = 3;
+    public static final long RETRY_DELAY = 10000;
+
 	private static URL remoteAuthorityLocation;
 	private static InputStream remoteAuthorityConnection;
 	private static Properties remoteAuthorityProperties;
@@ -39,7 +42,7 @@ public class VersionHelper implements Runnable {
 	
 	
 	public static void runCheck() throws InterruptedException {
-		Log.info("Checking version against remote authority at %s", Reference.VERSION_AUTHORITY_LOCATION);
+		info("Checking version against remote authority at %s", AUTHORITY_URI);
 		new Thread(validator).start();
 	}
 	
@@ -47,11 +50,11 @@ public class VersionHelper implements Runnable {
 	public void run() {
 		try {
 			checkVersion();
-			Log.info("Using current version");
+			info("Using current version");
 		} catch (VersionCheckException e) {
-			Log.warning(e.getMessage());
+			warning(e.getMessage());
 		} catch (InterruptedException e) {
-			Log.severe("Version checking failed to initialize");
+			severe("VERSION checking failed to initialize");
 		}
 	}
 	
@@ -67,7 +70,7 @@ public class VersionHelper implements Runnable {
 	
 	private static void getRemoteAuthorityLocation() throws InterruptedException {
 		try {
-			remoteAuthorityLocation = new URL(Reference.VERSION_AUTHORITY_LOCATION);
+			remoteAuthorityLocation = new URL(AUTHORITY_URI);
 		} catch (MalformedURLException e) {
 			throw new VersionCheckException("Invalid authority URI", e);
 		}
@@ -81,7 +84,7 @@ public class VersionHelper implements Runnable {
 				remoteAuthorityConnection = remoteAuthorityLocation.openStream();
 				getRemoteAuthorityProperties();
 			} catch (IOException e) {
-				Log.info("Unable to connect, attempt %d of %d", attemptsMade, Reference.VERSION_CHECK_ATTEMPTS);
+				info("Unable to connect, attempt %d of %d", attemptsMade, Reference.VERSION_CHECK_ATTEMPTS);
 				Thread.sleep(Reference.VERSION_RETRY);
 			}
 		}
@@ -106,7 +109,7 @@ public class VersionHelper implements Runnable {
 			String[] remoteVersionPropertyTokens = remoteVersionProperty.split("\\|");
 			remoteVersionNumber = remoteVersionPropertyTokens[0];
 			remoteUpdateLocation = remoteVersionPropertyTokens[1];
-		} catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+		} catch (Exception e) {
 			throw new VersionCheckException("Unable to find a version at remote authority");
 		}
 	}
