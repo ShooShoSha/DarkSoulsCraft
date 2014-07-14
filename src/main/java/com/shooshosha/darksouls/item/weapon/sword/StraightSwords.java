@@ -1,8 +1,8 @@
 package com.shooshosha.darksouls.item.weapon.sword;
 
-import com.shooshosha.darksouls.item.weapon.Weapon;
+import com.shooshosha.darksouls.item.weapon.DSCItemWeapon;
 
-abstract class StraightSwords extends Weapon {
+abstract class StraightSwords extends DSCItemWeapon {
 	public StraightSwords() {
 		super();
 	}

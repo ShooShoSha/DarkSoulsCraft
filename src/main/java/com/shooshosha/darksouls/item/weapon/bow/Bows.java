@@ -1,10 +1,9 @@
 package com.shooshosha.darksouls.item.weapon.bow;
 
 
-import com.shooshosha.darksouls.item.weapon.Weapon;
-import com.shooshosha.darksouls.library.Reference;
+import com.shooshosha.darksouls.item.weapon.DSCItemWeapon;
 
-abstract class Bows extends Weapon {
+abstract class Bows extends DSCItemWeapon {
 	private int range;
 	Bows() {
 		super();

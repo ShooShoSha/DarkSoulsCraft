@@ -1,8 +1,8 @@
 package com.shooshosha.darksouls.item.weapon.hammer;
 
-import com.shooshosha.darksouls.item.weapon.Weapon;
+import com.shooshosha.darksouls.item.weapon.DSCItemWeapon;
 
-abstract class Hammers extends Weapon {
+abstract class Hammers extends DSCItemWeapon {
 	Hammers() {
 		super();
 	}

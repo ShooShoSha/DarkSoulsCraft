@@ -1,9 +1,9 @@
 package com.shooshosha.darksouls.item.weapon.halberd;
 
-import com.shooshosha.darksouls.item.weapon.Weapon;
+import com.shooshosha.darksouls.item.weapon.DSCItemWeapon;
 
 
-abstract class Halberds extends Weapon {
+abstract class Halberds extends DSCItemWeapon {
 	protected Halberds() {
 		super();
 	}
