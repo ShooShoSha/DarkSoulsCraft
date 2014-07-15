@@ -1,5 +1,6 @@
 /*
- * Copyright 2014. Kevin O'Brien (shooshosha@gmail.com) License: LGPLv3 or later
+ * Copyright 2014. pahimar (pahimar@gmail.com) License: LGPLv3 only
+ * Copyright 2014. Kevin "shooshosha" O'Brien (shooshosha@gmail.com) License: LGPLv3 or later
  *
  * This file is part of DarkSoulsCraft.
  *
