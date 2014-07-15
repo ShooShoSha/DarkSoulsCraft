@@ -17,29 +17,26 @@
  */
 package com.shooshosha.darksouls.event;
 
+import com.pahimar.ee3.util.LogHelper;
 import com.shooshosha.darksouls.block.DSCBlocks;
-import com.shooshosha.darksouls.helper.ConfigurationHelper;
+import com.shooshosha.darksouls.config.ConfigurationHelper;
 import com.shooshosha.darksouls.helper.VersionHelper;
 import com.shooshosha.darksouls.item.DSCItems;
-
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 /**
  * @author shooshosha
- * @date Feb 4, 2014
  */
 public final class PreInitializer {
     public static void handle(FMLPreInitializationEvent preInitializeEvent) {
-        ConfigurationHelper.initializeFiles(preInitializeEvent);
-
         try {
-            VersionHelper.runCheck();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+            ConfigurationHelper.handle(preInitializeEvent.getSuggestedConfigurationFile());
+        } catch (InterruptedException threadInterruptedException) {
+            LogHelper.fatal("Configuration thread interrupted!%n%s", threadInterruptedException);
         }
 
-        DSCItems.initialize();
+        //DSCItems.initialize();
 
-        DSCBlocks.initialize();
+        //DSCBlocks.initialize();
     }
 }
