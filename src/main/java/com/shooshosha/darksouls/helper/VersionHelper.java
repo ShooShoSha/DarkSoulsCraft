@@ -29,8 +29,10 @@ package com.shooshosha.darksouls.helper;
 
 import com.pahimar.ee3.util.LogHelper;
 import com.shooshosha.darksouls.DarkSoulsCraft;
+import com.shooshosha.darksouls.config.ConfigVersion;
 import com.shooshosha.darksouls.error.VersionCheckException;
 import cpw.mods.fml.common.Loader;
+import sun.security.krb5.Config;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -42,10 +44,6 @@ import java.util.Properties;
  * @author shooshosha
  */
 public class VersionHelper implements Runnable {
-    private static final String AUTHORITY_URI = "https://raw.github.com/ShooShoSha/DarkSoulsCraft/release/version.xml";
-    public static final int CHECK_ATTEMPTS = 3;
-    public static final long RETRY_DELAY = 10000;
-
     private static URL remoteAuthorityLocation;
     private static InputStream remoteAuthorityConnection;
     private static Properties remoteAuthorityProperties;
@@ -57,8 +55,8 @@ public class VersionHelper implements Runnable {
 
 
     public static void runCheck() throws InterruptedException {
-        LogHelper.info("Checking version against remote authority at %s", AUTHORITY_URI);
-        new Thread(validator).start();
+        LogHelper.info("Checking version against remote authority at %s", ConfigVersion.getAuthorityURI());
+        new Thread(validator, validator.getClass().getSimpleName()).start();
     }
 
     @Override
@@ -69,7 +67,7 @@ public class VersionHelper implements Runnable {
         } catch (VersionCheckException e) {
             LogHelper.warn(e.getMessage());
         } catch (InterruptedException e) {
-            LogHelper.error("VERSION checking failed to initialize");
+            LogHelper.fatal("Version checking thread interrupted!");
         }
     }
 
@@ -85,7 +83,7 @@ public class VersionHelper implements Runnable {
 
     private static void getRemoteAuthorityLocation() throws InterruptedException {
         try {
-            remoteAuthorityLocation = new URL(AUTHORITY_URI);
+            remoteAuthorityLocation = new URL(ConfigVersion.getAuthorityURI());
         } catch (MalformedURLException e) {
             throw new VersionCheckException("Invalid authority URI", e);
         }
@@ -94,13 +92,13 @@ public class VersionHelper implements Runnable {
 
     private static void getRemoteAuthorityConnection() throws InterruptedException {
         int attemptsMade = 0;
-        while (remoteAuthorityConnection == null && ++attemptsMade < CHECK_ATTEMPTS) {
+        while (remoteAuthorityConnection == null && ++attemptsMade < ConfigVersion.getConnectAttempts()) {
             try {
                 remoteAuthorityConnection = remoteAuthorityLocation.openStream();
                 getRemoteAuthorityProperties();
             } catch (IOException e) {
-                LogHelper.info(String.format("Unable to connect, attempt %d of %d", attemptsMade, CHECK_ATTEMPTS));
-                Thread.sleep(RETRY_DELAY);
+                LogHelper.info(String.format("Unable to connect, attempt %d of %d", attemptsMade, ConfigVersion.getConnectAttempts()));
+                Thread.sleep(ConfigVersion.getRetryDelay());
             }
         }
         if (remoteAuthorityConnection.equals(null)) {
@@ -131,7 +129,7 @@ public class VersionHelper implements Runnable {
 
     private static void compareVersions() {
         if (!getVersionForComparison().equalsIgnoreCase(remoteVersionNumber)) {
-            throw new VersionCheckException(String.format("A new version Exists.class Get it here: %s", remoteUpdateLocation));
+            throw new VersionCheckException(String.format("A new version exists. Get it here: %s", remoteUpdateLocation));
         }
     }
 
