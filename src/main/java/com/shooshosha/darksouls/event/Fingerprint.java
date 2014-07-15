@@ -1,5 +1,5 @@
 /*
- * Copyright 2014. Kevin O'Brien (shooshosha@gmail.com) License: LGPLv3 or later
+ * Copyright 2014. Kevin "shooshosha" O'Brien (shooshosha@gmail.com) License: LGPLv3 or later
  *
  * This file is part of DarkSoulsCraft.
  *
@@ -19,7 +19,6 @@ package com.shooshosha.darksouls.event;
 
 import com.pahimar.ee3.util.LogHelper;
 import com.shooshosha.darksouls.DarkSoulsCraft;
-import com.shooshosha.darksouls.error.Error;
 
 import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
 
@@ -29,9 +28,9 @@ import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
 public class Fingerprint {
     public static void handle(FMLFingerprintViolationEvent event) {
         if (DarkSoulsCraft.FINGERPRINT.equals("@FINGERPRINT@")) {
-            LogHelper.warn(String.format(Error.Fingerprint.NONE.getMessage(), DarkSoulsCraft.NAME));
+            LogHelper.warn("This copy of %s is a development version and thus may be unstable, incomplete, or both", DarkSoulsCraft.NAME);
         } else {
-            LogHelper.error(String.format(Error.Fingerprint.INVALID.getMessage(), DarkSoulsCraft.NAME));
+            LogHelper.error("This copy of %s was modified from the original and may be harmful. Please re-download the original from an appropriate site", DarkSoulsCraft.NAME);
         }
     }
 }
