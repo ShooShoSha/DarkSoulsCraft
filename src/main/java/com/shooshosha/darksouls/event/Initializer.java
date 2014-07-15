@@ -17,17 +17,17 @@
  */
 package com.shooshosha.darksouls.event;
 
+import com.pahimar.ee3.util.LogHelper;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 
 /**
  * @author shooshosha
  * @date Feb 10, 2014
- *
  */
 public class Initializer {
-	
-	public static void handle(FMLInitializationEvent event) {
-		
-	}
-	
+
+    public static void handle(FMLInitializationEvent event) {
+
+    }
+
 }
