@@ -1,5 +1,5 @@
 /*
- * Copyright 2014. Kevin O'Brien (shooshosha@gmail.com) License: LGPLv3 or later
+ * Copyright 2014. Kevin "shooshosha" O'Brien (shooshosha@gmail.com) License: LGPLv3 or later
  *
  * This file is part of DarkSoulsCraft.
  *
@@ -43,19 +43,4 @@ public abstract class Proxy {
     public static final String SERVER = "com.shooshosha.darksouls.proxy.Server";
 
     public static CreativeTabs DSCtab = new DSCCreativeTab(DarkSoulsCraft.ID);
-
-    @EventHandler
-    public void onTampered(FMLFingerprintViolationEvent event) {
-
-    }
-
-    @EventHandler
-    public void sendMessages(FMLInterModComms event) {
-
-    }
-
-    @EventHandler
-    public void receiveMessages(FMLInterModComms.IMCEvent event) {
-
-    }
 }
