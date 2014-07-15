@@ -29,25 +29,5 @@ import net.minecraftforge.common.config.Configuration;
  * @date Dec 10, 2013
  */
 public class ConfigItem {
-    private static Configuration itemConfiguration;
 
-    public static void initialize(File itemConfigurations) {
-        itemConfiguration = new Configuration(itemConfigurations);
-
-
-        try {
-            itemConfiguration.load();
-
-            readItemConfigurations();
-
-        } catch (Exception e) {
-            LogHelper.error("%s encountered a problem loading its item configurations", DarkSoulsCraft.ID, e);
-        } finally {
-            itemConfiguration.save();
-        }
-    }
-
-    private static void readItemConfigurations() {
-        //TODO read item configuration file
-    }
 }

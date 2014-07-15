@@ -31,53 +31,12 @@ import net.minecraftforge.common.config.Configuration;
  * @author shooshosha
  */
 public class ConfigGeneral {
-    private static Configuration generalConfiguration;
+    private static final String NAME = "General";
 
-    public static void initialize(File generalConfigurations) {
-        generalConfiguration = new Configuration(generalConfigurations);
+    private static boolean configTest = false;
 
-        try {
-            generalConfiguration.load();
-
-            getVersionInformation();
-
-        } catch (Exception e) {
-            LogHelper.error("%s encountered a problem loading its general configurations", DarkSoulsCraft.ID);
-        } finally {
-            generalConfiguration.save();
-        }
-    }
-
-    private static void getVersionInformation() {
-        getVersionDisplayResult();
-        getLastDiscoveredVersion();
-        getTypeOfLastDiscoveredVersion();
-    }
-
-    private static void getVersionDisplayResult() {
-        ConfigVersion.VERSION_RESULT = generalConfiguration.get(CATEGORY_GENERAL,
-                ConfigVersion.VERSION_RESULT_NAME,
-                ConfigVersion.VERSION_RESULT_DEFAULT).getBoolean(ConfigVersion.VERSION_RESULT_DEFAULT);
-    }
-
-    private static void getLastDiscoveredVersion() {
-        ConfigVersion.VERSION_DISCOVERED = generalConfiguration.get(CATEGORY_GENERAL,
-                ConfigVersion.VERSION_DISCOVERED_NAME,
-                ConfigVersion.VERSION_DISCOVERED_DEFAULT).getString();
-    }
-
-    private static void getTypeOfLastDiscoveredVersion() {
-        ConfigVersion.VERSION_TYPE = generalConfiguration.get(CATEGORY_GENERAL,
-                ConfigVersion.VERSION_TYPE_NAME,
-                ConfigVersion.VERSION_TYPE_DEFAULT).getString();
-    }
-
-    public static void set(String categoryName, String propertyName, String newValue) {
-        generalConfiguration.load();
-        if (generalConfiguration.getCategoryNames().contains(categoryName)) {
-            if (generalConfiguration.getCategory(categoryName).containsKey(propertyName)) {
-                generalConfiguration.getCategory(categoryName).get(propertyName).set(newValue);
-            }
-        }
+    public static void loadGeneralConfigurations(Configuration configuration) {
+        LogHelper.trace("Loading general configurations");
+        configTest = configuration.getBoolean("configTest", Configuration.CATEGORY_GENERAL, configTest, "Example configuration value.", "en_US");
     }
 }
