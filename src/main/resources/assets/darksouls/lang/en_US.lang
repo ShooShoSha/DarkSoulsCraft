@@ -1,0 +1,19 @@
+#Item localizations
+darksouls.item.homewardbone.name=Homeward Bone
+
+#Weapon localizations
+darksouls.item.weapon.banditsknife.name=Bandit's Knife
+darksouls.item.weapon.battleaxe.name=Battle Axe
+darksouls.item.weapon.club.name=Club
+darksouls.item.weapon.dagger.name=Dagger
+darksouls.item.weapon.halberd.name=Halberd
+darksouls.item.weapon.handaxe.name=Hand Axe
+darksouls.item.weapon.mace.name=Mace
+darksouls.item.weapon.longsword.name=Longsword
+darksouls.item.weapon.lucerne.name=Lucerne
+darksouls.item.weapon.shortsword.name=Shortsword
+
+#Block localizations
+darksouls.tile.bonfire.name=Bonfire
+
+itemGroup.darksouls=Dark Souls Craft
