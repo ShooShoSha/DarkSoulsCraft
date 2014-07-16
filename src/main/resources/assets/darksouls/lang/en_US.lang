@@ -16,4 +16,22 @@ darksouls.item.weapon.shortsword.name=Shortsword
 #Block localizations
 darksouls.tile.bonfire.name=Bonfire
 
+#Creative Tab localization
 itemGroup.darksouls=Dark Souls Craft
+
+#Configuration localizations
+darksouls.option=Dark Souls Craft Configurations
+darksouls.option.category.general=General
+darksouls.option.category.general.tooltip=Change general options
+darksouls.option.category.general.configTest=Configuration Test
+darksouls.option.category.general.configTest.tooltip=Testing configuration and localizations
+darksouls.option.category.version=Version
+darksouls.option.category.version.tooltip=Change version checking options
+darksouls.option.category.version.performCheck=Check Version
+darksouls.option.category.version.performCheck.tooltip=Enable or disable remote version checking
+darksouls.option.category.version.authorityURI=Authority URI
+darksouls.option.category.version.authorityURI.tooltip=Location of the remote version control authority file
+darksouls.option.category.version.connectAttempts=Connection Attempts
+darksouls.option.category.version.connectAttempts.tooltip=Maximum tries to check version to remote authority
+darksouls.option.category.version.retryDelay=Attempt Delay
+darksouls.option.category.version.retryDelay.tooltip=Time delay between a failed connection and next attempt
