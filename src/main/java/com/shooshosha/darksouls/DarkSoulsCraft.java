@@ -18,10 +18,10 @@
 package com.shooshosha.darksouls;
 
 import com.pahimar.ee3.util.LogHelper;
+import com.shooshosha.darksouls.config.ConfigGui;
 import com.shooshosha.darksouls.event.*;
 import com.shooshosha.darksouls.proxy.Proxy;
 
-import com.shooshosha.darksouls.proxy.Proxy;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
@@ -30,7 +30,7 @@ import cpw.mods.fml.common.event.*;
 /**
  * @author shooshosha
  */
-@Mod(modid = DarkSoulsCraft.ID, name = DarkSoulsCraft.NAME, dependencies = DarkSoulsCraft.DEPENDENCIES)
+@Mod(modid = DarkSoulsCraft.ID, name = DarkSoulsCraft.NAME, dependencies = DarkSoulsCraft.DEPENDENCIES, guiFactory = ConfigGui.FACTORY)
 public class DarkSoulsCraft {
     public static final String NAME = "Dark Souls Craft";
     public static final String ID = "darksouls";
@@ -47,78 +47,78 @@ public class DarkSoulsCraft {
 
     @Mod.EventHandler
     public void onTampered(FMLFingerprintViolationEvent event) {
-        LogHelper.info("Starting fingerprint violation handling");
+        LogHelper.trace("Starting fingerprint violation handling");
         Fingerprint.handle(event);
-        LogHelper.info("Finished fingerprint violation handling");
+        LogHelper.trace("Finished fingerprint violation handling");
     }
 
     @Mod.EventHandler
     public void preInitialize(FMLPreInitializationEvent event) {
-        LogHelper.info("Starting pre-initialization...");
+        LogHelper.trace("Starting pre-initialization...");
         PreInitializer.handle(event);
-        LogHelper.info("Finished pre-initialization...");
+        LogHelper.trace("Finished pre-initialization...");
     }
 
     @Mod.EventHandler
     public void onInitialize(FMLInitializationEvent event) {
-        LogHelper.info("Starting initialization...");
+        LogHelper.trace("Starting initialization...");
         Initializer.handle(event);
-        LogHelper.info("Finished initialization");
+        LogHelper.trace("Finished initialization");
     }
 
     @Mod.EventHandler
     public void sendMessages(FMLInterModComms event) {
-        LogHelper.info("Sending messages to other mods");
+        LogHelper.trace("Sending messages to other mods");
         Messenger.handle(event);
-        LogHelper.info("Sent messages to other mods");
+        LogHelper.trace("Sent messages to other mods");
     }
 
     @Mod.EventHandler
     public void receiveMessages(FMLInterModComms.IMCEvent event) {
-        LogHelper.info("Receiving message from other mod");
+        LogHelper.trace("Receiving message from other mod");
         Messenger.handle(event);
-        LogHelper.info("Received message from other mod");
+        LogHelper.trace("Received message from other mod");
     }
 
     @Mod.EventHandler
     public void postInitialize(FMLPostInitializationEvent event) {
-        LogHelper.info("Starting post-initialization...");
+        LogHelper.trace("Starting post-initialization...");
         PostInitializer.handle(event);
-        LogHelper.info("Finished post-initialization");
+        LogHelper.trace("Finished post-initialization");
     }
 
     @Mod.EventHandler
     public void preStart(FMLServerAboutToStartEvent event) {
-        LogHelper.info("Server about to start initialization");
+        LogHelper.trace("Server about to start initialization");
 
-        LogHelper.info("Server about to start initialized");
+        LogHelper.trace("Server about to start initialized");
     }
 
     @Mod.EventHandler
     public void onStart(FMLServerStartingEvent event) {
-        LogHelper.info("Server starting initialization");
+        LogHelper.trace("Server starting initialization");
 
-        LogHelper.info("Server starting initialized");
+        LogHelper.trace("Server starting initialized");
     }
 
     @Mod.EventHandler
     public void postStart(FMLServerStartedEvent event) {
-        LogHelper.info("Server started initialization");
+        LogHelper.trace("Server started initialization");
 
-        LogHelper.info("Server started initialized");
+        LogHelper.trace("Server started initialized");
     }
 
     @Mod.EventHandler
     public void onStop(FMLServerStoppingEvent event) {
-        LogHelper.info("Server stopping finalizing");
+        LogHelper.trace("Server stopping finalizing");
 
-        LogHelper.info("Server stopping finalized");
+        LogHelper.trace("Server stopping finalized");
     }
 
     @Mod.EventHandler
     public void postStop(FMLServerStoppedEvent event) {
-        LogHelper.info("Server stopped finalizing");
+        LogHelper.trace("Server stopped finalizing");
 
-        LogHelper.info("Server stopped finalized");
+        LogHelper.trace("Server stopped finalized");
     }
 }
