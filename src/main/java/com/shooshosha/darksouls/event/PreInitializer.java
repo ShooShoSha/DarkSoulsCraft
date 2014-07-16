@@ -18,10 +18,8 @@
 package com.shooshosha.darksouls.event;
 
 import com.pahimar.ee3.util.LogHelper;
-import com.shooshosha.darksouls.block.DSCBlocks;
-import com.shooshosha.darksouls.config.ConfigurationHelper;
+import com.shooshosha.darksouls.config.ConfigHandler;
 import com.shooshosha.darksouls.helper.VersionHelper;
-import com.shooshosha.darksouls.item.DSCItems;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
 /**
@@ -30,9 +28,10 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 public final class PreInitializer {
     public static void handle(FMLPreInitializationEvent preInitializeEvent) {
         try {
-            ConfigurationHelper.handle(preInitializeEvent.getSuggestedConfigurationFile());
+            ConfigHandler.handle(preInitializeEvent.getSuggestedConfigurationFile());
+            VersionHelper.runCheck();
         } catch (InterruptedException threadInterruptedException) {
-            LogHelper.fatal("Configuration thread interrupted!%n%s", threadInterruptedException);
+            LogHelper.fatal("%s thread interrupted!", threadInterruptedException.getMessage());
         }
 
         //DSCItems.initialize();
