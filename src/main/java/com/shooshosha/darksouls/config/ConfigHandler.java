@@ -18,6 +18,9 @@
 package com.shooshosha.darksouls.config;
 
 import com.pahimar.ee3.util.LogHelper;
+import com.shooshosha.darksouls.DarkSoulsCraft;
+import cpw.mods.fml.client.event.ConfigChangedEvent.OnConfigChangedEvent;
+import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.common.config.Configuration;
 
 import java.io.File;
@@ -25,32 +28,46 @@ import java.io.File;
 /**
  * @author shooshosha
  */
-public class ConfigurationHelper implements Runnable {
-    private static ConfigurationHelper configurationHelper = new ConfigurationHelper();
+public class ConfigHandler implements Runnable {
+    public static final String LOCALE = DarkSoulsCraft.LOCALE + "option.category.";
+    private static Configuration configuration;
+    private static ConfigHandler configHandler = new ConfigHandler();
 
-    private Configuration configuration;
+    private ConfigHandler() {
+    }
+
+    public static Configuration getConfiguration() {
+        return configuration;
+    }
 
     public static void handle(File configurationFile) throws InterruptedException {
-        configurationHelper.configuration = new Configuration(configurationFile);
-        new Thread(configurationHelper, configurationHelper.getClass().getSimpleName()).start();
+        if (configHandler.configuration == null) {
+            configHandler.configuration = new Configuration(configurationFile);
+            new Thread(configHandler, configHandler.getClass().getSimpleName()).start();
+        }
     }
 
     @Override
     public void run() {
-        LogHelper.trace("Loading general configurations");
+        LogHelper.trace("Loading configurations");
         try {
             configuration.load();
-            ConfigGeneral.loadGeneralConfigurations(configuration);
-            ConfigVersion.loadVersionConfigurations(configuration);
+            ConfigGeneral.syncConfigurations();
+            ConfigVersion.syncConfigurations(configuration);
         } catch (RuntimeException loadConfigurationException) {
             LogHelper.warn("Loading configuration file encountered an error:%n%s", loadConfigurationException);
         } catch (Exception e) {
             LogHelper.error("Loading configuration file encountered an unexpected error:%n%s", e);
         } finally {
-            configuration.save();
+            if (configuration.hasChanged())
+                configuration.save();
         }
     }
 
-    private ConfigurationHelper() {
+    @SubscribeEvent
+    public void onConfigurationChanged(OnConfigChangedEvent event) {
+        if (event.modID.equalsIgnoreCase(DarkSoulsCraft.ID)) {
+            new Thread(configHandler, configHandler.getClass().getSimpleName()).start();
+        }
     }
 }
