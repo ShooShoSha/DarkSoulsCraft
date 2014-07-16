@@ -19,36 +19,76 @@ package com.shooshosha.darksouls.config;
 
 import com.pahimar.ee3.util.LogHelper;
 import com.shooshosha.darksouls.helper.VersionHelper;
+import cpw.mods.fml.client.config.GuiConfig;
+import cpw.mods.fml.client.config.GuiConfigEntries;
+import cpw.mods.fml.client.config.GuiConfigEntries.CategoryEntry;
+import cpw.mods.fml.client.config.IConfigElement;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraftforge.common.config.ConfigElement;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.config.Property;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author shooshosha
- * @date Dec 2, 2013
- *
  */
-public final class ConfigVersion {
-    public static final String CATEGORY_VERSION = "version";
-    private static String authorityURI = "https://raw.github.com/ShooShoSha/DarkSoulsCraft/release/version.xml";
+public final class ConfigVersion extends CategoryEntry {
+    public static final String CATEGORY = "version";
+    public static final String LOCALE = ConfigHandler.LOCALE + CATEGORY + ".";
+
+    private static boolean performCheck = true;
+    private static String authorityURI = "http://shooshosha.github.io/DarkSoulsCraft/version.xml";
     private static int connectAttempts = 3;
     private static int retryDelay = 10000;
 
-    public static void loadVersionConfigurations(Configuration configuration) {
-        LogHelper.trace("Loading version configurations");
+    public static void syncConfigurations(Configuration configuration) {
+        LogHelper.trace("Syncing version configurations");
 
-        authorityURI = configuration.getString("authorityURI", CATEGORY_VERSION, authorityURI, "Remote version authority URI");
-        connectAttempts = configuration.getInt("connectAttempts", CATEGORY_VERSION, connectAttempts, 0, 3, "Max connection attempts to remote version authority");
-        retryDelay = configuration.getInt("retryDelay", CATEGORY_VERSION, retryDelay, 100, 60000, "Delay (in milliseconds) between connection attempts");
+        List<String> propertyOrder = new ArrayList<String>();
+        Property property;
 
-        LogHelper.trace("Version configurations loaded");
+        property = configuration.get(CATEGORY, "performCheck", performCheck);
+        property.setLanguageKey(LOCALE + property.getName()).setRequiresMcRestart(true);
+        property.comment = "Enable/Disable remote version checking";
+        performCheck = property.getBoolean();
+        propertyOrder.add(property.getName());
 
-        try {
-            VersionHelper.runCheck();
-        } catch (InterruptedException threadInterruptedException) {
-            LogHelper.fatal("Version thread interrupted!%n%s", threadInterruptedException);
-        }
+        property = configuration.get(CATEGORY, "authorityURI", authorityURI);
+        property.setLanguageKey(LOCALE + property.getName()).setRequiresMcRestart(true);
+        property.comment = "Remote version authority location";
+        authorityURI = property.getString();
+        propertyOrder.add(property.getName());
+
+        property = configuration.get(CATEGORY, "connectAttempts", connectAttempts);
+        property.setLanguageKey(LOCALE + property.getName()).setRequiresMcRestart(true);
+        property.setMinValue(0).setMaxValue(5);
+        property.comment = "Number of connection attempts to remote authority";
+        connectAttempts = property.getInt();
+        propertyOrder.add(property.getName());
+
+        property = configuration.get(CATEGORY, "retryDelay", retryDelay);
+        property.setLanguageKey(LOCALE + property.getName()).setRequiresMcRestart(true);
+        property.setMinValue(100).setMaxValue(60000);
+        property.comment = "Time delay (in milliseconds) between connection attempts";
+        retryDelay = property.getInt();
+        propertyOrder.add(property.getName());
+
+        configuration.setCategoryPropertyOrder(CATEGORY, propertyOrder);
     }
 
-    private ConfigVersion() {
+    public ConfigVersion(GuiConfig owningScreen, GuiConfigEntries owningEntryList, IConfigElement configElement) {
+        super(owningScreen, owningEntryList, configElement);
+    }
+
+    @Override
+    protected GuiScreen buildChildScreen() {
+        return new GuiConfig(this.owningScreen, (new ConfigElement(ConfigHandler.getConfiguration().getCategory(CATEGORY))).getChildElements(), this.owningScreen.modID, CATEGORY, this.configElement.requiresWorldRestart() || this.owningScreen.allRequireWorldRestart, this.configElement.requiresMcRestart() || this.owningScreen.allRequireMcRestart, ConfigGui.getAbridgedConfigPath(ConfigHandler.getConfiguration().toString()));
+    }
+
+    public static boolean performCheck() {
+        return performCheck;
     }
 
     public static String getAuthorityURI() {

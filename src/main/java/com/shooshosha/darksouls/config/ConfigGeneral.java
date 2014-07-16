@@ -18,25 +18,56 @@
 package com.shooshosha.darksouls.config;
 
 
-import static net.minecraftforge.common.config.Configuration.CATEGORY_GENERAL;
-
-import java.io.File;
-
 import com.pahimar.ee3.util.LogHelper;
 import com.shooshosha.darksouls.DarkSoulsCraft;
+import cpw.mods.fml.client.config.GuiConfig;
+import cpw.mods.fml.client.config.GuiConfigEntries;
+import cpw.mods.fml.client.config.GuiConfigEntries.CategoryEntry;
+import cpw.mods.fml.client.config.IConfigElement;
+import net.minecraft.client.gui.GuiScreen;
+import net.minecraftforge.common.ForgeModContainer;
+import net.minecraftforge.common.config.ConfigElement;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.common.config.Property;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 /**
  * @author shooshosha
  */
-public class ConfigGeneral {
-    private static final String NAME = "General";
+public class ConfigGeneral extends CategoryEntry {
+    public static final String CATEGORY = "general";
+    public static final String LOCALE = ConfigHandler.LOCALE + CATEGORY;
 
     private static boolean configTest = false;
 
-    public static void loadGeneralConfigurations(Configuration configuration) {
-        LogHelper.trace("Loading general configurations");
-        configTest = configuration.getBoolean("configTest", Configuration.CATEGORY_GENERAL, configTest, "Example configuration value.", "en_US");
+    public static void syncConfigurations() {
+        LogHelper.trace("Syncing general configurations");
+
+        List<String> propertyOrder = new ArrayList<String>();
+        Configuration configuration = ConfigHandler.getConfiguration();
+        Property property;
+
+        property = configuration.get(CATEGORY, "configTest", configTest);
+        property.setLanguageKey(LOCALE + "." + property.getName());
+        configTest = property.getBoolean();
+        propertyOrder.add(property.getName());
+
+        configuration.setCategoryPropertyOrder(CATEGORY, propertyOrder);
+    }
+
+    public ConfigGeneral(GuiConfig owningScreen, GuiConfigEntries owningEntryList, IConfigElement configElement) {
+        super(owningScreen, owningEntryList, configElement);
+    }
+
+    @Override
+    protected GuiScreen buildChildScreen() {
+        return new GuiConfig(this.owningScreen, (new ConfigElement(ConfigHandler.getConfiguration().getCategory(CATEGORY))).getChildElements(), this.owningScreen.modID, CATEGORY, this.configElement.requiresWorldRestart() || this.owningScreen.allRequireWorldRestart, this.configElement.requiresMcRestart() || this.owningScreen.allRequireMcRestart, ConfigGui.getAbridgedConfigPath(ConfigHandler.getConfiguration().toString()));
+    }
+
+    public static boolean getConfigTest() {
+        return configTest;
     }
 }
