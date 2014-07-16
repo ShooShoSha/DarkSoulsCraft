@@ -32,7 +32,6 @@ import com.shooshosha.darksouls.DarkSoulsCraft;
 import com.shooshosha.darksouls.config.ConfigVersion;
 import com.shooshosha.darksouls.error.VersionCheckException;
 import cpw.mods.fml.common.Loader;
-import sun.security.krb5.Config;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -55,15 +54,17 @@ public class VersionHelper implements Runnable {
 
 
     public static void runCheck() throws InterruptedException {
-        LogHelper.info("Checking version against remote authority at %s", ConfigVersion.getAuthorityURI());
-        new Thread(validator, validator.getClass().getSimpleName()).start();
+        if (ConfigVersion.performCheck()) {
+            LogHelper.trace("Checking version against remote authority at %s", ConfigVersion.getAuthorityURI());
+            new Thread(validator, validator.getClass().getSimpleName()).start();
+        }
     }
 
     @Override
     public void run() {
         try {
             checkVersion();
-            LogHelper.info("Using current version");
+            LogHelper.trace("Using current version");
         } catch (VersionCheckException e) {
             LogHelper.warn(e.getMessage());
         } catch (InterruptedException e) {
@@ -97,12 +98,11 @@ public class VersionHelper implements Runnable {
                 remoteAuthorityConnection = remoteAuthorityLocation.openStream();
                 getRemoteAuthorityProperties();
             } catch (IOException e) {
-                LogHelper.info(String.format("Unable to connect, attempt %d of %d", attemptsMade, ConfigVersion.getConnectAttempts()));
+                LogHelper.trace(String.format("Unable to connect, attempt %d of %d", attemptsMade, ConfigVersion.getConnectAttempts()));
                 Thread.sleep(ConfigVersion.getRetryDelay());
+            } catch (NullPointerException e) {
+                throw new VersionCheckException("Unable to connect to remote authority");
             }
-        }
-        if (remoteAuthorityConnection.equals(null)) {
-            throw new VersionCheckException("Unable to connect to remote authority");
         }
     }
 
