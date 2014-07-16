@@ -48,16 +48,16 @@ public class LogHelper {
         log(Level.FATAL, message, formatSpecifiers);
     }
 
-    public static void info(String message, Object... formatSpecifiers) {
-        log(Level.INFO, message, formatSpecifiers);
+    public static void trace(String message, Object... formatSpecifiers) {
+        log(Level.TRACE, message, formatSpecifiers);
     }
 
     public static void off(String message, Object... formatSpecifiers) {
         log(Level.OFF, message, formatSpecifiers);
     }
 
-    public static void trace(String message, Object... formatSpecifiers) {
-        log(Level.TRACE, message, formatSpecifiers);
+    public static void info(String message, Object... formatSpecifiers) {
+        log(Level.INFO, message, formatSpecifiers);
     }
 
     public static void warn(String message, Object... formatSpecifiers) {
