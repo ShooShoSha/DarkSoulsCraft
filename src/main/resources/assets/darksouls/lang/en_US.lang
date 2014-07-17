@@ -1,17 +1,38 @@
 #Item localizations
-darksouls.item.homewardbone.name=Homeward Bone
+item.darksouls:homewardbone.name=Homeward Bone
 
 #Weapon localizations
-darksouls.item.weapon.banditsknife.name=Bandit's Knife
-darksouls.item.weapon.battleaxe.name=Battle Axe
-darksouls.item.weapon.club.name=Club
-darksouls.item.weapon.dagger.name=Dagger
-darksouls.item.weapon.halberd.name=Halberd
-darksouls.item.weapon.handaxe.name=Hand Axe
-darksouls.item.weapon.mace.name=Mace
-darksouls.item.weapon.longsword.name=Longsword
-darksouls.item.weapon.lucerne.name=Lucerne
-darksouls.item.weapon.shortsword.name=Shortsword
+##Axes
+darksouls.item.weapon.axes.battleaxe.name=Battle Axe
+darksouls.item.weapon.axes.handaxe.name=Hand Axe
+##Bows
+darksouls.item.weapon.bows.longbow.name=Longbow
+darksouls.item.weapon.bows.shortbow.name=Shortbow
+##Crossbows
+darksouls.item.weapon.crossbows.heavycrossbow.name=Heavy Crossbow
+darksouls.item.weapon.crossbows.lightcrossbow.name=Light Crossbow
+##Daggers
+darksouls.item.weapon.daggers.banditsknife.name=Bandit's Knife
+darksouls.item.weapon.daggers.dagger.name=Dagger
+##Fists
+darksouls.item.weapon.fists.caestus.name=Caestus
+darksouls.item.weapon.fists.claw.name=Claw
+##Halberds
+darksouls.item.weapon.halberds.halberd.name=Halberd
+darksouls.item.weapon.halberds.lucerne.name=Lucerne
+##Hammers
+darksouls.item.weapon.hammers.club.name=Club
+darksouls.item.weapon.hammers.mace.name=Mace
+##Spears
+darksouls.item.weapon.spears.pike.name=Pike
+darksouls.item.weapon.spears.spear.name=Spear
+##Swords
+darksouls.item.weapon.swords.longsword.name=Longsword
+darksouls.item.weapon.swords.shortsword.name=Shortsword
+##Whips
+darksouls.item.weapon.whips.guardiantail.name=Guardian Tail
+darksouls.item.weapon.whips.notchedwhip.name=Notched Whip
+darksouls.item.weapon.whips.whip.name=Whip
 
 #Block localizations
 darksouls.tile.bonfire.name=Bonfire
