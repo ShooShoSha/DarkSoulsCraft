@@ -5,8 +5,8 @@ import com.shooshosha.darksouls.item.equipment.Type;
 import com.shooshosha.darksouls.item.equipment.Upgrade;
 
 public class Caestus extends Fists {
-	public Caestus() {
-        super("claw");
+    public Caestus() {
+        super("caestus");
         setAttackRatings(66, 0, 0, 0, 100);
         setDamageType(Type.STRIKE);
         setDurability(300);
