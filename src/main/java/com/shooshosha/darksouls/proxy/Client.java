@@ -35,7 +35,6 @@ import cpw.mods.fml.common.network.FMLIndexedMessageToMessageCodec;
 
 /**
  * @author shooshosha
- * @date Dec 2, 2013
  */
 public class Client extends Proxy {
 

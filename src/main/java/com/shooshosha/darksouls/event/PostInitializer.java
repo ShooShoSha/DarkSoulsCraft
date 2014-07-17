@@ -22,7 +22,6 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 
 /**
  * @author shooshosha
- * @date Feb 10, 2014
  */
 public class PostInitializer {
 

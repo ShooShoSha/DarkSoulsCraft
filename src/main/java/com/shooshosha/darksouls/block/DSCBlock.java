@@ -25,7 +25,6 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 
 /**
  * @author shooshosha
- * @date Dec 13, 2013
  */
 public class DSCBlock extends Block {
 

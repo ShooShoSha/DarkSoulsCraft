@@ -26,7 +26,6 @@ import net.minecraftforge.common.config.Configuration;
 
 /**
  * @author shooshosha
- * @date Dec 10, 2013
  */
 public class ConfigItem {
 

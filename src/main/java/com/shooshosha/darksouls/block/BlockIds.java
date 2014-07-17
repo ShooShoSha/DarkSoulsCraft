@@ -20,9 +20,7 @@ package com.shooshosha.darksouls.block;
 
 /**
  * @author shooshosha
- * @date Dec 13, 2013
- *
  */
 public class BlockIds {
-	public static int BONFIRE;
+    public static int BONFIRE;
 }

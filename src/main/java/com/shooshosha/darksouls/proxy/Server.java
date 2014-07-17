@@ -32,7 +32,6 @@ import cpw.mods.fml.common.event.*;
 
 /**
  * @author shooshosha
- * @date Dec 2, 2013
  */
 public class Server extends Proxy {
 

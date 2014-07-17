@@ -30,7 +30,6 @@ package com.shooshosha.darksouls.item;
 
 /**
  * @author shooshosha
- * @date Dec 11, 2013
  */
 public class HomewardBone extends DSCItem {
 
