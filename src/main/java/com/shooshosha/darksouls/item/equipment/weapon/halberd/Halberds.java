@@ -20,10 +20,20 @@ package com.shooshosha.darksouls.item.equipment.weapon.halberd;
 
 import com.shooshosha.darksouls.item.equipment.weapon.DSCItemWeapon;
 
+import java.util.HashSet;
+import java.util.Set;
+
 
 abstract class Halberds extends DSCItemWeapon {
+    private static Set<Halberds> instances = new HashSet<Halberds>();
+
     protected Halberds(String unlocalName) {
         super("halberds." + unlocalName);
+        instances.add(this);
+    }
+
+    public static Set<Halberds> getInstances() {
+        return instances;
     }
     //if attack doesn't connect, player stumbles
 }

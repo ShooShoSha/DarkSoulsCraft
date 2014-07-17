@@ -2,8 +2,14 @@ package com.shooshosha.darksouls.item.equipment.weapon;
 
 import com.shooshosha.darksouls.item.*;
 import com.shooshosha.darksouls.item.equipment.*;
+import net.minecraft.creativetab.CreativeTabs;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class DSCItemWeapon extends DSCItem {
+    private static Set<DSCItemWeapon> weapons = new HashSet<DSCItemWeapon>();
+
     private Damage attackRatings;
     //TODO Account for multiple damage types
     private Type damageType;
@@ -15,12 +21,13 @@ public abstract class DSCItemWeapon extends DSCItem {
     private int stability;
     private int soulValue;
     private Upgrade path;
-	private int modifier;
+    private int modifier;
     private Effect ailmentEffects;
-	
-	public DSCItemWeapon(String unlocalName) {
+
+    public DSCItemWeapon(String unlocalName) {
         super("weapon." + unlocalName);
-		setMaxStackSize(1);
+        setCreativeTab(CreativeTabs.tabCombat);
+        setMaxStackSize(1);
         setAttackRatings(0, 0, 0, 0, 0);
         setDamageType(Type.NORMAL);
         setDurability(0);
@@ -30,10 +37,15 @@ public abstract class DSCItemWeapon extends DSCItem {
         setReductionRatings(0.0, 0.0, 0.0, 0.0);
         setStability(0);
         setSoulValue(0);
-		setPath(Upgrade.NORMAL);
-		setModifier(0);
+        setPath(Upgrade.NORMAL);
+        setModifier(0);
         setAilmentEffects(0, 0, 0, 0, 0, 0);
-	}
+        weapons.add(this);
+    }
+
+    public static Set<DSCItemWeapon> getWeapons() {
+        return weapons;
+    }
 
     public Damage getAttackRatings() {
         return attackRatings;

@@ -29,13 +29,18 @@ package com.shooshosha.darksouls.item;
 
 import com.shooshosha.darksouls.DarkSoulsCraft;
 import com.shooshosha.darksouls.proxy.Proxy;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author shooshosha
  */
 public class DSCItem extends Item {
-    private static final String localePrefix = DarkSoulsCraft.LOCALE;
+    private static Set<DSCItem> items = new HashSet<DSCItem>();
 
     public DSCItem(String unlocalName) {
         super();
@@ -44,10 +49,20 @@ public class DSCItem extends Item {
         this.maxStackSize = 64;
         this.setNoRepair();
         this.setCreativeTab(Proxy.DSCtab);
+        items.add(this);
     }
 
     @Override
     public String getUnlocalizedName() {
-        return localePrefix + super.getUnlocalizedName();
+        return String.format("%s.%s", DarkSoulsCraft.ID, super.getUnlocalizedName());
+    }
+
+    @Override
+    public String getUnlocalizedName(ItemStack itemStack) {
+        return getUnlocalizedName();
+    }
+
+    public static Set<DSCItem> getItems() {
+        return items;
     }
 }
