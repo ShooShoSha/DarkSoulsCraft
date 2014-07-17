@@ -36,7 +36,7 @@ import java.util.List;
  */
 public final class ConfigVersion extends CategoryEntry {
     public static final String CATEGORY = "version";
-    public static final String LOCALE = ConfigHandler.LOCALE + CATEGORY + ".";
+    public static final String LOCALE = ConfigHandler.LOCALE + CATEGORY;
 
     private static boolean performCheck = true;
     private static String authorityURI = "http://shooshosha.github.io/DarkSoulsCraft/version.xml";
@@ -50,26 +50,26 @@ public final class ConfigVersion extends CategoryEntry {
         Property property;
 
         property = configuration.get(CATEGORY, "performCheck", performCheck);
-        property.setLanguageKey(LOCALE + property.getName()).setRequiresMcRestart(true);
+        property.setLanguageKey(LOCALE + "." + property.getName()).setRequiresMcRestart(true);
         property.comment = "Enable/Disable remote version checking";
         performCheck = property.getBoolean();
         propertyOrder.add(property.getName());
 
         property = configuration.get(CATEGORY, "authorityURI", authorityURI);
-        property.setLanguageKey(LOCALE + property.getName()).setRequiresMcRestart(true);
+        property.setLanguageKey(LOCALE + "." + property.getName()).setRequiresMcRestart(true);
         property.comment = "Remote version authority location";
         authorityURI = property.getString();
         propertyOrder.add(property.getName());
 
         property = configuration.get(CATEGORY, "connectAttempts", connectAttempts);
-        property.setLanguageKey(LOCALE + property.getName()).setRequiresMcRestart(true);
+        property.setLanguageKey(LOCALE + "." + property.getName()).setRequiresMcRestart(true);
         property.setMinValue(0).setMaxValue(5);
         property.comment = "Number of connection attempts to remote authority";
         connectAttempts = property.getInt();
         propertyOrder.add(property.getName());
 
         property = configuration.get(CATEGORY, "retryDelay", retryDelay);
-        property.setLanguageKey(LOCALE + property.getName()).setRequiresMcRestart(true);
+        property.setLanguageKey(LOCALE + "." + property.getName()).setRequiresMcRestart(true);
         property.setMinValue(100).setMaxValue(60000);
         property.comment = "Time delay (in milliseconds) between connection attempts";
         retryDelay = property.getInt();
