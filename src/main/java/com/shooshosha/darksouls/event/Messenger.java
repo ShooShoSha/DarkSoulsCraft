@@ -31,7 +31,7 @@ public class Messenger {
 
     public static void handle(FMLInterModComms.IMCEvent event) {
         for (FMLInterModComms.IMCMessage m : event.getMessages()) {
-            LogHelper.trace("Message from %s: %s", m.getSender(), m.getStringValue());
+            LogHelper.info("Message from %s: %s", m.getSender(), m.getStringValue());
         }
     }
 }
