@@ -13,6 +13,8 @@ deploy:
   api_key:
     secure: jM0oFxkJ2SZ+HLVNJpZ7FVwO13+k8uSuh0t+CcKMRurhmJ8NAaiTBgpFrXmvTwzc+RvnRipke1dCHG649ZYbFN/uat2bzj6TRPENJ7JOhbVifHcoKnVL/qhsGGTpDQh90IfNQZ3Ccz0HpmFFWstBp5jp2V97GAghCvWKFR/vMVQ=
   file: make/build/lib/*universal.jar
+  skip_cleanup: true
   on:
     repo: ShooShoSha/DarkSoulsCraft
+    tags: true
     branch: release
