@@ -48,7 +48,6 @@ public class DSCItem extends Item {
         setTextureName(getUnlocalizedName());
         this.maxStackSize = 64;
         this.setNoRepair();
-        this.setCreativeTab(Proxy.DSCtab);
         items.add(this);
     }
 

@@ -27,20 +27,10 @@
  */
 package com.shooshosha.darksouls.proxy;
 
-import com.shooshosha.darksouls.DarkSoulsCraft;
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
-import cpw.mods.fml.common.event.FMLInterModComms;
-import net.minecraft.creativetab.CreativeTabs;
-
-import com.shooshosha.darksouls.creativetab.DSCCreativeTab;
-
 /**
  * @author shooshosha
  */
 public abstract class Proxy {
     public static final String CLIENT = "com.shooshosha.darksouls.proxy.Client";
     public static final String SERVER = "com.shooshosha.darksouls.proxy.Server";
-
-    public static CreativeTabs DSCtab = new DSCCreativeTab(DarkSoulsCraft.ID);
 }

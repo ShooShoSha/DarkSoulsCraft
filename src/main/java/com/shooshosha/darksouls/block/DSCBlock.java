@@ -30,7 +30,6 @@ public class DSCBlock extends Block {
 
     public DSCBlock(Material material) {
         super(material);
-        this.setCreativeTab(Proxy.DSCtab);
     }
 
     @Override
