@@ -17,4 +17,4 @@ deploy:
   on:
     repo: ShooShoSha/DarkSoulsCraft
     tags: true
-    branch: release
+    all_branches: true
