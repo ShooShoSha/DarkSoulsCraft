@@ -3,6 +3,8 @@ DarkSoulsCraft
 
 Bringing Dark Souls to Minecraft! (...eventually)
 
+[![Build Status](https://travis-ci.org/ShooShoSha/DarkSoulsCraft.svg?branch=release)](https://travis-ci.org/ShooShoSha/DarkSoulsCraft)
+
 # Wiki
 As best of an attempt to document the mod on the [Wiki](https://github.com/ShooShoSha/DarkSoulsCraft/wiki)
 
