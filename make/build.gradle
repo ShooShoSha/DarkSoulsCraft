@@ -17,13 +17,26 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "${minecraft_version}-${mod_version}." + System.getenv("BUILD_NUMBER") ?: "0"
+version = "${minecraft_version}-${mod_version}" + (System.getenv("BUILD_NUMBER") ?: "0")
+println System.getenv("BUILD_NUMBER")
 group = "${mod_package}.${mod_id}" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "${mod_base}"
 
 minecraft {
     version = "${minecraft_version}-${forge_version}"
     runDir = "run/"
+}
+
+sourceSets {
+    main {
+        def root = project.projectDir.parentFile
+        java {
+            srcDir new File(root, "src")
+        }
+        resources {
+            srcDir new File(root, "resources")
+        }
+    }
 }
 
 dependencies {
@@ -56,8 +69,26 @@ processResources
         expand 'version':project.version, 'mcversion':project.minecraft.version
     }
 
-    // copy everything else, thats not the mcmod.trace
+    // copy everything else, that's not the mcmod.info
     from(sourceSets.main.resources.srcDirs) {
-        exclude 'mcmod.trace'
+        exclude 'mcmod.info'
     }
+}
+
+jar {
+    classifier = 'universal'
+}
+
+task sourceJar(type: Jar) {
+    from sourceSets.main.java
+    classifier = 'src'
+}
+
+task devJar(type: Jar) {
+    from sourceSets.main.output
+    classifier = 'dev'
+}
+
+artifacts {
+    archives sourceJar, devJar
 }
