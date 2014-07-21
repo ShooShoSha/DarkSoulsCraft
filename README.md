@@ -36,4 +36,4 @@ The argument `setupDecompWorkspace` decompiles Minecraft code for reading how Mo
 After that, the changes will be reviewed. We may make comments on its acceptance, why it won't be accepted, or what would make it better before making the merge.
 
 # License
-Unless otherwise specified, source code in this repository is licensed under GNU Lesser General Public License version 3 or later. Any assets incorporated from the source code (text, textures, et cetera), are licensed under Creative Commons Attribution 4.0 unless otherwise specified.
+Unless otherwise specified, source code in this repository is licensed under GNU Lesser General Public License version 3 or later. Any assets incorporated from the source code (text, textures, et cetera), are licensed under Creative Commons Attribution-ShareAlike 4.0 unless otherwise specified.
