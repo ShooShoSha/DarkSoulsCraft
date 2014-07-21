@@ -1,12 +1,1 @@
-/bin
-/.gradle
-/build
-/run
-
-/.settings
-/.classpath
-/.project
-
-/*.ipr
-/*.iml
-/*.iws
+/.idea
