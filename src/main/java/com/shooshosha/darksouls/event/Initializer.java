@@ -18,8 +18,10 @@
 package com.shooshosha.darksouls.event;
 
 import com.shooshosha.darksouls.DarkSoulsCraft;
+import com.shooshosha.darksouls.world.WorldGenerator;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 
 /**
  * @author shooshosha
@@ -28,6 +30,7 @@ public class Initializer {
 
     public static void handle(FMLInitializationEvent event) {
         FMLCommonHandler.instance().bus().register(DarkSoulsCraft.instance);
+        GameRegistry.registerWorldGenerator(new WorldGenerator(), 4);
     }
 
 }
