@@ -1,34 +1,70 @@
 #Item localizations
-item.darksouls:homewardbone.name=Homeward Bone
+darksouls.item.homewardbone.name=Homeward Bone
+darksouls.item.homewardbone.info=Bone fragment reduced to white ash.%nReturn to last bonfire used for resting.%n%nBonfires are fueled by the bones of the Undead.%nIn rare cases, the strong urge of their previous owner's%nto seek bonfires enchants their bones with a homeward instinct.
 
 #Weapon localizations
 ##Axes
 darksouls.item.weapon.axes.battleaxe.name=Battle Axe
+darksouls.item.weapon.axes.battleaxe.info=Standard battle axe. Inflicts regular damage,%nmaking it effective in various situations.%n%nPowerful attack due to its weight, but one%nwrong swing leaves the wielder wide open,%nso timing and proximity to the enemy must%nbe judged carefully.
 darksouls.item.weapon.axes.handaxe.name=Hand Axe
+darksouls.item.weapon.axes.handaxe.info=Small hand axe. Appears identical to a%nlumberjack's tool, but has an ideal weight%nand strength, and is easy to handle.%n%nOne wrong swing leaves the wielder wide%nopen, so timing and proximity to the enemy%nmust be judged carefully.
+
 ##Bows
 darksouls.item.weapon.bows.longbow.name=Longbow
+darksouls.item.weapon.bows.longbow.info=Large bow. Projectile weapon for experienced%nhunters. Equip arrows to use.%n%nHold bow and press L1 to aim.%nAim for heads of humanoid foes.%nPress L2/R2 to change type of arrows.
 darksouls.item.weapon.bows.shortbow.name=Shortbow
+darksouls.item.weapon.bows.shortbow.info=Small bow. Standard projectile weapon.%nEquip arrows to use.%n%nHold bow and press L1 to aim.%nAim for heads of humanoid foes.%nPress L2/R2 to change type of arrows.
+
 ##Crossbows
 darksouls.item.weapon.crossbows.heavycrossbow.name=Heavy Crossbow
+darksouls.item.weapon.crossbows.heavycrossbow.info=Powerful large crossbow.%nWhile bows require both hands, a crossbow is%nheld in one, but arming each bolt takes time.%n%nEquip bolts to use.%nPress L2/R2 to change type of bolt.
 darksouls.item.weapon.crossbows.lightcrossbow.name=Light Crossbow
+darksouls.item.weapon.crossbows.lightcrossbow.info=Standard crossbow issued to soldiers.%nWhile bows require both hands, a crossbow is%nheld in one, but arming each bolt takes time.
+
 ##Daggers
 darksouls.item.weapon.daggers.banditsknife.name=Bandit's Knife
+darksouls.item.weapon.daggers.banditsknife.info=This wide single-edged shortsword is%nthe favorite of lowly thieves and bandits.%n%nPrimarily a slicing weapon, but highly%neffective when used for critical hits,%nsuch as after parrying or from behind.
 darksouls.item.weapon.daggers.dagger.name=Dagger
+darksouls.item.weapon.daggers.dagger.info=This standard small dagger has only a modest%nattack but can be jabbed in rapid succession,%nand is effective in critical hits such as%nafter a parry or when stabbing in the back.%nWith both slash and thrust attacks, this%ndagger is useful in various situations.
+
 ##Fists
 darksouls.item.weapon.fists.caestus.name=Caestus
+darksouls.item.weapon.fists.caestus.info=The weapon augments one's bare hands%nwith thick, studded leather.%n%nThe Caestus has a short reach, but quickly%ncools down. Amount of damage inflicted is%ndependent on its wearer's strength.
 darksouls.item.weapon.fists.claw.name=Claw
+darksouls.item.weapon.fists.claw.info=A weapon formed by three sharped claws.%n%nAttacks cause bleeding, and the wounds%ninflicted are not easily mended. Preferred%nweapon of the spooks of an Eastern land.
+
 ##Halberds
 darksouls.item.weapon.halberds.halberd.name=Halberd
 darksouls.item.weapon.halberds.lucerne.name=Lucerne
+
 ##Hammers
 darksouls.item.weapon.hammers.club.name=Club
 darksouls.item.weapon.hammers.mace.name=Mace
+
 ##Spears
 darksouls.item.weapon.spears.pike.name=Pike
 darksouls.item.weapon.spears.spear.name=Spear
+
+##Spell Tools
+###Catalysts
+darksouls.item.weapon.spellTool.catalyst.sorcerers.name=Socerer's Catalyst
+darksouls.item.weapon.spellTool.catalyst.tinBanishment.name=Tin Banishment Catalyst
+###Pyromancies
+darksouls.item.weapon.spellTool.pyromancy.pyromancyFlame.name=Pyromancy Flame
+
+###Talismans
+darksouls.item.weapon.spellTool.talisman.talisman.name=Talisman
+darksouls.item.weapon.spellTool.talisman.sunlight.name=Sunlight Talisman
+
+##Shields
+darksouls.item.weapon.shield.buckler.name=Buckler
+darksouls.item.weapon.shield.buckler.info=Very small round metal shield.%nParry attacks with large center protrusion.%n%nSmall shields are always less stable, but%nlanding critical hits after parry is easier.%nThis shield is specialized for parrying.
+darksouls.item.weapon.shield.grassCrest.name=Grass Crest Shield
+
 ##Swords
 darksouls.item.weapon.swords.longsword.name=Longsword
 darksouls.item.weapon.swords.shortsword.name=Shortsword
+
 ##Whips
 darksouls.item.weapon.whips.guardiantail.name=Guardian Tail
 darksouls.item.weapon.whips.notchedwhip.name=Notched Whip
