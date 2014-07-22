@@ -6,6 +6,7 @@ before_install:
 - chmod +x gradlew
 install: "./gradlew setupCIWorkspace -S"
 script: "./gradlew build -S"
+after_script: "ls -al"
 
 env:
   global: TERM=dumb
