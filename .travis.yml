@@ -6,10 +6,6 @@ before_install:
 - chmod +x gradlew
 install: "./gradlew setupCIWorkspace -S"
 script: "./gradlew build -S"
-after_script:
-- "echo TRAVIS_BUILD_DIR"
-- "echo {mod_base}"
-- "echo ${project.version}"
 
 env:
   global: TERM=dumb
@@ -19,7 +15,7 @@ deploy:
   api_key:
     secure: jM0oFxkJ2SZ+HLVNJpZ7FVwO13+k8uSuh0t+CcKMRurhmJ8NAaiTBgpFrXmvTwzc+RvnRipke1dCHG649ZYbFN/uat2bzj6TRPENJ7JOhbVifHcoKnVL/qhsGGTpDQh90IfNQZ3Ccz0HpmFFWstBp5jp2V97GAghCvWKFR/vMVQ=
   file:
-    - "TRAVIS_BUILD_DIR/make/build/lib/{mod_base}-{project.version}.jar"
+    - "TRAVIS_BUILD_DIR/make/build/lib/*.jar"
   skip_cleanup: true
   on:
     repo: ShooShoSha/DarkSoulsCraft
