@@ -31,11 +31,10 @@ package com.shooshosha.darksouls.item;
 /**
  * @author shooshosha
  */
-public class HomewardBone extends DSCItem {
+public final class HomewardBone extends DSCItem {
 
     public HomewardBone() {
         super("homewardbone");
-        setTextureName(getUnlocalizedName());
         maxStackSize = 99; //This probably won't work
     }
 }

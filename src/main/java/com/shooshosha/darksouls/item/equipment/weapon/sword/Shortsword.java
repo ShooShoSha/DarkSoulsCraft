@@ -4,7 +4,7 @@ import com.shooshosha.darksouls.item.equipment.Bonus;
 import com.shooshosha.darksouls.item.equipment.Type;
 import com.shooshosha.darksouls.item.equipment.Upgrade;
 
-public class Shortsword extends Swords {
+public final class Shortsword extends Swords {
 
     public Shortsword() {
         super("shortsword");

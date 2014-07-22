@@ -25,7 +25,7 @@ import com.shooshosha.darksouls.item.equipment.Upgrade;
 /**
  * @author shooshosha
  */
-public class GuardianTail extends Whips {
+public final class GuardianTail extends Whips {
     public GuardianTail() {
         super("guardiantail");
         setAttackRatings(84, 0, 0, 0, 100);

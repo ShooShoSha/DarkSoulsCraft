@@ -23,7 +23,7 @@ import com.shooshosha.darksouls.item.equipment.Type;
 import com.shooshosha.darksouls.item.equipment.Upgrade;
 
 
-public class Halberd extends Halberds {
+public final class Halberd extends Halberds {
     public Halberd() {
         super("halberd");
         setAttackRatings(110, 0, 0, 0, 100);

@@ -4,7 +4,7 @@ import com.shooshosha.darksouls.item.equipment.Bonus;
 import com.shooshosha.darksouls.item.equipment.Type;
 import com.shooshosha.darksouls.item.equipment.Upgrade;
 
-public class Longbow extends Bows {
+public final class Longbow extends Bows {
 	public Longbow() {
         super("longbow");
         setAttackRatings(36, 0, 0, 0, 100);

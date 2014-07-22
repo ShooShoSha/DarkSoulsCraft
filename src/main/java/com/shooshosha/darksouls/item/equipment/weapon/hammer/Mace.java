@@ -4,7 +4,7 @@ import com.shooshosha.darksouls.item.equipment.Bonus;
 import com.shooshosha.darksouls.item.equipment.Type;
 import com.shooshosha.darksouls.item.equipment.Upgrade;
 
-public class Mace extends Hammers {
+public final class Mace extends Hammers {
 	public Mace() {
         super("mace");
         setAttackRatings(91, 0, 0, 0, 100);

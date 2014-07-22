@@ -4,7 +4,7 @@ import com.shooshosha.darksouls.item.equipment.Bonus;
 import com.shooshosha.darksouls.item.equipment.Type;
 import com.shooshosha.darksouls.item.equipment.Upgrade;
 
-public class Club extends Hammers {
+public final class Club extends Hammers {
 	public Club() {
         super("club");
         setAttackRatings(87, 0, 0, 0, 100);

@@ -4,7 +4,7 @@ import com.shooshosha.darksouls.item.equipment.Bonus;
 import com.shooshosha.darksouls.item.equipment.Type;
 import com.shooshosha.darksouls.item.equipment.Upgrade;
 
-public class Dagger extends Daggers {
+public final class Dagger extends Daggers {
 	public Dagger() {
         super("dagger");
         setAttackRatings(56, 0, 0, 0, 131);

@@ -4,7 +4,7 @@ import com.shooshosha.darksouls.item.equipment.Bonus;
 import com.shooshosha.darksouls.item.equipment.Type;
 import com.shooshosha.darksouls.item.equipment.Upgrade;
 
-public class NotchedWhip extends Whips {
+public final class NotchedWhip extends Whips {
 	
 	public NotchedWhip() {
         super("notchedwhip");

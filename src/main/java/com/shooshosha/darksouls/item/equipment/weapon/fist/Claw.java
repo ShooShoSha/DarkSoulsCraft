@@ -4,7 +4,7 @@ import com.shooshosha.darksouls.item.equipment.Bonus;
 import com.shooshosha.darksouls.item.equipment.Type;
 import com.shooshosha.darksouls.item.equipment.Upgrade;
 
-public class Claw extends Fists {
+public final class Claw extends Fists {
     public Claw() {
         super("claw");
         setAttackRatings(72, 0, 0, 0, 100);

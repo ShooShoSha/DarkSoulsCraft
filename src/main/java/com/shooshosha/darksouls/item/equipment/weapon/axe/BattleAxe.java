@@ -3,9 +3,8 @@ package com.shooshosha.darksouls.item.equipment.weapon.axe;
 import com.shooshosha.darksouls.item.equipment.Bonus;
 import com.shooshosha.darksouls.item.equipment.Type;
 import com.shooshosha.darksouls.item.equipment.Upgrade;
-import com.shooshosha.darksouls.item.equipment.weapon.DSCItemWeapon;
 
-public class BattleAxe extends Axes {
+public final class BattleAxe extends Axes {
 	public BattleAxe() {
         super("battleaxe");
         setAttackRatings(95, 0, 0, 0, 100);

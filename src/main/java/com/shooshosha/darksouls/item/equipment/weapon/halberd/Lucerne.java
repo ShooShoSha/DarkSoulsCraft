@@ -22,7 +22,7 @@ import com.shooshosha.darksouls.item.equipment.Bonus;
 import com.shooshosha.darksouls.item.equipment.Type;
 import com.shooshosha.darksouls.item.equipment.Upgrade;
 
-public class Lucerne extends Halberds {
+public final class Lucerne extends Halberds {
 
     public Lucerne() {
         super("lucerne");
