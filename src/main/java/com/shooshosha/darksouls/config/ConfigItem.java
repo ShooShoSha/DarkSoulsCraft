@@ -18,12 +18,6 @@
 
 package com.shooshosha.darksouls.config;
 
-import java.io.File;
-
-import com.pahimar.ee3.util.LogHelper;
-import com.shooshosha.darksouls.DarkSoulsCraft;
-import net.minecraftforge.common.config.Configuration;
-
 /**
  * @author shooshosha
  */

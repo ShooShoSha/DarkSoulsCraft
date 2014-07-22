@@ -18,7 +18,6 @@
 
 package com.shooshosha.darksouls.world;
 
-import com.pahimar.ee3.util.LogHelper;
 import cpw.mods.fml.common.IWorldGenerator;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;

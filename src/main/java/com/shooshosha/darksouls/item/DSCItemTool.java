@@ -1,9 +1,9 @@
 package com.shooshosha.darksouls.item;
 
-import java.util.Set;
-
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemTool;
+
+import java.util.Set;
 
 public abstract class DSCItemTool extends ItemTool {
 

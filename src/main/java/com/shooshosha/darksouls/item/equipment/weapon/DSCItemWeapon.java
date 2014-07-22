@@ -1,6 +1,6 @@
 package com.shooshosha.darksouls.item.equipment.weapon;
 
-import com.shooshosha.darksouls.item.*;
+import com.shooshosha.darksouls.item.DSCItem;
 import com.shooshosha.darksouls.item.equipment.*;
 import net.minecraft.creativetab.CreativeTabs;
 

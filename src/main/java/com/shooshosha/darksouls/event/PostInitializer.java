@@ -17,7 +17,6 @@
  */
 package com.shooshosha.darksouls.event;
 
-import com.pahimar.ee3.util.LogHelper;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 
 /**

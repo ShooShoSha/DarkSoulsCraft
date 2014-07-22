@@ -27,12 +27,6 @@
  */
 package com.shooshosha.darksouls.proxy;
 
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import cpw.mods.fml.common.network.FMLIndexedMessageToMessageCodec;
-
 /**
  * @author shooshosha
  */

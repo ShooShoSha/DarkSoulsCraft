@@ -18,7 +18,6 @@
 package com.shooshosha.darksouls.config;
 
 import com.pahimar.ee3.util.LogHelper;
-import com.shooshosha.darksouls.helper.VersionHelper;
 import cpw.mods.fml.client.config.GuiConfig;
 import cpw.mods.fml.client.config.GuiConfigEntries;
 import cpw.mods.fml.client.config.GuiConfigEntries.CategoryEntry;

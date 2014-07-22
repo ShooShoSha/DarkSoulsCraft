@@ -27,9 +27,6 @@
  */
 package com.shooshosha.darksouls.proxy;
 
-import cpw.mods.fml.common.Mod.EventHandler;
-import cpw.mods.fml.common.event.*;
-
 /**
  * @author shooshosha
  */

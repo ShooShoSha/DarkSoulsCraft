@@ -18,10 +18,8 @@
 package com.shooshosha.darksouls.block;
 
 import com.shooshosha.darksouls.DarkSoulsCraft;
-import com.shooshosha.darksouls.proxy.Proxy;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
 
 /**
  * @author shooshosha

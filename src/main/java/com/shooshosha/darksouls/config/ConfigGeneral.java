@@ -19,13 +19,11 @@ package com.shooshosha.darksouls.config;
 
 
 import com.pahimar.ee3.util.LogHelper;
-import com.shooshosha.darksouls.DarkSoulsCraft;
 import cpw.mods.fml.client.config.GuiConfig;
 import cpw.mods.fml.client.config.GuiConfigEntries;
 import cpw.mods.fml.client.config.GuiConfigEntries.CategoryEntry;
 import cpw.mods.fml.client.config.IConfigElement;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraftforge.common.ForgeModContainer;
 import net.minecraftforge.common.config.ConfigElement;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;

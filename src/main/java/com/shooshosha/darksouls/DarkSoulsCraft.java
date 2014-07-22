@@ -21,7 +21,6 @@ import com.pahimar.ee3.util.LogHelper;
 import com.shooshosha.darksouls.config.ConfigGui;
 import com.shooshosha.darksouls.event.*;
 import com.shooshosha.darksouls.proxy.Proxy;
-
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;

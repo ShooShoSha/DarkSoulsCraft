@@ -3,7 +3,6 @@ package com.shooshosha.darksouls.item.equipment.weapon.bow;
 
 import com.shooshosha.darksouls.item.equipment.weapon.DSCItemWeapon;
 import com.shooshosha.darksouls.item.equipment.weapon.Projectile;
-import net.minecraft.block.Block;
 
 import java.util.HashSet;
 import java.util.Set;
