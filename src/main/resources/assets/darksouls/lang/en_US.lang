@@ -35,40 +35,57 @@ darksouls.item.weapon.fists.claw.info=A weapon formed by three sharped claws.%n%
 
 ##Halberds
 darksouls.item.weapon.halberds.halberd.name=Halberd
+darksouls.item.weapon.halberds.halberd.info=Long-hilted weapon mixing spear and axe is difficult to handle, requiring both strength and dexterity. The Halberd has two elementary attacks: spear-like thrusting and large sweeping swings. However, one false swing and the wielder is left wide open.
 darksouls.item.weapon.halberds.lucerne.name=Lucerne
+darksouls.item.weapon.halberds.lucerne.info=Halberd with a large, hard beak-like protrusion. Inflicts thrust damage. Instead of thrusting like a spear, the wielder of the Lucerne aims to club the head with its hard beak.
 
 ##Hammers
 darksouls.item.weapon.hammers.club.name=Club
+darksouls.item.weapon.hammers.club.info=A simple wooden club. This simple bladeless strike weapon is effective against most foes, is easily handled, and can break the guard of a shield.%n%nHowever, a single miss makes one wide open, so timing and proximities are crucial.
 darksouls.item.weapon.hammers.mace.name=Mace
+darksouls.item.weapon.hammers.mace.info=Iron hammer with a protrusive pommel. Standard weapon for clerics. This simple bladeless strike weapon is effective against most foes, and can break the guard of a shield. However, one miss leaves one wide open.
 
 ##Spears
 darksouls.item.weapon.spears.pike.name=Pike
+darksouls.item.weapon.spears.pike.info=Long spear with a very long red hilt. Traditionally used by groups of soldiers. Specially designed for distance thrusting. Has the longest range of all non-projectile weapons, but its very length makes it somewhat difficult to handle.
 darksouls.item.weapon.spears.spear.name=Spear
+darksouls.item.weapon.spears.spear.info=Standard spear used commonly by soldiers. Long reach, and can be used with shield up. Effective against hard exteriors, and can hit for high damage at the right moment of an enemy's swing. But the hit radius is small, and it is easily blocked by shields.
 
 ##Spell Tools
 ###Catalysts
 darksouls.item.weapon.spellTool.catalyst.sorcerers.name=Socerer's Catalyst
+darksouls.item.weapon.spellTool.catalyst.sorcerers.info=Sorcery catalyst used by sorcerers of%nVinheim Dragon School.%n%nEquip catalyst to use sorceries.%nAttune sorceries from a scroll at a bonfire.%nMost sorceries have a limited no. of users.
 darksouls.item.weapon.spellTool.catalyst.tinBanishment.name=Tin Banishment Catalyst
+darksouls.item.weapon.spellTool.catalyst.tinBanishment.info=Catalyst of the banishment sorcerers who%nflooded New Londo to seal off away the%nDarkwraiths and the Kings who fell to Dark.%nIn contrast to other catalysts, the metal%ncatalyst qualifies as a weapon, as it%ninflicts physical damage, however small.
 ###Pyromancies
 darksouls.item.weapon.spellTool.pyromancy.pyromancyFlame.name=Pyromancy Flame
+darksouls.item.weapon.spellTool.pyromancy.pyromancyFlame.info=Flame medium used by Great Swamp pyromancers.%nPyromancers arouse this flame to produce various fire arts.%nEquip pyromancer flame to produce pyromancy.%nAttune pyromancies from a scroll at bonfire.%nMost pyromancies have a limited no. of uses.
 
 ###Talismans
 darksouls.item.weapon.spellTool.talisman.talisman.name=Talisman
+darksouls.item.weapon.spellTool.talisman.talisman.info=Medium for casting miracles of the Gods.%nStandard talisman issued to common believers.%nEquip talisman to cast miracles.%nAttune miracles from a scroll at a bonfire.%nMost miracles have a limited no. of uses.
 darksouls.item.weapon.spellTool.talisman.sunlight.name=Sunlight Talisman
+darksouls.item.weapon.spellTool.talisman.sunlight.info=Medium for casting miracles of the Gods.%nThe talisman of Solaire of Astora, the Knight%nof Sunlight, is decorated with a holy symbol,%nillustrated by Solaire himself.%nThis talisman is a projection of Solaire's%nupstanding, unwavering faith.
 
 ##Shields
 darksouls.item.weapon.shield.buckler.name=Buckler
 darksouls.item.weapon.shield.buckler.info=Very small round metal shield.%nParry attacks with large center protrusion.%n%nSmall shields are always less stable, but%nlanding critical hits after parry is easier.%nThis shield is specialized for parrying.
 darksouls.item.weapon.shield.grassCrest.name=Grass Crest Shield
+darksouls.item.weapon.shield.grassCrest.info=Old medium metal shield of unknown origin.%nThe grass crest is lightly imbued with magic,%nwhich slightly speeds stamina recovery.
 
 ##Swords
 darksouls.item.weapon.swords.longsword.name=Longsword
+darksouls.item.weapon.swords.longsword.info=Widely-used standard straight sword, only%nmatched in ubiquity by the shortsword.%nAn accessible sword which inflicts consistent%nregular damage and high slash damage, making%nit applicable to a variety of situations.
 darksouls.item.weapon.swords.shortsword.name=Shortsword
+darksouls.item.weapon.swords.shortsword.info=This small straight sword is widely used,%nto an extent only matched by the longsword.%nAn accessible sword which inflicts consistent%nregular damage and high slash damage, making%nit applicable to a variety of situations.
 
 ##Whips
 darksouls.item.weapon.whips.guardiantail.name=Guardian Tail
+darksouls.item.weapon.whips.guardiantail.info=Sliced tail of the Sanctuary Guardian.%n%nThis flexible, spiked and highly poisonous tail would make a rather obnoxious weapon.
 darksouls.item.weapon.whips.notchedwhip.name=Notched Whip
+darksouls.item.weapon.whips.notchedwhip.info=Whip with sharp spikes.%n%nOnly slightly effective against armor and%ntough scales, but quite formidable against%nenemies with exposed skin.%nAlso causes heavy bleeding.
 darksouls.item.weapon.whips.whip.name=Whip
+darksouls.item.weapon.whips.whip.info=Leather Whip.%nNot intended for battle.%n%nVirtually ineffective against armor and tough%nscale, but quite formidable against enemies%nwith exposed skin.
 
 #Block localizations
 darksouls.tile.bonfire.name=Bonfire

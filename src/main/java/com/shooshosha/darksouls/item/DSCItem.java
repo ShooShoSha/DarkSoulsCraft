@@ -28,6 +28,7 @@
 package com.shooshosha.darksouls.item;
 
 import com.shooshosha.darksouls.DarkSoulsCraft;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -60,6 +61,16 @@ public class DSCItem extends Item {
     @Override
     public String getUnlocalizedName(ItemStack itemStack) {
         return getUnlocalizedName();
+    }
+
+    @Override
+    public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+        if (I18n.hasKey(getUnlocalizedName() + ".info")) {
+            String localizedTooltip = I18n.format(getUnlocalizedName() + ".info");
+            for (String line : localizedTooltip.split("%n")) {
+                tooltip.add(line);
+            }
+        }
     }
 
     public static Set<DSCItem> getItems() {
