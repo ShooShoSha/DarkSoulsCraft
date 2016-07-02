@@ -1,0 +1,24 @@
+[
+	{
+		"modid":"darksouls",
+		"name":"Dark Souls Craft",
+		"description":"Prepare to die!",
+		"version":"${mod_version}",
+		"mcversion":"${minecraft_version}",
+		"url":"shooshosha.com",
+		"updateUrl":"shooshosha.com",
+		"authorList":
+			[
+				"shooshosha"
+			],
+		"credits":"pahimar",
+		"logoFile":"",
+		"screenshots":
+			[
+			],
+		"parent":"",
+		"dependencies":
+			[
+			]
+	}
+]
