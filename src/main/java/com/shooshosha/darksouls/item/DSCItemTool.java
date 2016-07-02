@@ -7,8 +7,9 @@ import java.util.Set;
 
 public abstract class DSCItemTool extends ItemTool {
 
-	protected DSCItemTool(float efficiencyOnProperMaterial, ToolMaterial toolMaterial, Set<Block> blocksEffectiveAgainst) {
-		super(efficiencyOnProperMaterial, toolMaterial, blocksEffectiveAgainst);
+	protected DSCItemTool(ToolMaterial toolMaterial, Set<Block> blocksEffectiveAgainst) {
+		//super(efficiencyOnProperMaterial, toolMaterial, blocksEffectiveAgainst);
+		super(toolMaterial, blocksEffectiveAgainst);
 	}
 
 }

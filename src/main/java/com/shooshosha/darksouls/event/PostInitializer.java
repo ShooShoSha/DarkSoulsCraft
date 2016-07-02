@@ -17,7 +17,7 @@
  */
 package com.shooshosha.darksouls.event;
 
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 
 /**
  * @author shooshosha

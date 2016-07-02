@@ -19,9 +19,9 @@
 package com.shooshosha.darksouls.client.gui;
 
 import com.shooshosha.darksouls.config.ConfigGui;
-import cpw.mods.fml.client.IModGuiFactory;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraftforge.fml.client.IModGuiFactory;
 
 import java.util.Set;
 

@@ -18,14 +18,13 @@
 package com.shooshosha.darksouls.config;
 
 import com.pahimar.ee3.util.LogHelper;
-import cpw.mods.fml.client.config.GuiConfig;
-import cpw.mods.fml.client.config.GuiConfigEntries;
-import cpw.mods.fml.client.config.GuiConfigEntries.CategoryEntry;
-import cpw.mods.fml.client.config.IConfigElement;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.common.config.ConfigElement;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
+import net.minecraftforge.fml.client.config.GuiConfig;
+import net.minecraftforge.fml.client.config.GuiConfigEntries;
+import net.minecraftforge.fml.client.config.IConfigElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,7 +32,7 @@ import java.util.List;
 /**
  * @author shooshosha
  */
-public final class ConfigVersion extends CategoryEntry {
+public final class ConfigVersion extends GuiConfigEntries.CategoryEntry {
     public static final String CATEGORY = "version";
     public static final String LOCALE = ConfigHandler.LOCALE + CATEGORY;
 
@@ -50,27 +49,27 @@ public final class ConfigVersion extends CategoryEntry {
 
         property = configuration.get(CATEGORY, "performCheck", performCheck);
         property.setLanguageKey(LOCALE + "." + property.getName()).setRequiresMcRestart(true);
-        property.comment = "Enable/Disable remote version checking";
+        property.setComment("Enable/Disable remote version checking");
         performCheck = property.getBoolean();
         propertyOrder.add(property.getName());
 
         property = configuration.get(CATEGORY, "authorityURI", authorityURI);
         property.setLanguageKey(LOCALE + "." + property.getName()).setRequiresMcRestart(true);
-        property.comment = "Remote version authority location";
+        //property.comment = "Remote version authority location";
         authorityURI = property.getString();
         propertyOrder.add(property.getName());
 
         property = configuration.get(CATEGORY, "connectAttempts", connectAttempts);
         property.setLanguageKey(LOCALE + "." + property.getName()).setRequiresMcRestart(true);
         property.setMinValue(0).setMaxValue(5);
-        property.comment = "Number of connection attempts to remote authority";
+        property.setComment("Number of connection attempts to remote authority");
         connectAttempts = property.getInt();
         propertyOrder.add(property.getName());
 
         property = configuration.get(CATEGORY, "retryDelay", retryDelay);
         property.setLanguageKey(LOCALE + "." + property.getName()).setRequiresMcRestart(true);
         property.setMinValue(100).setMaxValue(60000);
-        property.comment = "Time delay (in milliseconds) between connection attempts";
+        property.setComment("Time delay (in milliseconds) between connection attempts");
         retryDelay = property.getInt();
         propertyOrder.add(property.getName());
 

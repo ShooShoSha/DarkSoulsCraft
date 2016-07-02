@@ -21,7 +21,7 @@ import com.pahimar.ee3.util.LogHelper;
 import com.shooshosha.darksouls.config.ConfigHandler;
 import com.shooshosha.darksouls.helper.VersionHelper;
 import com.shooshosha.darksouls.init.DSCItems;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 /**
  * @author shooshosha

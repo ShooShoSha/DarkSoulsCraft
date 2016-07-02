@@ -18,11 +18,11 @@
 
 package com.shooshosha.darksouls.world;
 
-import cpw.mods.fml.common.IWorldGenerator;
 import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
+import net.minecraft.world.chunk.IChunkGenerator;
 import net.minecraft.world.chunk.IChunkProvider;
+import net.minecraftforge.fml.common.IWorldGenerator;
 
 import java.util.Random;
 
@@ -30,12 +30,9 @@ import java.util.Random;
  * @author shooshosha
  */
 public class WorldGenerator implements IWorldGenerator {
-    BiomeGenBase biome;
 
     @Override
-    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-        biome = biome != world.getBiomeGenForCoords(chunkX, chunkZ) ? world.getBiomeGenForCoords(chunkX, chunkZ) : biome;
-        if (biome.biomeName.equalsIgnoreCase(BiomeGenBase.plains.biomeName))
-            world.setBlock(chunkX * 16 + random.nextInt(16), 100, chunkZ * 16 + random.nextInt(16), Blocks.wool);
+    public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+
     }
 }

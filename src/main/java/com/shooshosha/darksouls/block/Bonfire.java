@@ -25,9 +25,9 @@ import net.minecraft.block.material.Material;
 public class Bonfire extends DSCBlock {
 
     public Bonfire() {
-        super(Material.fire);
-        setBlockName("bonfire");
+        super(Material.FIRE);
+        //setBlockName("bonfire");
         this.setHardness(5F);
-        this.setBlockBounds(0.1F, 0.0F, 0.1F, 0.9F, 1.0F, 0.9F);
+        //this.setBlockBounds(0.1F, 0.0F, 0.1F, 0.9F, 1.0F, 0.9F);
     }
 }

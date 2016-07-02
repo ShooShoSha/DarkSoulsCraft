@@ -26,7 +26,7 @@ public abstract class DSCItemWeapon extends DSCItem {
 
     public DSCItemWeapon(String unlocalName) {
         super("weapon." + unlocalName);
-        setCreativeTab(CreativeTabs.tabCombat);
+        setCreativeTab(CreativeTabs.COMBAT);
         setMaxStackSize(1);
         setAttackRatings(0, 0, 0, 0, 0);
         setDamageType(Type.NORMAL);

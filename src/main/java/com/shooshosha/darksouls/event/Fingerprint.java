@@ -19,7 +19,7 @@ package com.shooshosha.darksouls.event;
 
 import com.pahimar.ee3.util.LogHelper;
 import com.shooshosha.darksouls.DarkSoulsCraft;
-import cpw.mods.fml.common.event.FMLFingerprintViolationEvent;
+import net.minecraftforge.fml.common.event.FMLFingerprintViolationEvent;
 
 /**
  * @author shooshosha

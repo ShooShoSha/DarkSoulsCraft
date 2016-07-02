@@ -21,10 +21,9 @@ import com.pahimar.ee3.util.LogHelper;
 import com.shooshosha.darksouls.config.ConfigGui;
 import com.shooshosha.darksouls.event.*;
 import com.shooshosha.darksouls.proxy.Proxy;
-import cpw.mods.fml.common.Mod;
-import cpw.mods.fml.common.Mod.Instance;
-import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.*;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.SidedProxy;
+import net.minecraftforge.fml.common.event.*;
 
 /**
  * @author shooshosha
@@ -38,10 +37,10 @@ public class DarkSoulsCraft {
     public static final String DEPENDENCIES = "";
     public static final String LOCALE = ID + ".";
 
-    @Instance(ID)
+    @Mod.Instance(ID)
     public static DarkSoulsCraft instance;
 
-    @SidedProxy(modId = ID, clientSide = Proxy.CLIENT, serverSide = Proxy.SERVER)
+    @SidedProxy(modId= ID, clientSide= Proxy.CLIENT, serverSide= Proxy.SERVER)
     public static Proxy proxy;
 
     @Mod.EventHandler

@@ -47,8 +47,8 @@ import com.shooshosha.darksouls.item.equipment.weapon.sword.Shortsword;
 import com.shooshosha.darksouls.item.equipment.weapon.whip.GuardianTail;
 import com.shooshosha.darksouls.item.equipment.weapon.whip.NotchedWhip;
 import com.shooshosha.darksouls.item.equipment.weapon.whip.Whip;
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 
 /**

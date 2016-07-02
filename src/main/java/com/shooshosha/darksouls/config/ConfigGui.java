@@ -19,11 +19,11 @@
 package com.shooshosha.darksouls.config;
 
 import com.shooshosha.darksouls.DarkSoulsCraft;
-import cpw.mods.fml.client.config.DummyConfigElement.DummyCategoryElement;
-import cpw.mods.fml.client.config.GuiConfig;
-import cpw.mods.fml.client.config.IConfigElement;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
+import net.minecraftforge.fml.client.config.DummyConfigElement;
+import net.minecraftforge.fml.client.config.GuiConfig;
+import net.minecraftforge.fml.client.config.IConfigElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,8 +40,8 @@ public class ConfigGui extends GuiConfig {
 
     private static List<IConfigElement> getConfigElements() {
         List<IConfigElement> list = new ArrayList<IConfigElement>();
-        list.add(new DummyCategoryElement(ConfigGeneral.CATEGORY, ConfigGeneral.LOCALE, ConfigGeneral.class));
-        list.add(new DummyCategoryElement(ConfigVersion.CATEGORY, ConfigVersion.LOCALE, ConfigVersion.class));
+        list.add(new DummyConfigElement.DummyCategoryElement(ConfigGeneral.CATEGORY, ConfigGeneral.LOCALE, ConfigGeneral.class));
+        list.add(new DummyConfigElement.DummyCategoryElement(ConfigVersion.CATEGORY, ConfigVersion.LOCALE, ConfigVersion.class));
         return list;
     }
 }

@@ -19,9 +19,9 @@ package com.shooshosha.darksouls.config;
 
 import com.pahimar.ee3.util.LogHelper;
 import com.shooshosha.darksouls.DarkSoulsCraft;
-import cpw.mods.fml.client.event.ConfigChangedEvent.OnConfigChangedEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.io.File;
 
@@ -65,8 +65,8 @@ public class ConfigHandler implements Runnable {
     }
 
     @SubscribeEvent
-    public void onConfigurationChanged(OnConfigChangedEvent event) {
-        if (event.modID.equalsIgnoreCase(DarkSoulsCraft.ID)) {
+    public void onConfigurationChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
+        if (event.getModID().equalsIgnoreCase(DarkSoulsCraft.ID)) {
             new Thread(configHandler, configHandler.getClass().getSimpleName()).start();
         }
     }

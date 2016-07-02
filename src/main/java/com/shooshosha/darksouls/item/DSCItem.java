@@ -28,12 +28,11 @@
 package com.shooshosha.darksouls.item;
 
 import com.shooshosha.darksouls.DarkSoulsCraft;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.StatCollector;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.HashSet;
 import java.util.List;
@@ -48,7 +47,6 @@ public class DSCItem extends Item {
     public DSCItem(String unlocalName) {
         super();
         setUnlocalizedName(unlocalName);
-        setTextureName(getUnlocalizedName());
         this.maxStackSize = 64;
         this.setNoRepair();
         items.add(this);
@@ -62,14 +60,6 @@ public class DSCItem extends Item {
     @Override
     public String getUnlocalizedName(ItemStack itemStack) {
         return getUnlocalizedName();
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean hasSubtypes) {
-        String localizedTooltip = StatCollector.translateToLocal(getUnlocalizedName() + ".info");
-        for(String line : localizedTooltip.split("%n"))
-            list.add(line);
     }
 
     public static Set<DSCItem> getItems() {

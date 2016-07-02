@@ -31,7 +31,7 @@ import com.pahimar.ee3.util.LogHelper;
 import com.shooshosha.darksouls.DarkSoulsCraft;
 import com.shooshosha.darksouls.config.ConfigVersion;
 import com.shooshosha.darksouls.error.VersionCheckException;
-import cpw.mods.fml.common.Loader;
+import net.minecraftforge.fml.common.Loader;
 
 import java.io.IOException;
 import java.io.InputStream;

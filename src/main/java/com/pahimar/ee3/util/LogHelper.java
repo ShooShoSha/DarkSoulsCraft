@@ -20,7 +20,7 @@
 package com.pahimar.ee3.util;
 
 import com.shooshosha.darksouls.DarkSoulsCraft;
-import cpw.mods.fml.common.FMLLog;
+import net.minecraftforge.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;
 
 /**

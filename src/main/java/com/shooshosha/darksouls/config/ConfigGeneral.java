@@ -19,14 +19,13 @@ package com.shooshosha.darksouls.config;
 
 
 import com.pahimar.ee3.util.LogHelper;
-import cpw.mods.fml.client.config.GuiConfig;
-import cpw.mods.fml.client.config.GuiConfigEntries;
-import cpw.mods.fml.client.config.GuiConfigEntries.CategoryEntry;
-import cpw.mods.fml.client.config.IConfigElement;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.common.config.ConfigElement;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
+import net.minecraftforge.fml.client.config.GuiConfig;
+import net.minecraftforge.fml.client.config.GuiConfigEntries;
+import net.minecraftforge.fml.client.config.IConfigElement;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +34,7 @@ import java.util.List;
 /**
  * @author shooshosha
  */
-public class ConfigGeneral extends CategoryEntry {
+public class ConfigGeneral extends GuiConfigEntries.CategoryEntry {
     public static final String CATEGORY = "general";
     public static final String LOCALE = ConfigHandler.LOCALE + CATEGORY;
 

@@ -19,7 +19,7 @@
 package com.shooshosha.darksouls.event;
 
 import com.pahimar.ee3.util.LogHelper;
-import cpw.mods.fml.common.event.FMLInterModComms;
+import net.minecraftforge.fml.common.event.FMLInterModComms;
 
 /**
  * @author shooshosha
