@@ -29,7 +29,11 @@ public class Damage {
     private int critical;
 
     public Damage(int physical, int magical, int fire, int lightning, int critical) {
-
+        setPhysical(physical);
+        setMagical(magical);
+        setFire(fire);
+        setLightning(lightning);
+        setCritical(critical);
     }
 
     public int getPhysical() {
@@ -37,7 +41,9 @@ public class Damage {
     }
 
     public void setPhysical(int physical) {
-        this.physical = physical;
+        if (physical > -1) {
+            this.physical = physical;
+        }
     }
 
     public int getMagical() {
@@ -45,7 +51,9 @@ public class Damage {
     }
 
     public void setMagical(int magical) {
-        this.magical = magical;
+        if (magical > -1) {
+            this.magical = magical;
+        }
     }
 
     public int getFire() {
@@ -53,7 +61,9 @@ public class Damage {
     }
 
     public void setFire(int fire) {
-        this.fire = fire;
+        if (fire > -1) {
+            this.fire = fire;
+        }
     }
 
     public int getLightning() {
@@ -61,7 +71,9 @@ public class Damage {
     }
 
     public void setLightning(int lightning) {
-        this.lightning = lightning;
+        if (lightning > -1) {
+            this.lightning = lightning;
+        }
     }
 
     public int getCritical() {
@@ -69,6 +81,8 @@ public class Damage {
     }
 
     public void setCritical(int critical) {
-        this.critical = critical;
+        if (critical > -1 && critical < 101) {
+            this.critical = critical;
+        }
     }
 }
