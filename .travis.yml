@@ -2,7 +2,6 @@ language: java
 jdk:
 - oraclejdk7
 before_install:
-- cd make
 - chmod +x gradlew
 install: "./gradlew setupCIWorkspace -S"
 script: "./gradlew build -S"
